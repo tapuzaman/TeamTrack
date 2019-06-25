@@ -5,6 +5,7 @@
  */
 body {
   overflow-x: hidden;
+  line-height: 2em;
 }
 
 #sidebar-wrapper {
@@ -22,6 +23,9 @@ body {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
 }
+
+.sidebar-heading{
+  font-family: "Trebuchet MS";}
 
 #sidebar-wrapper .list-group {
   width: 18rem;
