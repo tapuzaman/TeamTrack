@@ -14,7 +14,9 @@ body {
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
+  position:fixed;
 }
+
 
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
@@ -27,6 +29,8 @@ body {
 
 #page-content-wrapper {
   min-width: 100vw;
+  position: relative;
+  left : 0rem;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -41,14 +45,22 @@ body {
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
+    left:15rem;
+    transition: all 0.25s ease-out;
   }
 
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+
+  #wrapper.toggled #page-content-wrapper {
+    left: 0rem;
+    transition-delay: 0.2s;
+    transition: all 0.25s ease-out;
+  }
 }
+
 table, th, td {
-  
   border: 1px solid black;
   border-collapse: collapse;
 }
