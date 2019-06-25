@@ -9,7 +9,7 @@ body {
 
 #sidebar-wrapper {
   min-height: 100vh;
-  margin-left: -15rem;
+  margin-left: -18rem;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
@@ -24,11 +24,11 @@ body {
 }
 
 #sidebar-wrapper .list-group {
-  width: 15rem;
+  width: 18rem;
 }
 
 #page-content-wrapper {
-  min-width: 100vw;
+  min-width: 10vw;
   position: relative;
   left : 0rem;
 }
@@ -45,12 +45,12 @@ body {
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
-    left:15rem;
+    left:18rem;
     transition: all 0.25s ease-out;
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
+    margin-left: -18rem;
   }
 
   #wrapper.toggled #page-content-wrapper {
