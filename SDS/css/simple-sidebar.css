@@ -5,15 +5,24 @@
  */
 body {
   overflow-x: hidden;
+  line-height: 2em;
 }
 
 #sidebar-wrapper {
   min-height: 100vh;
-  margin-left: -15rem;
+  margin-left: -18rem;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
+  position:fixed;
+  overflow-wrap: break-word;
+}
+
+.wrap{
+  width:75%;
+  overflow-wrap: break-word;
+  padding-left: 30px;
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -21,12 +30,17 @@ body {
   font-size: 1.2rem;
 }
 
+.sidebar-heading{
+  font-family: "Trebuchet MS";}
+
 #sidebar-wrapper .list-group {
-  width: 15rem;
+  width: 18rem;
 }
 
 #page-content-wrapper {
-  min-width: 100vw;
+  min-width: 10vw;
+  position: relative;
+  left : 0rem;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -41,9 +55,26 @@ body {
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
+    left:18rem;
+    transition: all 0.25s ease-out;
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
+    margin-left: -18rem;
   }
+
+  #wrapper.toggled #page-content-wrapper {
+    left: 0rem;
+    transition-delay: 0.2s;
+    transition: all 0.25s ease-out;
+  }
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.btn{
+  margin:3px;
 }
