@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <title>SRS</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,86 +24,491 @@
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Start Bootstrap </div>
+      <div class="sidebar-heading"><b>TeamTrack</b></div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="0">Slide 0</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="1">Slide 1</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="2">Slide 2</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="3">Slide 3</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="4" >Slide 4</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="5">Slide 5</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="0">Introduction</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="1">Architectural Pattern</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="2">Component Design Specification and Interaction</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="3">Class Design</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="4" >Database Design</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="5">API List</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="6">To Be Removed</a>
+
+        <div class="dropdown show list-group-item list-group-item-action ">
+          <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Remove 2        
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item btn"  data-target="#carouselExampleIndicators" data-slide-to="7">Use Case Diagram</a>
+            <a class="dropdown-item disabled">Extended Use Case Diagrams : </a>
+            <a class="dropdown-item btn"  data-target="#carouselExampleIndicators" data-slide-to="8" >  Sign up</a>
+            <a class="dropdown-item btn"  data-target="#carouselExampleIndicators" data-slide-to="9" >  Log in</a>
+            <a class="dropdown-item btn"  data-target="#carouselExampleIndicators" data-slide-to="10">  Create Group</a>
+            <a class="dropdown-item btn"  data-target="#carouselExampleIndicators" data-slide-to="11">  Create User-stories</a>
+            <a class="dropdown-item btn"  data-target="#carouselExampleIndicators" data-slide-to="12">  Assign User-stories</a>
+            <a class="dropdown-item btn"  data-target="#carouselExampleIndicators" data-slide-to="13">  View Progress</a>
+          </div>
+        </div>
+
+        <a href="#" class="list-group-item list-group-item-action bg-light" data-target="#carouselExampleIndicators" data-slide-to="14">To be removed 3</a>
       </div>
     </div>
+
+
+
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+        <button class="btn btn-primary" id="menu-toggle">Contents</button>
+
+        <a  href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <button class="btn btn-primary">Previous</button>
+        </a>
+        <a href="#carouselExampleIndicators" role="button" data-slide="next">
+          <button class="btn btn-primary">Next</button>
+        </a>
+
       </nav>
 
       <div class="container-fluid">
         <!--- CAROUSEL -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
 
-    <div class="carousel-inner">
+          <div class="carousel-inner">
 
-      <div class="carousel-item active">
-        <h1>Slide 0</h1>
-      </div>
+            <div class="carousel-item active wrap">
+              <h1>Introduction</h1>
+             
 
-      <div class="carousel-item">
-        <h1>Slide 1<h1>
-      </div>
+            </div>
 
-      <div class="carousel-item">
-        <h1>Slide 2<h1>
-      </div>
+            <div class="carousel-item wrap">
+              <h1>Overall Description</h1>
+              
 
-      <div class="carousel-item">
-        <h1>Slide 3<h1>
-      </div>
 
-      <div class="carousel-item">
-        <h1>Slide 4<h1>
-      </div>
+             </div>
 
-      <div class="carousel-item">
-        <h1>Slide 5<h1>
-      </div>
+             <div class="carousel-item wrap">
+              <h1>External Interface Requirements</h1>
+              <br>
 
-      <div class="carousel-item">
-        <h1>Slide 6<h1>
-      </div>
-      
+              <h2>User Interfaces</h2>
+              <h6>WebApp:</h6>
+              <ul>
+               <li>Front-end : HTML5, CSS3, Bootstrap, JavaScript.</li>
+               <li>Back-end : PHP, mySQL, Laravel framework.</li>
+             </ul>
+             <h6>Mobile App (Android):</h6>
+             <ul>
+               <li>Java</li>
+
+             </ul>
+             <br>
+
+             <h2>Hardware Interfaces</h2>
+             <ul>
+               <li>Web browser</li>
+               <li>Android smartphone</li>
+             </ul>
+
+             <br>
+
+             <h2>Software Interfaces</h2>
+             <p>Software Interfaces are following:</p>
+             <ul>
+               <li>Since most of the users are Windows user we have selected Windows as the primary operating system.</li>
+               <li>For the same reason, in mobile user we have picked the Android as the primary OS</li>
+               <li>To interact with the database, we’ll be using AJAX.</li>
+               <li>Laravel will be used to interact with the centralized server.</li>
+               <li>In order to save the records SQL database will be used.</li>
+
+             </ul>
+             <br>
+
+             <h2>Communications Interfaces</h2>
+             <p>This will support email verification using Gmail, all kinds of web browser and most likely all updates of Android devices.</p>
+             <br>
+           </div>
+
+           <div class="carousel-item wrap">
+            <h1>System Features</h1>
+            <p>While most of the features will be available for both the actors (Team Leader and Team member), Team members are restricted from some privileges.</p>
+
+            <h2>Create Groups</h2>
+            <h6>Description and Priority</h6>
+            <ul>This feature is only reserved for team leaders. They will be allowed to create groups where they will interact with their members.</ul>
+            <h6>Stimulus/Response Sequences</h6>
+            <ul>Team members will be able to create groups, if groups with said name already exist, the system will prompt them to choose a new name.</ul>
+            <br>
+
+
+            <h2>Create user-stories</h2>
+            <p>Both the team members and team leaders will be able to create user-stories, which are essentially small tasks.</p>
+            <br>
+
+
+            <h2>Create user-stories with OCR</h2>
+            <p>Both the team members and team leaders will be able to create user-stories from handwritten post-its or their footnotes using the camera on their phone. </p>
+            <br>
+
+
+            <h2>Assign user-stories</h2>
+            <p>This feature is reserved for the team leaders only. The team leader can designate each user-story to whichever team member he choses or deems appropriate. </p>
+            <br>
+
+
+            <h2>View Progress</h2>
+            <p>All the members within the group can view their progress, time taken for them to complete each task assigned to them. This will be in graphical representation.</p>
+            <br>
+
+
+          </div>
+
+          <div class="carousel-item wrap" >
+            <h1>Other Nonfunctional Requirements</h1>
+            <br>
+
+            <h2>Performance Requirements</h2>
+            <p>Performance is one of our major concerns. Since the core objective of this project is to efficiently manage  large scale projects, we have to prioritize time. We shall achieve this through minimal response times when creating groups and user-stories.</p>
+            <br>
+
+            <h2>Safety Requirements</h2>
+            <p>Since this is an online platform, we won’t have to deal with safety issues much often. But to avoid unnecessary risks, and potential crises, team members and team leaders will be able to report other users for violating community standards</p>
+            <br>
+
+            <h2>Security Requirements</h2>
+            <p>Users will be able to sign up with their Google accounts. This will verify them as legit users. Since user privacy is concerned, user’s confidential information will not be visible to the organizers.</p>
+            <br>
+
+            <h2>Software Quality Attributes</h2>
+            <h6>Adaptability​</h6>
+            <p> We will try to make it as adaptable as possible so that it can tolerate changes in the environment without any intervention</p>
+            <h6>Availability</h6>
+            <p> The groups will remain within the database until the team leader choses to close the group. There will be no time constraints.</p>
+            <h6>Maintainability​</h6>
+            <p>The platform will  be maintained to increase its reusability and performance.</p>
+            <br>
+
+          
+          </div>
+
+          <div class="carousel-item wrap">
+            <h1>Other Requirements</h1>
+            <br>
+            <p>
+              1.  Integration with payment system required before deploying the system.
+            </p>
+            <p>
+              2.  Verify data and implement security features into the system.
+            </p>
+
+
+
+          </div>
+
+          <div class="carousel-item wrap">
+            <h1>Appendix A: Glossary</h1>
+            <br>
+            <h5>Team Leader:</h5>
+            <p>Creates team/ group, adds members, adds ‘user stories’, assigns ‘user stories’, view progress.</p>
+            <br>
+            <h5>Team member:</h5>
+            <p>View tasks (‘user stories’) assigned, update progress, adds ‘user stories’, assigns ‘user stories’, view progress.</p>
+          </div>
+
+          <div class="carousel-item wrap">
+            <h1>Appendix B: Analysis Models</h1>
+            <br>
+            <h3>Use Case Diagram:</h3>
+            <img src="./images/useCaseDiagram.png" alt="Use Case Diagram" style="width:800px;height:600px;">
+            <br>
+            <br>
+          </div>
+
+          <div class="carousel-item wrap">
+            <h3><b>Sign up Extended Use Case Diagram</b></h3>
+            <b>Use case name:</b> Sign up to TeamTrack.<br>
+            <b>Actor:</b> Team Leader/ Team Member <br>
+            <b>Brief overview:</b> The actor makes an account on the TeamTrack system <br>
+            <b>Type:</b> Primary <br>
+            <b>Typical course of events:</b><br>
+            <table>
+             <col width="400">
+             <col width="400">
+
+             <tr>
+              <th><center>Actor Actions</center></th>
+              <th><center>System Responses</center></th>
+
+            </tr>
+            <tr>
+              <td>1. Actor goes to TeamTrack.com</td>
+              <td>2. System responses with sign up page.</td> 
+
+            </tr>
+            <tr>
+              <td>3. Actor enters email, username and password.</td>
+              <td>4. System creates a new account for actor and logs-in the actor in the account. </td> 
+
+            </tr>
+          </table>
+
+          <br>
+          <p><b>Alternative course of actions:</b></p>
+          <p>1) Email/ username/ password field empty.<br>
+           2) Email already used for another account. Suggest using different email/Password recovery<br>
+         3) Invalid username and password. Show error message
+       </p>
+
+          
+          <img src="./images/mockup (2).png" alt="Use Case Diagram" style="width:900px;height:500px;">
+
+
+       </div>
+
+       <div class="carousel-item wrap">
+        <h3><b>Log in Extended Use Case diagram</b></h3>
+        <b>Use case name:</b>Log in to TeamTrack.<br>
+        <b>Actor:</b> Team Leader/ Team Member <br>
+        <b>Brief overview:</b> The actor logs in to their account on the TeamTrack system. <br>
+        <b>Type:</b> Primary <br>
+        <b>Typical course of events:</b><br>
+
+        <table>
+         <col width="400">
+         <col width="400">
+
+         <tr>
+          <th><center>Actor Actions</center></th>
+          <th><center>System Responses</center></th>
+
+        </tr>
+        <tr>
+          <td>1. Actor goes to TeamTrack.com</td>
+          <td>2. System responses with login page.</td> 
+
+        </tr>
+        <tr>
+          <td>3. Actor enters email, username and password.</td>
+          <td>4. System checks credentials and redirects to home page.</td> 
+
+        </tr>
+      </table>
+
+      <br>
+      <p><b>Alternative course of actions:</b></p>
+      <p>1) Email/ username/ password field empty.<br>
+       2) Invalid username and password. Show error message. Suggest password recovery.<br></p>
+
+       <img src="./images/mockup (1).png" alt="Use Case Diagram" style="width:900px;height:500px;">
+     </div>
+
+     <div class="carousel-item wrap">
+       <h3><b>Create Group Extended Use Case diagram</b></h3>
+       <b>Use case name:</b>Create group<br>
+       <b>Actor:</b> Team Leader<br>
+       <b>Brief overview:</b> The actor makes a group/team.<br>
+       <b>Type:</b> Primary <br>
+       <b>Typical course of events:</b><br>
+       <table>
+         <col width="400">
+         <col width="400">
+
+         <tr>
+          <th><center>Actor Actions</center></th>
+          <th><center>System Responses</center></th>
+
+        </tr>
+        <tr>
+          <td>1. Actor goes to TeamTrack.com</td>
+          <td>2. System responses with homepage</td> 
+
+        </tr>
+        <tr>
+          <td>3. Actor clicks ‘Group’ option from the navbar.</td>
+          <td>4. System redirects to ‘Group’ page.</td> 
+
+        </tr>
+        <tr>
+          <td>5. Actor navigates to ‘create group’ segment of the page adds ‘Team members’ with their email address and names the group.</td>
+          <td>6. System makes a list of the ‘Team member’s added. And, informs the ‘Team member’.</td> 
+
+        </tr>
+      </table>
+      <br>
+      <p><b>Alternative course of actions:</b></p>
+      <p>1) Invalid email address. Show error message.<br></p>
+<img src="./images/mockup (3).png" alt="Use Case Diagram" style="width:900px;height:500px;">
     </div>
 
-<a  href="#carouselExampleIndicators" role="button" data-slide="prev">
-  previous
-</a>
-<a href="#carouselExampleIndicators" role="button" data-slide="next">
-  next
-</a>
+    <div class="carousel-item wrap">
+
+      <h3><b>Create User-stories Extended Use Case diagram</b></h3>
+      <b>Use case name:</b>Create user-stories<br>
+      <b>Actor:</b> Team Leader/ Team Member<br>
+      <b>Brief overview:</b> Actor creates user-stories/ tasks to be completed.<br>
+      <b>Type:</b> Primary <br>
+      <b>Typical course of events:</b><br>
+      <table>
+       <col width="400">
+       <col width="400">
+
+       <tr>
+        <th><center>Actor Actions</center></th>
+        <th><center>System Responses</center></th>
+
+      </tr>
+      <tr>
+        <td>1. Actor goes to TeamTrack.com</td>
+        <td>2. System responses with homepage</td> 
+
+      </tr>
+      <tr>
+        <td>3. Actor clicks ‘User-stories’ option from the navbar.</td>
+        <td>4. System redirects to ‘User-stories’ page.</td> 
+
+      </tr>
+      <tr>
+        <td>5. Actor navigates to add user-stories part of page and inputs User-story and clicks ‘add’</td>
+        <td>6. System stores the data into the database, shows the updated list of user-stories and waits for another input.</td> 
+
+      </tr>
+    </table>
+    <br>
+    <p><b>Alternative course of actions:</b></p>
+    <p>1) Invalid email address. Show error message.<br>
+     2) User inputs duplicate user-story. Show error message.<br> 3)Data save error. Show error message. Suggest user to try again later.<br>
+   </p>
+
+   <img src="./images/mockup (4).png" alt="Use Case Diagram" style="width:900px;height:500px;">
+ </div>
+
+ <div class="carousel-item wrap">
+   <h3><b>Assign User-stories Extended Use Case diagram</b></h3>
+   <b>Use case name:</b>Assign user-stories<br>
+   <b>Actor:</b> Team Member<br>
+   <b>Brief overview:</b> Actor assigns user-stories/ tasks to ‘Team member’(s).<br>
+   <b>Type:</b> Primary <br>
+   <b>Typical course of events:</b><br>
+   <table>
+     <col width="400">
+     <col width="400">
+
+     <tr>
+      <th><center>Actor Actions</center></th>
+      <th><center>System Responses</center></th>
+
+    </tr>
+    <tr>
+      <td>1. Actor goes to TeamTrack.com</td>
+      <td>2. System responses with homepage</td> 
+
+    </tr>
+    <tr>
+      <td>3. Actor clicks ‘User-stories’ option from the navbar.</td>
+      <td>4. System redirects to ‘User-stories’ page.</td> 
+
+    </tr>
+    <tr>
+      <td>5. Actor selects user-stories.</td>
+      <td>6. System shows a list of additional commands.</td> 
+
+    </tr>
+
+  </tr>
+  <tr>
+    <td>7. Actor clicks on ‘Assign’ and assigns the user-story from the drop down list.</td>
+    <td>8. System saves the information to the database. System shows confirmation message.</td> 
+
+  </tr>
+</table>
+<br>
+<p><b>Alternative course of actions:</b></p>
+<p>1) Data save error. Show error message. Suggest user to try again later..<br>
+</p>
+
+<img src="./images/mockup (5).png" alt="Use Case Diagram" style="width:900px;height:500px;">
 
 </div>
-    </div>
-    <!-- /#page-content-wrapper -->
 
-  </div>
-  <!-- /#wrapper -->
+<div class="carousel-item wrap">
+  <h5><b>View Progress Extended Use Case diagram</b></h5>
+  <b>Use case name:</b> View Progress<br>
+  <b>Actor:</b> Team Leader/Team Member<br>
+  <b>Brief overview:</b> Actor views the progress of the project.<br>
+  <b>Typical course of events:</b><br>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <table>
+   <col width="400">
+   <col width="400">
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
+   <tr>
+    <th><center>Actor Actions</center></th>
+    <th><center>System Responses</center></th>
+
+  </tr>
+  <tr>
+    <td>1. Actor goes to TeamTrack.com</td>
+    <td>2.System responses with home page.
+     The home page contains an overview of progress in graphs.
+   </td> 
+
+ </tr>
+
+</table>
+
+<br>
+<img src="./images/mockup (6).png" alt="Use Case Diagram" style="width:900px;height:500px;">
+</div>
+
+<div class="carousel-item wrap">
+  <h1>Business Case and Gartner's Predictions</h1>
+  <br>
+
+    <h2>Business Case</h2>
+            <p>Everyone tries to make a good business model. In order to do so, the platform will be free for the team members and team leaders. But if their project takes more than 1 month to complete, they will be charged on a monthly basis to continue their work within this platform.</p>
+            <br>
+
+  <h3>Gartner’s Predictions in technology trends include :</h3>
+  <p> 
+    <br>
+    Autonomous systems, Blockchain, Augmented Analytics, Edge Systems, Smart Spaces, AI-Driven Development, Immersive Experiences, Privacy and Ethics and Quantum Computing.
+    <br>
+
+    Thereby a project like ours, which aids in managing an agile framework development will greatly impact the tech industry.
+  </p>
+
+  	<img src="./images/Gartner's Prediction.png" alt="Gartner's Predictions" style="width:600px;height:600px;">
+
+</div>
+
+</div>
+
+
+
+</div>
+</div>
+<!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>
 
 </body>
 
