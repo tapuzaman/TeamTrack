@@ -148,10 +148,30 @@ c. After receiving the user input from the controller it makes call to the model
 
            <div class="carousel-item wrap">
             <h1><center>Class Design</center></h1> <br/>
+            <h3>3.1	Class Diagram</h3><br>
             <center>
               <img src="./images/TeamTrack UML2.png" alt="UML Diagram" style="width:900px;height:600px;">
             </center>
-          </div>
+      
+            
+                <h3>3.2	Class Details</h3><br>
+                <p> <p> <b>  Member: </b>This class will contain all the necessary information about an user after the registration and the stored data will be cross-checked during log in. The attributes of this class is: memberID, memberName, email, password, RegistrationDate, login(), logout().</p>
+
+                <p> <b>Team Member:</b> Team member can create a team or can act alone to create a story. Team can give update about the userStory as well as change the userStory details. The attributes of this class is: memberName(from Member Class), memberID(from Member Class),teamName,team ID, ,updateProgress().</p>
+                
+                  <p> <b> Team Leader:</b> It defines a leader who can create the team. The attributes of this class is: TeamLeaderID, memberID, memberName, teamID, teamName, userStoryID, userStoryName ,createTeam(), addMember(),CreateUserStory(),assignUserStory().</p>
+                
+                
+                      <p> <b>Team:</b> team members work as a team to create/update user story. 
+                     The attributes of this class is: memberID, memberName, teamID, teamName.</p>
+                
+                              <p> <b>UserStory:</b> It manages the tasks assigned by the team to respective team members. The attributes of this class is: userStoryID(), userStoryTitle, description, deadline, UserStoryCreatedTime, createStory(), createdBy(), AssignedTo(). </p>
+                
+                                  <p> <b>Update:</b> team members can update user story informations if needed. The attributes of this class is: TeamID(from team class), UserStoryName,userStoryID, UserStoryCreatedTime, description(from userStory class).</p>
+                
+                                  <p><b> Admin:</b> Admin looks after the system.</p>
+                </p>
+                      </div>
 
           <div class="carousel-item wrap" >
             <h1><center>Database Design</center></h1> <br/>
