@@ -165,7 +165,7 @@ c. After receiving the user input from the controller it makes call to the model
                       <p> <b>Team:</b> team members work as a team to create/update user story. 
                      The attributes of this class is: memberID, memberName, teamID, teamName.</p>
                 
-                              <p> <b>UserStory:</b> It manages the tasks assigned by the team to respective team members. The attributes of this class is: userStoryID(), userStoryTitle, description, deadline, UserStoryCreatedTime, createStory(), createdBy(), AssignedTo(). </p>
+                              <p> <b>UserStory:</b> It manages the tasks assigned by the team to respective team members. The attributes of this class is: teamID(from team class),userStoryID(), userStoryTitle, description, deadline, UserStoryCreatedTime, createStory(), createdBy(), AssignedTo(). </p>
                 
                                   <p> <b>Update:</b> team members can update user story informations if needed. The attributes of this class is: TeamID(from team class), UserStoryName,userStoryID, UserStoryCreatedTime, description(from userStory class).</p>
                 
@@ -176,10 +176,17 @@ c. After receiving the user input from the controller it makes call to the model
           <div class="carousel-item wrap" >
             <h1><center>Database Design</center></h1> <br/>
             <center>
+                <h3>4.1	Database Diagram</h3><br></b>
                 <img src="./images/TeamTrack ERD.png" alt="ER Diagram" style="width:1100px;height:600px;">
             </center>          
-          </div>
+          
+          <h3>4.2	Database Description</h3><br></b>
+        		<p> <p> <b>Member:</b> The attributes of this class is: memberID(PK), memberName, email, password, registerDate.</p>
 
+            <p> <b>Team:</b> The attributes of this class is: memberName(from Member Class), memberID(from Member Class-FK), teamName, team ID(PK).</p>
+                <p> <b>  UserStory:</b> The attributes of this class is: userStoryID(PK), userStoryTitle, description, deadline, UserStoryCreatedTime, teamID(FK).</p>
+                </p>
+              </div>
           <div class="carousel-item wrap">
             <h1><center>API List</center></h1>
             <h2>6. List of APIs</h2><br>
