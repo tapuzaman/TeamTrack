@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('/help', function () {
     return '<b>Hello</b>';
 });
+Route::get('/service', function () {
+    return '<b>never</b>';
+});
