@@ -15,18 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/help', function () {
-    return '<b>Hello</b>';
-});
-Route::get('/service', function () {
-    return '<b>never</b>';
-});
 
-Route::get('/about', function () {
-    return '<b>about page</b>';
-});
-
-
-Route::get('/TEST', function () {
-    return '<b>CHOLE NA</b>';
-});
