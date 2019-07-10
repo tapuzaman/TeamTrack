@@ -21,3 +21,9 @@ Route::get('/help', function () {
 Route::get('/service', function () {
     return '<b>never</b>';
 });
+
+
+
+Route::get('/TEST', function () {
+    return '<b>CHOLE NA</b>';
+});
