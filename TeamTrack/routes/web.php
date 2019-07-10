@@ -22,6 +22,9 @@ Route::get('/service', function () {
     return '<b>never</b>';
 });
 
+Route::get('/about', function () {
+    return '<b>about page</b>';
+});
 
 
 Route::get('/TEST', function () {
