@@ -3,9 +3,9 @@
 @section('content')
 
     <div id="container">
-        <h1>{{$task->Task}}</h1>
+        <h1>{{$task->title}}</h1>
         <div>
-            {{$task->Description}}
+            {{$task->description}}
         </div>
 
         <hr>
