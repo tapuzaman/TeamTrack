@@ -79,7 +79,8 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+        return view('tasks.edit')->with('task',$task);
     }
 
     /**
@@ -91,7 +92,21 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'title'=>'required',
+            'description'=> 'required'
+        ]);
+
+        //update Task 
+        $task = Task::find($id);
+        $task->teamID = 1; // Dummy teamID
+        $task->sprintNo = 1; //Dummy sprint ID 
+        $task->title = $request->input('title');
+        $task->description = $request->input('description');
+        $task->isCompleted = false;
+        $task->save();
+
+        return redirect('/tasks');
     }
 
     /**

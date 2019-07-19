@@ -4,6 +4,7 @@
 
     <div id="container">
 
+        <a href="/tasks/{{$task->id}}/edit" class="btn btn-primary float-left" text-decoration="none">Edit</a>
         <!--DELETE BUTTON -->
         {!!Form::open(['action'=>['TasksController@destroy',$task->id],'method'=>'POST'])!!}
 			{{Form::hidden('_method','DELETE')}}
