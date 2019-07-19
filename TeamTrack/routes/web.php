@@ -15,4 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contact', 'PagesController@contact');
+Route::get('/about', 'PagesController@about');
+Route::resource('tasks', 'TasksController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
