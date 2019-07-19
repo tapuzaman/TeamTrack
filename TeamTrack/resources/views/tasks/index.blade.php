@@ -10,10 +10,10 @@
 
     @if(count($tasks)>0)
         @foreach($tasks as $task)
-        <div class="well">
-        <h3><a href = "/tasks/{{$task->id}}">{{$task->Task}}</a></h3>
+        <div class="well card m-3 p-3">
+            <h3><a href = "/tasks/{{$task->id}}">{{$task->Task}}</a></h3>
 
-        <small>Written on {{$task->created_at}}</small>
+            <small>Written on {{$task->created_at}}</small>
         </div>
         @endforeach
     @else
