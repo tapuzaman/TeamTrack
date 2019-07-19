@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
 
     <div class="page-header row no-gutters py-0">
@@ -17,7 +18,7 @@
                 {{Form::label('description', 'Task Description')}}
                 {{Form::textarea('description', '', ['class' => 'form-control', 'placeholder' => 'Task Description'])}}
             </div>
-        {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
+        {{Form::submit('Add Task', ['class'=>'btn btn-primary'])}}
         {!! Form::close() !!}
     </div>
 

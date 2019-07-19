@@ -42,16 +42,19 @@ class TasksController extends Controller
     {
         $this->validate($request,[
             'title'=>'required',
-            'body'=> 'required'
+            'description'=> 'required'
         ]);
 
-        //Create Task
+        //Create Task 
         $task = new Task;
+        $task->teamID = 1; // Dummy teamID
+        $task->sprintNo = 1; //Dummy sprint ID 
         $task->title = $request->input('title');
         $task->description = $request->input('description');
+        $task->isCompleted = false;
         $task->save();
 
-        return redirect('/tasks')->with('success','Task created');
+        return redirect('/tasks');
     }
 
     /**
