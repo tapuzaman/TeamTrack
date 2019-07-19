@@ -46,30 +46,35 @@ class TasksController extends Controller
         ]);
 
         //Create Task
+        $task = new Task;
+        $task->title = $request->input('title');
+        $task->description = $request->input('description');
+        $task->save();
 
+        return redirect('/tasks')->with('success','Task created');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $taskID
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($taskID)
+    public function show($id)
     {
         //fetching task data from the task table database
         
-    $task= Task::find($taskID);
-    return view('tasks.show')->with('task',$task);
+        $task= Task::find($id);
+        return view('tasks.show')->with('task',$task);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $taskID
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($taskID)
+    public function edit($id)
     {
         //
     }
@@ -78,10 +83,10 @@ class TasksController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $taskID
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $taskID)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -89,10 +94,10 @@ class TasksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $taskID
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($taskID)
+    public function destroy($id)
     {
         //
     }
