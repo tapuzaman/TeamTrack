@@ -11,7 +11,7 @@
     @if(count($tasks)>0)
         @foreach($tasks as $task)
         <div class="well card m-3 p-3">
-            <h3><a href = "/tasks/{{$task->id}}">{{$task->title}}</a></h3>
+            <h3><a href = "/tasks/{{$task->taskID}}">{{$task->title}}</a></h3>
 
             <small>Written on {{$task->created_at}}</small>
         </div>
