@@ -47,11 +47,14 @@ class TasksController extends Controller
 
         //Create Task 
         $task = new Task;
-        $task->teamID = 1; // Dummy teamID
-        $task->sprintNo = 1; //Dummy sprint ID 
+        $task->team_id = 1; // Dummy team_id
+        $task->member_id = 0;
+        $task->created_by = 1;
         $task->title = $request->input('title');
         $task->description = $request->input('description');
-        $task->isCompleted = false;
+        $task->sprint_no = 1; //Dummy sprint ID 
+        $task->due_date = now();
+        $task->is_completed = false;
         $task->save();
 
         return redirect('/tasks');
@@ -99,11 +102,11 @@ class TasksController extends Controller
 
         //update Task 
         $task = Task::find($id);
-        $task->teamID = 1; // Dummy teamID
-        $task->sprintNo = 1; //Dummy sprint ID 
+        $task->team_id = 1; // Dummy team_id
+        $task->sprint_no = 1; //Dummy sprint ID 
         $task->title = $request->input('title');
         $task->description = $request->input('description');
-        $task->isCompleted = false;
+        $task->is_completed = false;
         $task->save();
 
         return redirect('/tasks');
