@@ -8,7 +8,12 @@
                   </div>
                   <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>
               </form>
-              <ul class="navbar-nav border-left flex-row ">
+
+              <div class="btn "> <a href="/empty_data">Empty Data</a> </div>
+              <div class="btn "> <a href="/import_data">Import Data</a> </div>
+              
+              <ul class="navbar-nav border-left flex-row ">                
+
                 @guest
                         <li class="nav-item">
                             <a class="nav-link text-nowrap px-3" href="{{ route('login') }}" >

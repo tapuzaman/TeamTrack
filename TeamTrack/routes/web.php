@@ -20,9 +20,17 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
+
+// Data Routes
+Route::get('/import_data','DataController@importData'); // import data
+Route::get('/empty_data','DataController@emptyData'); // empty database
+
 Route::get('/contact', 'PagesController@contact');
 Route::get('/about', 'PagesController@about');
+
+// Model Routes
 Route::resource('tasks', 'TasksController');
 Route::resource('teams','TeamsController');
 

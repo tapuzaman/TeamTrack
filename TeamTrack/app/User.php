@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use App\Team;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -36,6 +38,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function addUserToTeam($user_id, $team_id){
+        $user = User::find($user_id);
+        $user->teams()->attach($team_id);
+    }
+
+    public static function addUserToTeamByEmail($user_email, $team_id){
+        $user = User::where('email',$user_email)->first();
+        $user->teams()->attach($team_id);
+    }
 
     public function teams()
     {
