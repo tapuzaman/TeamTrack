@@ -16,9 +16,9 @@ class TeamsController extends Controller
     public function index()
     {
         $teams = Team::all();
-        $users = User::all();
-        return view('test.userteams')->with('users',$users);
-        //return view('teams.index')->with('teams',$teams);
+        return view('teams.index')->with('teams',$teams);        
+        //$users = User::all();
+        //return view('test.userteams')->with('users',$users);
     }
 
     /**

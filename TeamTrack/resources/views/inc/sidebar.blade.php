@@ -43,12 +43,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="">
+                <a class="nav-link " href="/teams/index">
                   <i class="material-icons">view_module</i>
-                  <span>Members</span>
+                  <span>Teams masterview</span>
                 </a>
               </li>
-
+              
             </ul>
           </div>
         </aside>
