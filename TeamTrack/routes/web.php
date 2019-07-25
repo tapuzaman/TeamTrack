@@ -1,5 +1,8 @@
 <?php
 
+use App\Team;
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,15 +14,18 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
 Route::get('/contact', 'PagesController@contact');
 Route::get('/about', 'PagesController@about');
 Route::resource('tasks', 'TasksController');
+Route::resource('/team_user','test/fetchteamuser');
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
