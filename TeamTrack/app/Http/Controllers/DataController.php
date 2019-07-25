@@ -22,13 +22,14 @@ class DataController extends Controller
             ->create(['id'=>4, 'name' => 'Team 4'])
             ->create(['id'=>5, 'name' => 'Team 5']);
 
-        // id cannot be explicitly defined, relation added via email
+        // id cannot be explicitly defined, team_user table relations added via email
         User::create(['name'=>'Tom Scott', 'email'=>'tomscott@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
             ->create(['name'=>'Simon the slowloris', 'email'=>'simon@lorismail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
             ->create(['name'=>'Leonard', 'email'=>'leo@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
             ->create(['name'=>'Dark Vader', 'email'=>'dark@vader.mail', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
             ->create(['name'=>'Neon Cactus', 'email'=>'cactu@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ]);
 
+        // adds team_user table realtions
         User::addUserToTeamByEmail('tomscott@gmail.com',1);
         User::addUserToTeamByEmail('tomscott@gmail.com',2);
         User::addUserToTeamByEmail('simon@lorismail.com',2);
@@ -42,7 +43,7 @@ class DataController extends Controller
     }
 
     public function emptyData(){
-        DB::delete('delete from users'); // you can't assign id to users table
+        DB::delete('delete from users');
         DB::delete('delete from teams');
         DB::delete('delete from team_user');
         DB::delete('delete from tasks');
