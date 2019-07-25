@@ -24,24 +24,29 @@
           </form>
           <div class="nav-wrapper">
             <ul class="nav flex-column">
+            <!------ SIDEBAR LINKS ---------->
+
               <li class="nav-item">
                 <a class="nav-link" href="/home">
                   <i class="material-icons">edit</i>
                   <span>Dashboard</span>
                 </a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link " href="/tasks">
                   <i class="material-icons">vertical_split</i>
                   <span>All Tasks</span>
                 </a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link " href="/tasks/create">
                   <i class="material-icons">note_add</i>
                   <span>Add Task</span>
                 </a>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link " href="/teams/index">
                   <i class="material-icons">view_module</i>
