@@ -24,7 +24,7 @@ Auth::routes();
 Route::get('/contact', 'PagesController@contact');
 Route::get('/about', 'PagesController@about');
 Route::resource('tasks', 'TasksController');
-Route::resource('/team_user','test/fetchteamuser');
+Route::resource('teams','TeamsController');
 
 
 
