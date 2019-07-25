@@ -11,6 +11,9 @@ use App\Task;
 
 class DataController extends Controller
 {
+
+    //The purpose of this Controller is to add Dummy Data to the database
+
     public function importData(){
 
         Team::create(['id'=>1, 'name' => 'Team 1'])
@@ -19,11 +22,12 @@ class DataController extends Controller
             ->create(['id'=>4, 'name' => 'Team 4'])
             ->create(['id'=>5, 'name' => 'Team 5']);
 
-        User::create(['id'=>1, 'name'=>'Tom Scott', 'email'=>'tomscott@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
-            ->create(['id'=>2, 'name'=>'Simon the slowloris', 'email'=>'simon@lorismail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
-            ->create(['id'=>3, 'name'=>'Leonard', 'email'=>'leo@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
-            ->create(['id'=>4, 'name'=>'Dark Vader', 'email'=>'dark@vader.mail', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
-            ->create(['id'=>5, 'name'=>'Neon Cactus', 'email'=>'cactu@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ]);
+        // id cannot be explicitly defined, relation added via email
+        User::create(['name'=>'Tom Scott', 'email'=>'tomscott@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
+            ->create(['name'=>'Simon the slowloris', 'email'=>'simon@lorismail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
+            ->create(['name'=>'Leonard', 'email'=>'leo@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
+            ->create(['name'=>'Dark Vader', 'email'=>'dark@vader.mail', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
+            ->create(['name'=>'Neon Cactus', 'email'=>'cactu@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ]);
 
         User::addUserToTeamByEmail('tomscott@gmail.com',1);
         User::addUserToTeamByEmail('tomscott@gmail.com',2);

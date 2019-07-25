@@ -48,7 +48,7 @@
               </li>
               
               <li class="nav-item">
-                <a class="nav-link " href="/teams/index">
+                <a class="nav-link " href="/teams">
                   <i class="material-icons">view_module</i>
                   <span>Teams masterview</span>
                 </a>

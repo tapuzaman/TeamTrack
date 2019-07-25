@@ -13,7 +13,7 @@
         <div class="well card m-3 p-3">
             <h3>{{$team->name}}</h3>
                 @foreach($team->users as $user)
-                    {{$user->id}} {{$user->name}} <br>
+                     {{$user->id}} : {{$user->name}} <br>
                 @endforeach
         </div>
         @endforeach
