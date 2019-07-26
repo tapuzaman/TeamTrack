@@ -60,6 +60,13 @@
                   <span>Teams</span>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link " href="/teams/create">
+                  <i class="material-icons">view_module</i>
+                  <span>Create Team</span>
+                </a>
+              </li>
               
             </ul>
           </div>

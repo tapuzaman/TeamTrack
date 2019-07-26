@@ -4,7 +4,7 @@
 
     <div id="container">
 
-        <a href="/teams/{{$team->id}}/edit" class="btn btn-primary float-left" text-decoration="none">Add Member</a>
+        <a href="/teams/addMember/{{$team->id}}" class="btn btn-primary float-left" text-decoration="none">Add Member</a>
         <br><br>
 
         <h1>{{$team->name}}</h1>
