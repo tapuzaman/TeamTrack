@@ -10,11 +10,16 @@
     </div>
 
     <div class="container">
-        {!! Form::open(['action' => 'TeamsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+        {!! Form::open(['action' => 'TeamsController@storeMember', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+            <!-- make this hidden later -->
             <div class="form-group">
-                {{Form::label('name', 'Add Member by email')}}
+                {{Form::label('team_id', 'Team to add to')}}
+                {{Form::text('team_id', $team->id, ['class' => 'form-control', 'placeholder' => 'Enter member email'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('email', 'Add Member by email')}}
                 <!-- replace with list later -->
-                {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Enter member email'])}}
+                {{Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Enter member email'])}}
             </div>
         {{Form::submit('Add Member', ['class'=>'btn btn-primary'])}}
         {!! Form::close() !!}

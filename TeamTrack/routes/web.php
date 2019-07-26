@@ -37,6 +37,8 @@ Route::resource('tasks', 'TasksController');
 Route::get('teams','TeamsController@index');
 Route::get('teams/create','TeamsController@create');
 Route::get('teams/{id}','TeamsController@show');
+Route::post('teams','TeamsController@store');   // required for post actions
+Route::post('teams','TeamsController@storeMember');   // required for post actions
 // implement delete Team route and method
 Route::get('teams/{id}/addMember','TeamsController@addMember');
 // implement delete Member route and method

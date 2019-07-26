@@ -29,6 +29,7 @@ class TeamsController extends Controller
      */
     public function create()
     {
+        //return 'createfun';
         return view('teams.create');
     }
 
@@ -38,7 +39,7 @@ class TeamsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($request)
+    public function store(Request $request)
     {
         $this->validate($request,[
             'name'=>'required'
@@ -69,13 +70,21 @@ class TeamsController extends Controller
      */
     // addMember() loads the view and storeMember() stores the data to DB
     public function addMember($id)
-    {
-        $team = Team::find($id);
-        return view('teams.addMember')->with('team',$team);
+    {        
+       $team = Team::find($id);
+       return view('teams.addMember')->with('team',$team);
     }
 
-    public function storeMember($id){
-        
+    public function storeMember(Request $request)
+    {
+        $this->validate($request,[
+            'email'=>'required',
+            'team_id'=>'required'
+        ]);
+
+        User::addUserToTeamByEmail($request->input('email'), $request->input('team_id') );
+
+        return redirect ('/teams');
     }
 
     public function removeMember($id)
