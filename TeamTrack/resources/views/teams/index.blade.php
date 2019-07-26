@@ -12,6 +12,7 @@
         @foreach($teams as $team)
         <div class="well card m-3 p-3">
             <h3>{{$team->name}}</h3>
+                <b> {{$team->leader}}  </b>
                 @foreach($team->users as $user)
                      {{$user->id}} : {{$user->name}} <br>
                 @endforeach

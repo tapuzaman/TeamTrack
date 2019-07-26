@@ -16,8 +16,10 @@ class CreateLeadersTable extends Migration
         Schema::create('leaders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('team_id');
-            $table->unsignedBigInteger('leader_id');
+            $table->unsignedBigInteger('user_id')->index();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
