@@ -14,9 +14,9 @@ class CreateLeadersTable extends Migration
     public function up()
     {
         Schema::create('leaders', function (Blueprint $table) {
-            //$table->bigIncrements('id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('team_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('leader_id');
             $table->timestamps();
         });
     }
