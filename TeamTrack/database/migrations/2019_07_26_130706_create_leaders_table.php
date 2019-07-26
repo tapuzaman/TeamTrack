@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLeaderTable extends Migration
+class CreateLeadersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class CreateLeaderTable extends Migration
      */
     public function up()
     {
-        Schema::create('leader', function (Blueprint $table) {
+        Schema::create('leaders', function (Blueprint $table) {
+            //$table->bigIncrements('id');
             $table->unsignedBigInteger('team_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
@@ -27,6 +28,6 @@ class CreateLeaderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leader');
+        Schema::dropIfExists('leaders');
     }
 }
