@@ -29,7 +29,7 @@ class DataController extends Controller
             ->create(['name'=>'Dark Vader', 'email'=>'dark@vader.mail', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])
             ->create(['name'=>'Neon Cactus', 'email'=>'cactu@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ]);
 
-        // adds team_user table realtions
+        // adds team_user table relations
         User::addUserToTeamByEmail('tomscott@gmail.com',1);
         User::addUserToTeamByEmail('tomscott@gmail.com',2);
         User::addUserToTeamByEmail('simon@lorismail.com',2);
@@ -39,7 +39,6 @@ class DataController extends Controller
         User::addUserToTeamByEmail('cactu@gmail.com',5);
 
         return redirect('/teams');
-
     }
 
     public function emptyData(){

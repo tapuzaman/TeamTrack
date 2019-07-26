@@ -28,7 +28,7 @@ class TeamsController extends Controller
      */
     public function create()
     {
-        //
+        return view('teams.create');
     }
 
     /**
@@ -39,7 +39,13 @@ class TeamsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required'
+        ]);
+
+        Team::create(['name' => $request->input('name')]);
+
+        return redirect ('/teams');
     }
 
     /**
