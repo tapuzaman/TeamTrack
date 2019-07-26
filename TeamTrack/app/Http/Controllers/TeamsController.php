@@ -16,11 +16,8 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        //show teams where user is Leader
-
-        //show teams where user is Member
-        //return User::find(Auth::id())->teams;
-        
+        $teams = User::find(Auth::id())->teams;
+        return view('teams.index')->with('teams',$teams);
     }
 
     /**
@@ -41,7 +38,6 @@ class TeamsController extends Controller
      */
     public function create()
     {
-        //return 'createfun';
         return view('teams.create');
     }
 
@@ -57,10 +53,11 @@ class TeamsController extends Controller
             'name'=>'required'
         ]);
         //add new Team
-        Team::create(['name' => $request->input('name'), 'leader_id'=>Auth::id() ]);
-        //add this user in team_user table
+        $newTeam = Team::create(['name' => $request->input('name'), 'leader_id'=>Auth::id() ]);
+        //add this user to the new team
+        User::addUserToTeamByEmail(Auth::user()->email, $newTeam->id);
 
-        return redirect ('/teams');
+        return redirect ('/teamsmasterindex');
     }
 
     /**
@@ -98,7 +95,7 @@ class TeamsController extends Controller
         //TODO : add access control, check if Team belongs to this user
         User::addUserToTeamByEmail($request->input('email'), $request->input('team_id') );
 
-        return redirect ('/teams');
+        return redirect ('/teamsmasterindex');
     }
 
     public function removeMember($id)
