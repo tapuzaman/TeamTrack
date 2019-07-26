@@ -38,7 +38,7 @@ class TeamsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeRequest ($request)
+    public function store($request)
     {
         $this->validate($request,[
             'name'=>'required'
