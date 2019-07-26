@@ -16,11 +16,11 @@ class DataController extends Controller
 
     public function importData(){
 
-        Team::create(['id'=>1, 'name' => 'Team 1'])
-            ->create(['id'=>2, 'name' => 'Team 2'])
-            ->create(['id'=>3, 'name' => 'Team 3'])
-            ->create(['id'=>4, 'name' => 'Team 4'])
-            ->create(['id'=>5, 'name' => 'Team 5']);
+        Team::create(['id'=>1, 'name' => 'Team 1', 'leader_id'=>2])
+            ->create(['id'=>2, 'name' => 'Team 2', 'leader_id'=>3])
+            ->create(['id'=>3, 'name' => 'Team 3', 'leader_id'=>2])
+            ->create(['id'=>4, 'name' => 'Team 4', 'leader_id'=>2])
+            ->create(['id'=>5, 'name' => 'Team 5', 'leader_id'=>2]);
 
         // id cannot be explicitly defined, team_user table relations added via email
         User::create(['name'=>'Tom Scott', 'email'=>'tomscott@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ])

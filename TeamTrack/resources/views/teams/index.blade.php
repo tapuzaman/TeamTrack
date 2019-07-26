@@ -12,7 +12,7 @@
         @foreach($teams as $team)
         <div class="well card m-3 p-3">
             <h3>{{$team->name}}</h3>
-                <b> {{$team->leader}}  </b>
+                <h5> {{ App\User::find($team->leader_id)->name }}  </h5>
                 @foreach($team->users as $user)
                      {{$user->id}} : {{$user->name}} <br>
                 @endforeach

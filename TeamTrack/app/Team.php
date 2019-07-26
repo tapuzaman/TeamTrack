@@ -12,8 +12,4 @@ class Team extends Model
         return $this->belongsToMany('App\User');
     }
 
-    public function leader(){
-        return $this->hasOne('App\Leader');
-    }
-
 }
