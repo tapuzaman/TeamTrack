@@ -11,8 +11,10 @@
     @if(count($teams)>0)
         @foreach($teams as $team)
         <div class="well card m-3 p-3">
-            <h3>{{$team->name}}</h3>
-                <h5> {{ App\User::find($team->leader_id)->name }}  </h5>
+            <h3><a href="/teams/{{$team->id}}">{{$team->name}}</a></h3>
+                <h5> 
+                    {{ App\User::find($team->leader_id)->name }}
+                </h5>
                 @foreach($team->users as $user)
                      {{$user->id}} : {{$user->name}} <br>
                 @endforeach

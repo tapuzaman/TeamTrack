@@ -82,6 +82,7 @@ class TeamsController extends Controller
             'team_id'=>'required'
         ]);
 
+        //TODO : add access control, check if Team belongs to this user
         User::addUserToTeamByEmail($request->input('email'), $request->input('team_id') );
 
         return redirect ('/teams');
