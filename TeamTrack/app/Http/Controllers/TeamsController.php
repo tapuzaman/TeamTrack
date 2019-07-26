@@ -80,9 +80,17 @@ class TeamsController extends Controller
      */
     // addMember() loads the view and storeMember() stores the data to DB
     public function addMember($id)
-    {        
-       $team = Team::find($id);
-       return view('teams.addMember')->with('team',$team);
+    {     
+        $team = Team::find($id);
+        //only team leader can add members
+        if($team->leader_id == Auth::id()){
+            return view('teams.addMember')->with('team',$team);
+        }
+        else{
+            return view('\home');
+        }
+        
+        
     }
 
     public function storeMember(Request $request)
