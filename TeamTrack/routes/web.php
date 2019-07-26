@@ -30,9 +30,16 @@ Route::get('/empty_data','DataController@emptyData'); // empty database
 Route::get('/contact', 'PagesController@contact');
 Route::get('/about', 'PagesController@about');
 
-// Model Routes
+// Task Routes
 Route::resource('tasks', 'TasksController');
-Route::resource('teams','TeamsController');
+
+// Team Routes
+Route::get('teams','TeamsController@index');
+Route::get('teams/{id}','TeamsController@show');
+Route::get('teams/create','TeamsController@create');
+// implement delete Team route and method
+Route::get('teams/{id}/addMember','TeamsController@addMember');
+// implement delete Member route and method
 
 
 

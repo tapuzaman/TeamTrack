@@ -38,7 +38,7 @@ class TeamsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeRequest ($request)
     {
         $this->validate($request,[
             'name'=>'required'
@@ -57,7 +57,8 @@ class TeamsController extends Controller
      */
     public function show($id)
     {
-        //
+        $team = Team::find($id);
+        return view('teams.show')->with('team',$team);
     }
 
     /**
@@ -66,22 +67,33 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    // addMember() loads the view and storeMember() stores the data to DB
+    public function addMember($id)
     {
-        //
+        $team = Team::find($id);
+        return view('teams.addMember')->with('team',$team);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function storeMember($id){
+        
     }
+
+    public function removeMember($id)
+    {
+
+    }
+
+    // /**
+    //  * Update the specified resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function update(Request $request, $id)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
