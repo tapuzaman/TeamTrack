@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Team;
@@ -43,7 +44,7 @@ class TeamsController extends Controller
             'name'=>'required'
         ]);
 
-        Team::create(['name' => $request->input('name')]);
+        Team::create(['name' => $request->input('name'), 'leader_id'=>Auth::id() ]);
 
         return redirect ('/teams');
     }

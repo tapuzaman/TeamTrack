@@ -38,8 +38,7 @@ class DataController extends Controller
         User::addUserToTeamByEmail('dark@vader.mail',5);
         User::addUserToTeamByEmail('cactu@gmail.com',5);
 
-        //assign team leaders
-        
+        //assign team leaders        
 
         return redirect('/teams');
     }
