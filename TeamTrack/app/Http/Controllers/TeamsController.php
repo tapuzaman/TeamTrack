@@ -16,10 +16,22 @@ class TeamsController extends Controller
      */
     public function index()
     {
+        //show teams where user is Leader
+
+        //show teams where user is Member
+        //return User::find(Auth::id())->teams;
+        
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function masterindex()
+    {
         $teams = Team::all();
         return view('teams.index')->with('teams',$teams);        
-        //$users = User::all();
-        //return view('test.userteams')->with('users',$users);
     }
 
     /**
@@ -44,8 +56,9 @@ class TeamsController extends Controller
         $this->validate($request,[
             'name'=>'required'
         ]);
-
+        //add new Team
         Team::create(['name' => $request->input('name'), 'leader_id'=>Auth::id() ]);
+        //add this user in team_user table
 
         return redirect ('/teams');
     }
