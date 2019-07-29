@@ -37,12 +37,23 @@ Route::resource('tasks', 'TasksController');
 Route::get('teams','TeamsController@index');
 Route::get('teamsmasterindex','TeamsController@masterindex');
 Route::get('teams/create','TeamsController@create');
-Route::get('teams/{id}','TeamsController@show');
+Route::get('teams/{id}','TeamsController@show'); // Team deshboard page
 // implement delete Team route and method
-Route::get('teams/addMember/{id}','TeamsController@addMember');
+Route::get('teams/member/add/{id}','TeamsController@addMember'); // Add member to team page
 // implement delete Member route and method
 Route::post('teams','TeamsController@store');   // required for post actions
-Route::post('teams/addMember','TeamsController@storeMember');   // required for post actions
+Route::post('teams/member/add','TeamsController@storeMember');   // required for post actions
+
+// // Team Routes
+// Route::get('teams','TeamsController@index');
+// Route::get('teamsmasterindex','TeamsController@masterindex');
+// Route::get('teams/create','TeamsController@create');
+// Route::get('teams/{id}','TeamsController@show');
+// // implement delete Team route and method
+// Route::get('teams/addMember/{id}','TeamsController@addMember');
+// // implement delete Member route and method
+// Route::post('teams','TeamsController@store');   // required for post actions
+// Route::post('teams/addMember','TeamsController@storeMember');   // required for post actions
 
 
 

@@ -90,7 +90,6 @@ class TeamsController extends Controller
             return view('\home');
         }
         
-        
     }
 
     public function storeMember(Request $request)
