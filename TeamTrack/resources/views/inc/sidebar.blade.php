@@ -26,10 +26,12 @@
             <ul class="nav flex-column">
             <!------ SIDEBAR LINKS ---------->
 
-              <li class="nav-item">
+            <li>@yield('name')</li>
+
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="/home">
                   <i class="material-icons">edit</i>
-                  <span>Dashboard</span>
+                  <span>Laravel dashboard</span>
                 </a>
               </li>
 
@@ -45,7 +47,7 @@
                   <i class="material-icons">note_add</i>
                   <span>Add Task</span>
                 </a>
-              </li>
+              </li> -->
               
               <li class="nav-item">
                 <a class="nav-link " href="/teamsmasterindex">
@@ -57,7 +59,7 @@
               <li class="nav-item">
                 <a class="nav-link " href="/teams">
                   <i class="material-icons">view_module</i>
-                  <span>Teams</span>
+                  <span> my Teams</span>
                 </a>
               </li>
 
@@ -65,6 +67,13 @@
                 <a class="nav-link " href="/teams/create">
                   <i class="material-icons">view_module</i>
                   <span>Create Team</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link " href="/teams/member/add/@yield('idd')">
+                  <i class="material-icons">view_module</i>
+                  <span>Add Member</span>
                 </a>
               </li>
               

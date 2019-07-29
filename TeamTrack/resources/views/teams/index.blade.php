@@ -1,10 +1,18 @@
 @extends('layouts.app')
 
+@section('team_name')
+@endsection
+
+@section('team_id')
+6
+@endsection
+
+
 @section('content')
 
     <div class="page-header row no-gutters py-0">
         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-            <span class="text-uppercase page-subtitle">ALL TEAMS</span>
+            <span class="text-uppercase page-subtitle">ALL TEAMS yo</span>
         </div>
     </div>
 
