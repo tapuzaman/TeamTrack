@@ -19,12 +19,12 @@
                 <li class="nav-item border-right dropdown notifications">
                   <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="nav-link">
-                       Teams
+                       {{ Auth::user()->currentTeam() }}
                     </div>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
                     @foreach( Auth::user()->teams as $team)
-                      <a class="dropdown-item" href="">
+                      <a class="dropdown-item" href="/teams/{{$team->id}}">
                         <b>{{$team->name}}</b>
                       </a>
                     @endforeach

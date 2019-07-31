@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public $currentTeamId=0;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -48,6 +50,22 @@ class User extends Authenticatable
         $user = User::where('email',$user_email)->first();
         $user->teams()->attach($team_id);
     }
+
+    public function currentTeam(){
+        //add condition to fetch data from DB if 0
+        if($this->currentTeamId==0){
+            return 'Teams';
+        }
+        else{
+            return Team::find($this->currentTeamId)->name;
+        }
+        
+    }
+
+    public function currentTeamId(){
+        return $currentTeamId;
+    }
+
 
     public function teams()
     {

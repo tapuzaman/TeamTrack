@@ -37,7 +37,7 @@ Route::resource('tasks', 'TasksController');
 Route::get('teams','TeamsController@index');
 Route::get('teamsmasterindex','TeamsController@masterindex');
 Route::get('teams/create','TeamsController@create');
-Route::get('teams/{id}','TeamsController@show'); // Team deshboard page
+Route::get('teams/{id}','TeamsController@show'); // Team deshboard page - currents shows member list
 // implement delete Team route and method
 Route::get('teams/member/add/{id}','TeamsController@addMember'); // Add member to team page
 // implement delete Member route and method
