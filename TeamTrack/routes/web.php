@@ -43,6 +43,7 @@ Route::get('teams/members/{id}','TeamsController@members'); // Show members in t
 Route::get('teams/member/add/{id}','TeamsController@addMember'); // Add member to team page
 // implement delete Member route and method
 Route::post('teams','TeamsController@store');   // required for post actions
+Route::post('teams/members','TeamsController@storeMember');   // required for post actions
 Route::post('teams/member/add','TeamsController@storeMember');   // required for post actions
 
 // // Team Routes

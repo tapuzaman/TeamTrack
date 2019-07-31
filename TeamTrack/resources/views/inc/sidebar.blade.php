@@ -42,44 +42,13 @@
                   <span>Dashboard</span>
                 </a>
               </li>
-
-            <!--
-              <li class="nav-item">
-                <a class="nav-link " href="/tasks">
-                  <i class="material-icons">vertical_split</i>
-                  <span>All Tasks</span>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link " href="/tasks/create">
-                  <i class="material-icons">note_add</i>
-                  <span>Add Task</span>
-                </a>
-              </li> -->
               
-
-
               <li class="nav-item">
-                <a class="nav-link " href="/">
+                <a class="nav-link " href="/teams/members/{{$teamId}}">
                   <i class="material-icons">view_module</i>
                   <span>Members</span>
                 </a>
               </li>
-
-              <!-- <li class="nav-item">
-                <a class="nav-link " href="/teams/create">
-                  <i class="material-icons">view_module</i>
-                  <span>Create Team</span>
-                </a>
-              </li> -->
-
-              <!-- <li class="nav-item">
-                <a class="nav-link " href="/teams/member/add/@yield('idd')">
-                  <i class="material-icons">view_module</i>
-                  <span>Add Member</span>
-                </a>
-              </li> -->
               
             </ul>
           </div>

@@ -85,8 +85,8 @@ class TeamsController extends Controller
     public function members($id)
     {     
         $team = Team::find($id);
-        //only team leader can add members
-            return $team->users;
+        Auth::user()->setCurrentTeamId($team->id);
+        return view('teams.members')->with('team',$team);
     }
 
     /**
@@ -116,10 +116,11 @@ class TeamsController extends Controller
             'team_id'=>'required'
         ]);
 
+        Auth::user()->setCurrentTeamId($request->input('team_id'));
         //TODO : add access control, check if Team belongs to this user
         User::addUserToTeamByEmail($request->input('email'), $request->input('team_id') );
 
-        return redirect ('/teamsmasterindex');
+        return back();
     }
 
     public function removeMember($id)

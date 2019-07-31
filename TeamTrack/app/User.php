@@ -12,7 +12,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public static $currentTeamId=0;
+    public $currentTeamId=0;
 
     /**
      * The attributes that are mass assignable.
