@@ -12,7 +12,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public $currentTeamId=0;
+    public static $currentTeamId=0;
 
     /**
      * The attributes that are mass assignable.
@@ -62,10 +62,14 @@ class User extends Authenticatable
         
     }
 
-    public function currentTeamId(){
-        return $currentTeamId;
-    }
+    // public function currentTeamId(){
+    //     return $this->currentTeamId;
+    // }
 
+    public function setCurrentTeamId($newCurrentTeamId){
+        $this->currentTeamId = $newCurrentTeamId;
+        return $newCurrentTeamId;
+    }
 
     public function teams()
     {
