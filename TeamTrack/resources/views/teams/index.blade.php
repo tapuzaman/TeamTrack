@@ -1,13 +1,5 @@
 @extends('layouts.app')
 
-@section('team_name')
-@endsection
-
-@section('team_id')
-6
-@endsection
-
-
 @section('content')
 
     <div class="page-header row no-gutters py-0">

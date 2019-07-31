@@ -12,7 +12,24 @@
               <div class="btn "> <a href="/empty_data">Empty Data</a> </div>
               <div class="btn "> <a href="/import_data">Import Data</a> </div>
               
-              <ul class="navbar-nav border-left flex-row ">                
+              <ul class="navbar-nav border-left flex-row ">
+
+                
+
+                <li class="nav-item border-right dropdown notifications">
+                  <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="nav-link">
+                       Teams
+                    </div>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
+                    @foreach( Auth::user()->teams as $team)
+                      <a class="dropdown-item" href="">
+                        <b>{{$team->name}}</b>
+                      </a>
+                    @endforeach
+                  </div>
+                </li>          
 
                 @guest
                         <li class="nav-item">

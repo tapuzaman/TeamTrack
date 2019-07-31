@@ -24,9 +24,10 @@
           </form>
           <div class="nav-wrapper">
             <ul class="nav flex-column">
+            
             <!------ SIDEBAR LINKS ---------->
 
-            <li>@yield('name')</li>
+            <li>--</li>
 
               <!-- <li class="nav-item">
                 <a class="nav-link" href="/home">
