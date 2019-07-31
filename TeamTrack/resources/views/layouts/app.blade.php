@@ -43,6 +43,7 @@
       </div>
     </div>
     
+    @include('inc.teammodal')
     @include('layouts.appjsimports')
 
   </body>

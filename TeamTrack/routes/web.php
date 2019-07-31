@@ -34,7 +34,7 @@ Route::get('/about', 'PagesController@about');
 Route::resource('tasks', 'TasksController');
 
 // Team Routes
-Route::get('teams','TeamsController@index');
+//Route::get('teams','TeamsController@index');
 Route::get('teamsmasterindex','TeamsController@masterindex');
 Route::get('teams/create','TeamsController@create');
 Route::get('teams/{id}','TeamsController@show'); // Team deshboard page - currents shows member list
