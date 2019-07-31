@@ -24,18 +24,26 @@
           </form>
           <div class="nav-wrapper">
             <ul class="nav flex-column">
-            
+
             <!------ SIDEBAR LINKS ---------->
 
-            <li>--</li>
+            <li > Team id : {{ $teamId = Auth::user()->currentTeamId() }}</li>
 
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="/home">
-                  <i class="material-icons">edit</i>
-                  <span>Laravel dashboard</span>
+              <li class="nav-item">
+                <a class="nav-link " href="/teamsmasterindex">
+                  <i class="material-icons">view_module</i>
+                  <span>Teams masterview</span>
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a class="nav-link" href="/teams/{{$teamId}}">
+                  <i class="material-icons">view_module</i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+            <!--
               <li class="nav-item">
                 <a class="nav-link " href="/tasks">
                   <i class="material-icons">vertical_split</i>
@@ -50,33 +58,28 @@
                 </a>
               </li> -->
               
+
+
               <li class="nav-item">
-                <a class="nav-link " href="/teamsmasterindex">
+                <a class="nav-link " href="/">
                   <i class="material-icons">view_module</i>
-                  <span>Teams masterview</span>
+                  <span>Members</span>
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link " href="/teams">
-                  <i class="material-icons">view_module</i>
-                  <span> my Teams</span>
-                </a>
-              </li>
-
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link " href="/teams/create">
                   <i class="material-icons">view_module</i>
                   <span>Create Team</span>
                 </a>
-              </li>
+              </li> -->
 
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link " href="/teams/member/add/@yield('idd')">
                   <i class="material-icons">view_module</i>
                   <span>Add Member</span>
                 </a>
-              </li>
+              </li> -->
               
             </ul>
           </div>

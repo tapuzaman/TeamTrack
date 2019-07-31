@@ -62,9 +62,9 @@ class User extends Authenticatable
         
     }
 
-    // public function currentTeamId(){
-    //     return $this->currentTeamId;
-    // }
+    public function currentTeamId(){
+        return $this->currentTeamId;
+    }
 
     public function setCurrentTeamId($newCurrentTeamId){
         $this->currentTeamId = $newCurrentTeamId;

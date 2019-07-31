@@ -9,7 +9,7 @@
             <br><br>
         @endif
 
-        <h1>{{$team->name}}</h1>
+        <h1>{{$team->name}} DASHBOARD</h1>
         <div>
             <i>Team leader:</i>
             <br>

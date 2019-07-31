@@ -82,6 +82,20 @@ class TeamsController extends Controller
      * @return \Illuminate\Http\Response
      */
     // addMember() loads the view and storeMember() stores the data to DB
+    public function members($id)
+    {     
+        $team = Team::find($id);
+        //only team leader can add members
+            return $team->users;
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    // addMember() loads the view and storeMember() stores the data to DB
     public function addMember($id)
     {     
         $team = Team::find($id);
