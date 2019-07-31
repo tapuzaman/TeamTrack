@@ -40,11 +40,9 @@ Route::get('teams/create','TeamsController@create');
 Route::get('teams/{id}','TeamsController@show'); // Team deshboard page - currents shows member list
 // implement delete Team route and method
 Route::get('teams/members/{id}','TeamsController@members'); // Show members in team + add/delete member option
-Route::get('teams/member/add/{id}','TeamsController@addMember'); // Add member to team page
 // implement delete Member route and method
 Route::post('teams','TeamsController@store');   // required for post actions
 Route::post('teams/members','TeamsController@storeMember');   // required for post actions
-Route::post('teams/member/add','TeamsController@storeMember');   // required for post actions
 
 // // Team Routes
 // Route::get('teams','TeamsController@index');

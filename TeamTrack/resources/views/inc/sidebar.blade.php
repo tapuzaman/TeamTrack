@@ -30,7 +30,7 @@
             <li > Team id : {{ $teamId = Auth::user()->currentTeamId() }}</li>
 
               <li class="nav-item">
-                <a class="nav-link " href="/teamsmasterindex">
+                <a class="nav-link " href="/teamsmasterindex" target="_blank">
                   <i class="material-icons">view_module</i>
                   <span>Teams masterview</span>
                 </a>

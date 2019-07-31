@@ -28,6 +28,9 @@
                         <b>{{$team->name}}</b>
                       </a>
                     @endforeach
+                    <a class="dropdown-item" href="">
+                        <b>+ Add Team</b>
+                      </a>
                   </div>
                 </li>          
 

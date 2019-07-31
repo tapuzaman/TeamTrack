@@ -4,12 +4,7 @@
 
     <div id="container">
 
-        @if( $team->leader_id == Auth::id() )
-            <a href="/teams/addMember/{{$team->id}}" class="btn btn-primary float-left" text-decoration="none">Add Member</a>
-            <br><br>
-        @endif
-
-        <h1>{{$team->name}} DASHBOARD</h1>
+        <h1>{{$team->name}} Dashboard</h1>
         <div>
             <i>Team leader:</i>
             <br>

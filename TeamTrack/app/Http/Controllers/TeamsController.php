@@ -89,26 +89,6 @@ class TeamsController extends Controller
         return view('teams.members')->with('team',$team);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // addMember() loads the view and storeMember() stores the data to DB
-    public function addMember($id)
-    {     
-        $team = Team::find($id);
-        //only team leader can add members
-        if($team->leader_id == Auth::id()){
-            return view('teams.addMember')->with('team',$team);
-        }
-        else{
-            return view('\home');
-        }
-        
-    }
-
     public function storeMember(Request $request)
     {
         $this->validate($request,[
