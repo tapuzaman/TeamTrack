@@ -51,6 +51,7 @@ class User extends Authenticatable
         $user->teams()->attach($team_id);
     }
 
+    // TODO: Clean cuurent team code.. Refactor some other class
     public function currentTeam(){
         //add condition to fetch data from DB if 0
         if($this->currentTeamId==0){
@@ -59,7 +60,6 @@ class User extends Authenticatable
         else{
             return Team::find($this->currentTeamId)->name;
         }
-        
     }
 
     public function currentTeamId(){
@@ -71,8 +71,8 @@ class User extends Authenticatable
         return $newCurrentTeamId;
     }
 
-    public function teams()
-    {
-        return $this->belongsToMany('App\Team');
-    }
+    // public function teams()
+    // {
+    //     return $this->belongsToMany('App\Team','team_user','user_id');
+    // }
 }
