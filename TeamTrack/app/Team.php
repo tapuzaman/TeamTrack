@@ -28,7 +28,7 @@ class Team extends Model
 
     public function leader()
     {
-        return $this->belongsTo('App\Leader','id');
+        return $this->belongsTo('App\Leader','leader_id');
     }
 
     public function backlog()

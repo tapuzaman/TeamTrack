@@ -15,7 +15,10 @@ class CreateSprintsTable extends Migration
     {
         Schema::create('sprints', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->unsignedBigInteger('backlog_id');
+            $table->integer('sprint_no');
+            $table->dateTime('start_date');
+            $table->dateTime('due_date');
         });
     }
 

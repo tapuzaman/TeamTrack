@@ -12,4 +12,9 @@ class Backlog extends Model
         return $this->belongsTo('App\Team');
     }
 
+    public function sprints()
+    {
+        return $this->hasMany('App\Sprint');
+    }
+
 }
