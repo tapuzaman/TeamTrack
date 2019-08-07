@@ -14,5 +14,10 @@ class Member extends User
         return $this->belongsToMany('App\Team','team_user','user_id','team_id');
     }
 
+    public static function teamList($member_id)
+    {
+        $member = Member::find($member_id);
+        return $member->teams;
+    }
 
 }
