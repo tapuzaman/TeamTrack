@@ -55,7 +55,8 @@ class TeamsController extends Controller
         //add new Team
         $newTeam = Team::create(['name' => $request->input('name'), 'leader_id'=>Auth::id() ]);
         //add this user to the new team
-        User::addUserToTeamByEmail(Auth::user()->email, $newTeam->id);
+        Team::addMemberByEmail(Auth::user()->email, $newTeam->id);
+        
         Auth::user()->setCurrentTeamId($newTeam->id);
         return view('teams.show')->with('team',$newTeam);
     }
@@ -98,7 +99,7 @@ class TeamsController extends Controller
 
         Auth::user()->setCurrentTeamId($request->input('team_id'));
         //TODO : add access control, check if Team belongs to this user
-        User::addUserToTeamByEmail($request->input('email'), $request->input('team_id') );
+        Team::addMemberByEmail($request->input('email'), $request->input('team_id') );
 
         return back();
     }
