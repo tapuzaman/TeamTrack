@@ -2,7 +2,7 @@
 <html class="no-js h-100" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <title>TeamTrack</title>
-    @include('layouts.appheader')
+    @include('layouts.cssimports')
   </head>
   <body class="h-100">
 
@@ -44,7 +44,7 @@
     </div>
     
     @include('inc.teammodal')
-    @include('layouts.appjsimports')
+    @include('layouts.jsimports')
 
   </body>
 </html>
