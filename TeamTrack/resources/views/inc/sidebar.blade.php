@@ -28,6 +28,7 @@
             <!------ SIDEBAR LINKS ---------->
 
             <li > Team id : {{ $teamId = Auth::user()->currentTeamId() }}</li>
+            <li > Team : {{ $teamName = Auth::user()->currentTeam() }}</li>
 
               <li class="nav-item">
                 <a class="nav-link " href="/teamsmasterindex">

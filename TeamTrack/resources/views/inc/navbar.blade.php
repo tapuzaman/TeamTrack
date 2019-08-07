@@ -19,6 +19,7 @@
     <li class="nav-item border-right dropdown notifications">
       <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="nav-link">
+          Team
         </div>
       </a>
       <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
