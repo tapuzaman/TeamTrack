@@ -16,6 +16,12 @@ class Team extends Model
         return $this->belongsToMany('App\Member','team_user','team_id','user_id');
     }
 
+    public function leader()
+    {
+        return $this->belongsTo('App\Leader','id');
+    }
+
+
     public static function addMember($member_id, $team_id){
         $member = Member::find($member_id);
         $member->teams()->attach($team_id);
