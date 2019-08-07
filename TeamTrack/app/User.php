@@ -71,8 +71,4 @@ class User extends Authenticatable
         return $newCurrentTeamId;
     }
 
-    // public function teams()
-    // {
-    //     return $this->belongsToMany('App\Team','team_user','user_id');
-    // }
 }

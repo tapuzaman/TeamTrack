@@ -30,13 +30,13 @@ class DataController extends Controller
             ->create(['name'=>'Neon Cactus', 'email'=>'cactu@gmail.com', 'password'=>'$2y$10$m.uScGQzKGfB7b.TO0WlxepfNskVgM.zlzT9iy7erO62vc2ee7nfe' ]);
 
         // adds team_user table relations
-        User::addUserToTeamByEmail('tomscott@gmail.com',1);
-        User::addUserToTeamByEmail('tomscott@gmail.com',2);
-        User::addUserToTeamByEmail('simon@lorismail.com',2);
-        User::addUserToTeamByEmail('leo@gmail.com',3);
-        User::addUserToTeamByEmail('dark@vader.mail',4);
-        User::addUserToTeamByEmail('dark@vader.mail',5);
-        User::addUserToTeamByEmail('cactu@gmail.com',5);
+        Team::addMemberByEmail('tomscott@gmail.com',1);
+        Team::addMemberByEmail('tomscott@gmail.com',2);
+        Team::addMemberByEmail('simon@lorismail.com',2);
+        Team::addMemberByEmail('leo@gmail.com',3);
+        Team::addMemberByEmail('dark@vader.mail',4);
+        Team::addMemberByEmail('dark@vader.mail',5);
+        Team::addMemberByEmail('cactu@gmail.com',5);
 
         //assign team leaders        
 
