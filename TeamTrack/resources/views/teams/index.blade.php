@@ -1,10 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
+@include('layouts.cssimports')
 
     <div class="page-header row no-gutters py-0">
         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-            <span class="text-uppercase page-subtitle">ALL TEAMS yo</span>
+            <span class="text-uppercase page-subtitle">ALL TEAMS MASTERVIEW</span>
         </div>
     </div>
 
@@ -23,4 +21,5 @@
     @else
     <p> No Teams Found</p>
     @endif
-@endsection
+
+@include('layouts.jsimports')
