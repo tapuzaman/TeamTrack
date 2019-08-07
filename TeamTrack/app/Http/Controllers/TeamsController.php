@@ -72,8 +72,6 @@ class TeamsController extends Controller
     {
         $team = Team::find($id);
         Auth::user()->setCurrentTeamId($team->id);
-        //User::setCurrentTeamId(1);
-        //return Auth::user()->currentTeam();
         return view('teams.show')->with('team',$team);
     }
 

@@ -12,4 +12,9 @@ class Sprint extends Model
         return $this->belongsTo('App\Backlog');
     }
 
+    public function tasks()
+    {
+        return $this->hasMany('App\Task');
+    }
+
 }
