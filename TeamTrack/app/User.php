@@ -13,6 +13,7 @@ class User extends Authenticatable
     use Notifiable;
 
     public $currentTeamId=0;
+    public $flag = "nice";
 
     /**
      * The attributes that are mass assignable.
@@ -41,18 +42,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public static function addUserToTeam($user_id, $team_id){
+    public static function addUserToTeam($user_id, $team_id)
+    {
         $user = User::find($user_id);
         $user->teams()->attach($team_id);
     }
 
-    public static function addUserToTeamByEmail($user_email, $team_id){
+    public static function addUserToTeamByEmail($user_email, $team_id)
+    {
         $user = User::where('email',$user_email)->first();
         $user->teams()->attach($team_id);
     }
 
     // TODO: Clean cuurent team code.. Refactor some other class
-    public function currentTeam(){
+    public function currentTeam()
+    {
         //add condition to fetch data from DB if 0
         if($this->currentTeamId==0){
             return 'Teams';
@@ -62,13 +66,21 @@ class User extends Authenticatable
         }
     }
 
-    public function currentTeamId(){
+    public function currentTeamId()
+    {
         return $this->currentTeamId;
     }
 
-    public function setCurrentTeamId($newCurrentTeamId){
+    public function setCurrentTeamId($newCurrentTeamId)
+    {
         $this->currentTeamId = $newCurrentTeamId;
         return $newCurrentTeamId;
+    }
+
+    //accessors mutators
+    public function getFlagAttribute()
+    {
+        return $this->flag;
     }
 
 }

@@ -1,3 +1,3 @@
 {{ 
-     Auth::member()
+     Auth::user()->flag
 }}
