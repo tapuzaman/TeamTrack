@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
+    
     protected $guarded = [];
+
+
+    // Functions
 
     public static function addMember($member_id, $team_id){
         $member = Member::find($member_id);
@@ -17,6 +21,9 @@ class Team extends Model
         $member = Member::where('email',$member_email)->first();
         $member->teams()->attach($team_id);
     }
+
+
+    // Eloquent Relationships 
 
     public function users(){
         return $this->belongsToMany('App\User','team_user','team_id');

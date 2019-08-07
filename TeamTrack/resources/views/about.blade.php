@@ -1,3 +1,3 @@
 {{ 
-     Auth::user()->flag
+     dd(Auth::user())
 }}

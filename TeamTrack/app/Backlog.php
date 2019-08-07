@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Backlog extends Model
 {
-    
+ 
+    // Eloquent Relationships 
+
     public function team()
     {
         return $this->belongsTo('App\Team');

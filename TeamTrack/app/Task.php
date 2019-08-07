@@ -10,6 +10,9 @@ class Task extends Model
     public $primaryKey = 'id';
     public $timestamp =true;
 
+
+    // Eloquent Relationships 
+
     public function sprint()
     {
         return $this->belongsTo('App\Sprint');
