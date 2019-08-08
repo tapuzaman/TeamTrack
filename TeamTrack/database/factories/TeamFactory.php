@@ -8,6 +8,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Team::class, function (Faker $faker) {
 
+    // No use.... to be deleted
+
     Team::createTeam($faker->company, User::all()->random()->id);
 
     // return [ 

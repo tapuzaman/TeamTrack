@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
+use App\Team;
+use App\User;
 
 class TeamsTableSeeder extends Seeder
 {
@@ -9,8 +12,13 @@ class TeamsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+
+        for($x=0; $x<10; $x++)
+        {
+            Team::createTeam($faker->company, User::all()->random()->id);
+        }
+        
     }
 }
