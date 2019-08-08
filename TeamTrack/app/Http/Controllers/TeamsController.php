@@ -54,7 +54,7 @@ class TeamsController extends Controller
 
         $team_name = $request->input('name');
         $leader_id = Auth::id();
-        Team::createTeam($team_name, $leader_id);
+        $newTeam = Team::createTeam($team_name, $leader_id);
 
         //add new Team
         //$newTeam = Team::create(['name' => $request->input('name'), 'leader_id'=>Auth::id() ]);

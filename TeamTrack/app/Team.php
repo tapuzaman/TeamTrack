@@ -19,6 +19,7 @@ class Team extends Model
         self::addMember($leader_id, $newTeam->id); //adds creator to created Team's member-list
         $newTeamBacklog = self::createBacklog($newTeam->id, $default_no_of_sprints); //create Backlog for created Team
         self::createSprints($newTeamBacklog->id, $default_no_of_sprints); // create Sprints for created team
+        return $newTeam;
     }
 
     public static function addMember($member_id, $team_id)
