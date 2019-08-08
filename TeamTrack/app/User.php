@@ -24,7 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'cid'
+        'name', 'email', 'password', 'currentTeamId'
     ];
 
     /**
@@ -95,7 +95,7 @@ class User extends Authenticatable
 
     public function getCurrentTeamIdAttribute()
     {
-        return $this->currentTeamId;
+        return $this->setting->currentTeamId;
     }
 
     public function getCurrentTeamNameAttribute()
@@ -111,9 +111,12 @@ class User extends Authenticatable
 
     //mutators
 
-    public function setCurrentTeamIdAttribute($team_id)
+    public function setCurrentTeamIdAttribute($value)
     {
-        $this->currentTeamId = $team_id;
+       // $this->currentTeamId = $value;
+        $this->setting->attributes['currentTeamId'] = $value;
+        //$this->setting->currentTeamId = $value;
+       // $this->attributes['currentTeamId'] = $value;
     }
 
     public  function setFlagAttribute($value)
@@ -124,6 +127,14 @@ class User extends Authenticatable
     public function setCidAttribute($value)
     {
         $this->attributes['cid'] = $value;
+    }
+
+
+    //Eloquent relation
+
+    public function setting()
+    {
+        return $this->hasOne('App\Setting');
     }
 
 }

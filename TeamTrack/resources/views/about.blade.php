@@ -1,3 +1,3 @@
 {{ 
-     dd(Auth::user())
+     Auth::user()->setting
 }}

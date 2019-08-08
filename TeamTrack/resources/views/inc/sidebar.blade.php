@@ -27,10 +27,8 @@
 
             <!------ SIDEBAR LINKS ---------->
 
-            <li > Team id : {{ $teamId = Auth::user()->currentTeamId() }}</li>
-            <li > Cid :: {{ $teamId2 = Auth::user()->cid }}</li>
-            <li > Team : {{ $teamName = Auth::user()->currentTeam() }}</li>
-            <li > Team : {{ $teamName2 = Auth::user()->currentTeamName }}</li>
+         
+            <li > setting :: {{ $teamId = Auth::user()->setting->currentTeamId }}</li>
             <li > Flag : {{ Auth::user()->flag }}</li>
 
               <li class="nav-item">
