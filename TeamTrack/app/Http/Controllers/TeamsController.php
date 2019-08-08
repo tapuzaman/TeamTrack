@@ -70,7 +70,9 @@ class TeamsController extends Controller
     public function show($id)
     {
         $team = Team::find($id);
+        Auth::user()->cid = $team->id;
         Auth::user()->flag = $team->id;
+        Auth::user()->save();
         Auth::user()->setCurrentTeamId($team->id);
         return view('teams.show')->with('team',$team);
     }

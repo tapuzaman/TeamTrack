@@ -13,7 +13,10 @@ class User extends Authenticatable
     use Notifiable;
 
     public $currentTeamId=0;
-    public $flag = "nice";
+    public $flag;
+
+    //public function __construct() {}
+
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'cid'
     ];
 
     /**
@@ -85,6 +88,11 @@ class User extends Authenticatable
         return $this->flag;
     }
 
+    public function getCidAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
     public function getCurrentTeamIdAttribute()
     {
         return $this->currentTeamId;
@@ -108,9 +116,14 @@ class User extends Authenticatable
         $this->currentTeamId = $team_id;
     }
 
-    public function setFlagAttribute($value)
+    public  function setFlagAttribute($value)
     {
-        $this->flag = $value;
+       $this->flag = $value;
+    }
+
+    public function setCidAttribute($value)
+    {
+        $this->attributes['cid'] = $value;
     }
 
 }
