@@ -45,53 +45,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public static function addUserToTeam($user_id, $team_id)
-    {
-        $user = User::find($user_id);
-        $user->teams()->attach($team_id);
-    }
 
-    public static function addUserToTeamByEmail($user_email, $team_id)
-    {
-        $user = User::where('email',$user_email)->first();
-        $user->teams()->attach($team_id);
-    }
-
-    // TODO: Clean cuurent team code.. Refactor some other class
-    public function currentTeam()
-    {
-        // condition to fetch data from DB if 0
-        if($this->currentTeamId==0){
-            return 'Teams';
-        }
-        else{
-            return Team::find($this->currentTeamId)->name;
-        }
-    }
-
-    public function currentTeamId()
-    {
-        return $this->currentTeamId;
-    }
-
-    public function setCurrentTeamId($newCurrentTeamId)
-    {
-        $this->currentTeamId = $newCurrentTeamId;
-        return $newCurrentTeamId;
-    }
-
-
-    //accessors
-
-    public function getFlagAttribute()
-    {
-        return $this->flag;
-    }
-
-    public function getCidAttribute($value)
-    {
-        return ucfirst($value);
-    }
+    //Accessors
 
     public function getCurrentTeamIdAttribute()
     {
@@ -109,24 +64,11 @@ class User extends Authenticatable
     }
 
 
-    //mutators
+    //Mutators
 
     public function setCurrentTeamIdAttribute($value)
     {
-       // $this->currentTeamId = $value;
         $this->setting->attributes['currentTeamId'] = $value;
-        //$this->setting->currentTeamId = $value;
-       // $this->attributes['currentTeamId'] = $value;
-    }
-
-    public  function setFlagAttribute($value)
-    {
-       $this->flag = $value;
-    }
-
-    public function setCidAttribute($value)
-    {
-        $this->attributes['cid'] = $value;
     }
 
 
