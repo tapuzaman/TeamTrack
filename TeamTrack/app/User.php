@@ -57,7 +57,7 @@ class User extends Authenticatable
     // TODO: Clean cuurent team code.. Refactor some other class
     public function currentTeam()
     {
-        //add condition to fetch data from DB if 0
+        // condition to fetch data from DB if 0
         if($this->currentTeamId==0){
             return 'Teams';
         }
@@ -77,10 +77,35 @@ class User extends Authenticatable
         return $newCurrentTeamId;
     }
 
-    //accessors mutators
+
+    //accessors
+
     public function getFlagAttribute()
     {
         return $this->flag;
+    }
+
+    public function getCurrentTeamIdAttribute()
+    {
+        return $this->currentTeamId;
+    }
+
+    public function getCurrentTeamNameAttribute()
+    {
+        if($this->currentTeamId==0){
+            return 'Select Team';
+        }
+        else{
+            return Team::find($this->currentTeamId)->name;
+        }
+    }
+
+
+    //mutators
+
+    public function setCurrentTeamIdAttribute($team_id)
+    {
+        $this->currentTeamId = $team_id;
     }
 
 }
