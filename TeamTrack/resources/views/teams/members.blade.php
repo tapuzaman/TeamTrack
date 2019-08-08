@@ -42,6 +42,7 @@
                         <hr>
                     @endforeach
             </p>
+            <hr>
         @endforeach 
 
         <hr>
