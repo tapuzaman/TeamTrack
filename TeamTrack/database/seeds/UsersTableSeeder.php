@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $newUsers = factory(App\User::class,3)->create();
+        $newUsers = factory(App\User::class,20)->create();
 
         //create Setting entry for new users
         foreach( $newUsers as $newUser)
