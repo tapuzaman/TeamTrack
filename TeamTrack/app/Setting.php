@@ -8,9 +8,11 @@ class Setting extends Model
 {
 
     protected $fillable = [
-        'currentTeamId'
     ];
     
+
+    //Eloquent Relation
+
     public function user()
     {
         return $this->belongsTo('App\User');

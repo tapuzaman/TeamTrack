@@ -57,7 +57,7 @@ class TeamsController extends Controller
         Team::addMemberByEmail(Auth::user()->email, $newTeam->id);
         //TODO: create Team backlog
 
-        Auth::user()->setCurrentTeamId($newTeam->id);
+        //Auth::user()->setCurrentTeamId($newTeam->id);
         return view('teams.show')->with('team',$newTeam);
     }
 
@@ -70,10 +70,7 @@ class TeamsController extends Controller
     public function show($id)
     {
         $team = Team::find($id);
-        Auth::user()->setting->currentTeamId = $team->id;
-        //Auth::user()->flag = $team->id;
-        Auth::user()->setting->save();
-        //Auth::user()->setCurrentTeamId($team->id);
+        Auth::user()->setCurrentTeamId($id);
         return view('teams.show')->with('team',$team);
     }
 
@@ -87,7 +84,6 @@ class TeamsController extends Controller
     public function members($id)
     {     
         $team = Team::find($id);
-        Auth::user()->setCurrentTeamId($team->id);
         return view('teams.members')->with('team',$team);
     }
 
@@ -98,7 +94,7 @@ class TeamsController extends Controller
             'team_id'=>'required'
         ]);
 
-        Auth::user()->setCurrentTeamId($request->input('team_id'));
+        //Auth::user()->setCurrentTeamId($request->input('team_id'));
         //TODO : add access control, check if Team belongs to this user
         Team::addMemberByEmail($request->input('email'), $request->input('team_id') );
 

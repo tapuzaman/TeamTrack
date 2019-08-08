@@ -12,11 +12,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public $currentTeamId=0;
-    public $flag;
-
-    //public function __construct() {}
-
+    //public $currentTeamId=0;
 
     /**
      * The attributes that are mass assignable.
@@ -24,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'currentTeamId'
+        'name', 'email', 'password'
     ];
 
     /**
@@ -46,31 +42,26 @@ class User extends Authenticatable
     ];
 
 
-    //Accessors
-
-    public function getCurrentTeamIdAttribute()
+    public function setCurrentTeamId($team_id)
     {
-        return $this->setting->currentTeamId;
+        $this->setting->current_team_id = $team_id;
+        $this->setting->save();
     }
 
-    public function getCurrentTeamNameAttribute()
+    public function getCurrentTeamId()
     {
-        if($this->currentTeamId==0){
+        return $this->setting->current_team_id;
+    }
+
+    public function getCurrentTeamName()
+    {
+        if($this->setting->current_team_id==0){
             return 'Select Team';
         }
         else{
-            return Team::find($this->currentTeamId)->name;
+            return Team::find($this->setting->current_team_id)->name;
         }
     }
-
-
-    //Mutators
-
-    public function setCurrentTeamIdAttribute($value)
-    {
-        $this->setting->attributes['currentTeamId'] = $value;
-    }
-
 
     //Eloquent relation
 

@@ -27,9 +27,8 @@
 
             <!------ SIDEBAR LINKS ---------->
 
-         
-            <li > setting :: {{ $teamId = Auth::user()->setting->currentTeamId }}</li>
-            <li > Flag : {{ Auth::user()->flag }}</li>
+            <li > Team id : {{ $teamId = Auth::user()->getCurrentTeamId() }} </li>
+            <li > Team name : {{ $teamName = Auth::user()->getCurrentTeamName() }} </li>
 
               <li class="nav-item">
                 <a class="nav-link " href="/teamsmasterindex">
