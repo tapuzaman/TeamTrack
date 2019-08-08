@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Backlog extends Model
 {
  
+    protected $guarded = [];
+
+    
     // Eloquent Relationships 
 
     public function team()
