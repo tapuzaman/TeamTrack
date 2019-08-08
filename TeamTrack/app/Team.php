@@ -51,7 +51,7 @@ class Team extends Model
 
     private static function createSprints($backlog_id, $default_no_of_sprints)
     {
-        for($x=1; $x<=$default_no_of_sprints; $x++)
+        for($x=1; $x <= $default_no_of_sprints; $x++)
         {
             Sprint::create(['backlog_id'=>$backlog_id, 'sprint_no'=>$x, 'start_date'=>'2019-08-08 00:00:00', 'due_date'=>'2019-08-10 00:00:00']);
         }

@@ -101,7 +101,7 @@ class TeamsController extends Controller
 
         //Auth::user()->setCurrentTeamId($request->input('team_id'));
         //TODO : add access control, check if Team belongs to this user
-        Team::addMemberByEmail($request->input('email'), $request->input('team_id') );
+        Team::addMemberByEmail($request->input('email'), Auth::user()->getCurrentTeamId() );
 
         return back();
     }

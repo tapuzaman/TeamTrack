@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use DB;
 use App\Task;
@@ -46,18 +47,23 @@ class TasksController extends Controller
         ]);
 
         //Create Task 
-        $task = new Task;
-        $task->team_id = 1; // Dummy team_id
-        $task->user_id = 0;  // Dummy user_id (assigned by)
-        $task->created_by = 1; // Dummy cretaed_by
-        $task->title = $request->input('title');
-        $task->description = $request->input('description');
-        $task->sprint_no = 1; //Dummy sprint ID 
-        $task->due_date = now();
-        $task->is_completed = false;
-        $task->save();
+        $title = $request->input('title');
+        $description = $request->input('description');
+        Task::createTask(1, 11, Auth::id(), $title, $description);
+        //Task::createTask($sprint_id, $assigned_to, $created_by, $title, $description);
 
-        return redirect('/tasks');
+        // $task = new Task;
+        // $task->team_id = 1; // Dummy team_id
+        // $task->user_id = 0;  // Dummy user_id (assigned by)
+        // $task->created_by = 1; // Dummy cretaed_by
+        // $task->title = $request->input('title');
+        // $task->description = $request->input('description');
+        // $task->sprint_no = 1; //Dummy sprint ID 
+        // $task->due_date = now();
+        // $task->is_completed = false;
+        // $task->save();
+
+        // return redirect('/tasks');
     }
 
     /**
