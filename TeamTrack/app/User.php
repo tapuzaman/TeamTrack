@@ -108,4 +108,9 @@ class User extends Authenticatable
         $this->currentTeamId = $team_id;
     }
 
+    public function setFlagAttribute($value)
+    {
+        $this->flag = $value;
+    }
+
 }

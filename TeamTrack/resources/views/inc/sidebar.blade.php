@@ -31,6 +31,7 @@
             <li > Team id :: {{ $teamId2 = Auth::user()->currentTeamId }}</li>
             <li > Team : {{ $teamName = Auth::user()->currentTeam() }}</li>
             <li > Team : {{ $teamName2 = Auth::user()->currentTeamName }}</li>
+            <li > Flag : {{ Auth::user()->flag }}</li>
 
               <li class="nav-item">
                 <a class="nav-link " href="/teamsmasterindex">
