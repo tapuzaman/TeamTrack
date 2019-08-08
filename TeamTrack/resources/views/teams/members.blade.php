@@ -18,6 +18,32 @@
                     {{$user->id}} : {{$user->name}} <br>
                 @endforeach
         </div>
+        <br>
+        <hr>
+
+        @foreach($team->backlog->sprints as $sprint)
+            <p>
+                Sprint : {{$sprint->sprint_no}}
+                    @foreach($sprint->tasks as $task)
+                        <p>
+                            <h5> {{$task->title}} </h5>
+                                {{$task->description}}
+                            <br>
+                                <i>Comments : </i>
+                                <small>
+                                    @foreach($task->comments as $comment)
+                                        <div>
+                                            <b>{{App\User::find($comment->commentor_id)->name}}</b> <br>
+                                            {{$comment->content}}
+                                        </div>
+                                    @endforeach
+                                </small>
+                        </p>
+                        <hr>
+                    @endforeach
+            </p>
+        @endforeach 
+
         <hr>
 
         <!-- Button trigger modal -->
