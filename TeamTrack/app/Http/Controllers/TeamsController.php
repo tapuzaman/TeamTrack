@@ -52,17 +52,18 @@ class TeamsController extends Controller
             'name'=>'required'
         ]);
 
-        //$team_name = $request->input('name')
-        //$leader_id = Auth::id()
-        //createTeam($team_name, $leader_id);
+        $team_name = $request->input('name');
+        $leader_id = Auth::id();
+        Team::createTeam($team_name, $leader_id);
 
         //add new Team
-        $newTeam = Team::create(['name' => $request->input('name'), 'leader_id'=>Auth::id() ]);
+        //$newTeam = Team::create(['name' => $request->input('name'), 'leader_id'=>Auth::id() ]);
         //add this user to the new team
-        Team::addMemberByEmail(Auth::user()->email, $newTeam->id);
+        //Team::addMemberByEmail(Auth::user()->email, $newTeam->id);
         //TODO: create Team backlog
         //Auth::user()->setCurrentTeamId($newTeam->id);
-        return view('teams.show')->with('team',$newTeam);
+        //return view('teams.show')->with('team',$newTeam);
+        return redirect('/home');
     }
 
     /**

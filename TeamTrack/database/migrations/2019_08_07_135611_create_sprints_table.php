@@ -19,6 +19,7 @@ class CreateSprintsTable extends Migration
             $table->integer('sprint_no');
             $table->dateTime('start_date');
             $table->dateTime('due_date');
+            $table->timestamps();
         });
     }
 

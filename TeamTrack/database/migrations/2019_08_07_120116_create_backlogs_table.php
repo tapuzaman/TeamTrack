@@ -18,6 +18,7 @@ class CreateBacklogsTable extends Migration
             $table->unsignedBigInteger('team_id');
             $table->integer('no_of_sprints');
             $table->dateTime('due_date');
+            $table->timestamps();
         });
     }
 

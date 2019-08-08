@@ -12,13 +12,13 @@ class Team extends Model
 
     // Functions
 
-    public function createTeam($team_name, $leader_id)
+    public static function createTeam($team_name, $leader_id)
     {
         $default_no_of_sprints = 4; //sets no of sprints in new Team
-        $newTeam = createTeamDB($team_name, $leader_id); //creates Team in DB and assigns creator as Leader
-        addMember($leader_id, $newTeam->id); //adds creator to created Team's member-list
-        $newTeamBacklog = createBacklog($newTeamId, $default_no_0f_sprints); //create Backlog for created Team
-        createSprints($newTeamBacklog->id, $default_no_of_sprints); // create Sprints for created team
+        $newTeam = self::createTeamDB($team_name, $leader_id); //creates Team in DB and assigns creator as Leader
+        self::addMember($leader_id, $newTeam->id); //adds creator to created Team's member-list
+        $newTeamBacklog = self::createBacklog($newTeam->id, $default_no_of_sprints); //create Backlog for created Team
+        self::createSprints($newTeamBacklog->id, $default_no_of_sprints); // create Sprints for created team
     }
 
     public static function addMember($member_id, $team_id)
@@ -36,24 +36,23 @@ class Team extends Model
 
     // Internal Functions
 
-    private function createTeamDB($team_name, $leader_id)
+    private static function createTeamDB($team_name, $leader_id)
     {
         $newTeam = Team::create(['name'=>$team_name, 'leader_id'=>$leader_id ]);
         return $newTeam;
     }
 
-    private function createBacklog($teamId, $default_no_of_sprints)
+    private static function createBacklog($team_id, $default_no_of_sprints)
     {
-        $default_no_0f_sprints = 4;
-        $newTeamBacklog = Backlog::create(['team_id'=>$teamId, 'no_of_sprints'=>$default_no_of_sprints]);
+        $newTeamBacklog = Backlog::create(['team_id'=>$team_id, 'no_of_sprints'=>$default_no_of_sprints, 'due_date'=>'2019-08-12 00:00:00']);
         return $newTeamBacklog;
     }
 
-    private function createSprints($backlogId, $default_no_of_sprints)
+    private static function createSprints($backlog_id, $default_no_of_sprints)
     {
-        for($x=0; $x<$default_no_of_sprints; $x++)
+        for($x=1; $x<=$default_no_of_sprints; $x++)
         {
-            Sprint::create(['backlog_id'=>$backlog_id, 'sprint_no'=>$x ]);
+            Sprint::create(['backlog_id'=>$backlog_id, 'sprint_no'=>$x, 'start_date'=>'2019-08-08 00:00:00', 'due_date'=>'2019-08-10 00:00:00']);
         }
     }
 
