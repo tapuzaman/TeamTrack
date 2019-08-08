@@ -44,9 +44,14 @@ class DataController extends Controller
     }
 
     public function emptyData(){
-        DB::delete('delete from users');
+        //DB::delete('delete from users');
         DB::delete('delete from teams');
         DB::delete('delete from team_user');
+        DB::delete('delete from tasks');
+        DB::delete('delete from backlogs');
+        DB::delete('delete from sprints');
+        DB::delete('delete from comments');
+        DB::delete('delete from settings');
         DB::delete('delete from tasks');
         
         return redirect('/teams');
