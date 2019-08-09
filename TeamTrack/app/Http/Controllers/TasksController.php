@@ -49,7 +49,7 @@ class TasksController extends Controller
         //Create Task 
         $title = $request->input('title');
         $description = $request->input('description');
-        Task::createTask(1, 11, Auth::id(), $title, $description);
+        Task::createTask(1, 11, Auth::id(), $title, $description); //TODO : change inputs
         //Task::createTask($sprint_id, $assigned_to, $created_by, $title, $description);
 
         // $task = new Task;
