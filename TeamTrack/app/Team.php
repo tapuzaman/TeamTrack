@@ -14,24 +14,47 @@ class Team extends Model
 
     public static function createTeam($team_name, $leader_id)
     {
-        $default_no_of_sprints = 4; //sets no of sprints in new Team
-        $newTeam = self::createTeamDB($team_name, $leader_id); //creates Team in DB and assigns creator as Leader
-        self::addMember($leader_id, $newTeam->id); //adds creator to created Team's member-list
-        $newTeamBacklog = self::createBacklog($newTeam->id, $default_no_of_sprints); //create Backlog for created Team
-        self::createSprints($newTeamBacklog->id, $default_no_of_sprints); // create Sprints for created team
+        $default_no_of_sprints = 4;                             //sets no of sprints in new Team
+
+        $newTeam = self::createTeamDB($team_name, $leader_id);  //creates Team in DB and assigns creator as Leader
+        self::addMember($leader_id, $newTeam->id);              //adds creator to created Team's member-list
+        $newTeamBacklog = self::createBacklog($newTeam->id, $default_no_of_sprints);    //create Backlog for created Team
+        self::createSprints($newTeamBacklog->id, $default_no_of_sprints);               // create Sprints for created team
         return $newTeam;
+    }
+
+    public static function deleteTeam($teamId)
+    {
+        $team = Team::find($teamId);
+
+        //delete tasks for each sprint
+            // TODO : Refactor to emptySprint()
+        foreach($team->backlog->sprints as $sprint)
+        {
+            $sprint->tasks()->delete();
+        }
+        //delete sprints
+        $team->backlog->sprints()->delete();
+        //delete backlog
+        $team->backlog()->delete();
+        //detach members
+            //TODO refactor to removeMember()
+        $team->members()->detach();
+        //delete team
+        $team->delete();
     }
 
     public static function addMember($member_id, $team_id)
     {
-        $member = Member::find($member_id);
-        $member->teams()->sync($team_id);
+        $team = Team::find($team_id);
+        $team->members()->syncWithoutDetaching($member_id);
     }
 
     public static function addMemberByEmail($member_email, $team_id)
     {
-        $member = Member::where('email',$member_email)->first();
-        $member->teams()->sync($team_id);
+        $newMember = User::where('email',$member_email)->first();
+        $team = Team::find($team_id);
+        $team->members()->syncWithoutDetaching($newMember->id);
     }
 
 
