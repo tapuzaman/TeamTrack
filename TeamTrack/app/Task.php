@@ -25,6 +25,7 @@ class Task extends Model
             'description' => $description,
             'due_date' => '2020-08-12 00:00:00',
             'is_completed' => false
+           
         ]);
     }
 

@@ -17,14 +17,21 @@ class TasksTableSeeder extends Seeder
         
         foreach( Sprint::all() as $sprint)
         {
-            Task::createTask(
-                $sprint->id, $sprint->backlog->team->members->random() , 
-                $sprint->backlog->team->members->random(), 
-                $faker->realText($maxNbChars = 15, $indexSize = 1), 
-                $faker->realText($maxNbChars = 40, $indexSize = 3)
-            );
+            $defaultNoOfTasksPerSprint = rand(4,8);
 
-            //Task::createTask($sprint_id, $assigned_to, $created_by, $title, $description);
+            for($x==0; $x<$defaultNoOfTasksPerSprint; $x++)
+            {
+                Task::createTask(
+                    $sprint->id, 
+                    $sprint->backlog->team->members->random()->id , 
+                    $sprint->backlog->team->members->random()->id, 
+                    $faker->realText($maxNbChars = 15, $indexSize = 1), 
+                    $faker->realText($maxNbChars = 40, $indexSize = 3)
+                );
+    
+                //Task::createTask($sprint_id, $assigned_to, $created_by, $title, $description);
+            }
+            
         }
 
     }
