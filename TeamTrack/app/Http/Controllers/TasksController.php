@@ -50,18 +50,7 @@ class TasksController extends Controller
         $title = $request->input('title');
         $description = $request->input('description');
         Task::createTask(1, 11, Auth::id(), $title, $description); //TODO : change inputs
-        //Task::createTask($sprint_id, $assigned_to, $created_by, $title, $description);
 
-        // $task = new Task;
-        // $task->team_id = 1; // Dummy team_id
-        // $task->user_id = 0;  // Dummy user_id (assigned by)
-        // $task->created_by = 1; // Dummy cretaed_by
-        // $task->title = $request->input('title');
-        // $task->description = $request->input('description');
-        // $task->sprint_no = 1; //Dummy sprint ID 
-        // $task->due_date = now();
-        // $task->is_completed = false;
-        // $task->save();
 
         // return redirect('/tasks');
     }
@@ -106,16 +95,17 @@ class TasksController extends Controller
         ]);
 
         //update Task 
-        $task = Task::find($id);
-        $task->team_id = 1; // Dummy team_id
-        $task->user_id = 0; // Dummy user_id (assigned by)
-        $task->created_by = 1; // Dummy cretaed_by
-        $task->title = $request->input('title');
-        $task->description = $request->input('description');
-        $task->sprint_no = 1; //Dummy sprint ID
-        $task->due_date = now();
-        $task->is_completed = false;
-        $task->save();
+        //Task::updateTask()
+        // $task = Task::find($id);
+        // $task->team_id = 1; // Dummy team_id
+        // $task->user_id = 0; // Dummy user_id (assigned by)
+        // $task->created_by = 1; // Dummy cretaed_by
+        // $task->title = $request->input('title');
+        // $task->description = $request->input('description');
+        // $task->sprint_no = 1; //Dummy sprint ID
+        // $task->due_date = now();
+        // $task->is_completed = false;
+        // $task->save();
 
         return redirect('/tasks');
     }
