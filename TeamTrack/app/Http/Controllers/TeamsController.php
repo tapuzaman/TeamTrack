@@ -56,13 +56,6 @@ class TeamsController extends Controller
         $leader_id = Auth::id();
         $newTeam = Team::createTeam($team_name, $leader_id);
 
-        //add new Team
-        //$newTeam = Team::create(['name' => $request->input('name'), 'leader_id'=>Auth::id() ]);
-        //add this user to the new team
-        //Team::addMemberByEmail(Auth::user()->email, $newTeam->id);
-        //TODO: create Team backlog
-        //Auth::user()->setCurrentTeamId($newTeam->id);
-        //return view('teams.show')->with('team',$newTeam);
         return redirect('/home');
     }
 
