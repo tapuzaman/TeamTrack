@@ -23,7 +23,7 @@
 
         @foreach($team->backlog->sprints as $sprint)
             <p>
-                Sprint : {{$sprint->sprint_no}}
+                Sprint : {{$sprint->sprint_no}} . {{count($sprint->tasks)}} tasks
                     @foreach($sprint->tasks as $task)
                         <p>
                             <h5> {{$task->title}} </h5>
