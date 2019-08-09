@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
         foreach( App\User::all() as $user)
         {
             App\Setting::create([
-                'user_id' => $newUser->id,
+                'user_id' => $user->id,
                 'current_team_id' => 0
             ]);
         }
