@@ -28,10 +28,10 @@ class Team extends Model
         $team = Team::find($teamId);
 
         //delete tasks for each sprint
-            // TODO : Refactor to emptySprint()
         foreach($team->backlog->sprints as $sprint)
         {
-            $sprint->tasks()->delete();
+            //$sprint->tasks()->delete();
+            self::emptySprint($sprint->id);
         }
         //delete sprints
         $team->backlog->sprints()->delete();
@@ -62,13 +62,21 @@ class Team extends Model
 
     private static function createTeamDB($team_name, $leader_id)
     {
-        $newTeam = Team::create(['name'=>$team_name, 'leader_id'=>$leader_id ]);
+        $newTeam = Team::create([
+            'name'=>$team_name, 
+            'leader_id'=>$leader_id 
+            ]);
+
         return $newTeam;
     }
 
     private static function createBacklog($team_id, $default_no_of_sprints)
     {
-        $newTeamBacklog = Backlog::create(['team_id'=>$team_id, 'no_of_sprints'=>$default_no_of_sprints, 'due_date'=>'2019-08-12 00:00:00']);
+        $newTeamBacklog = Backlog::create([
+            'team_id'=>$team_id, 
+            'no_of_sprints'=>$default_no_of_sprints, 
+            'due_date'=>'2019-08-12 00:00:00'
+            ]);
         return $newTeamBacklog;
     }
 
@@ -76,7 +84,29 @@ class Team extends Model
     {
         for($x=1; $x <= $default_no_of_sprints; $x++)
         {
-            Sprint::create(['backlog_id'=>$backlog_id, 'sprint_no'=>$x, 'start_date'=>'2019-08-08 00:00:00', 'due_date'=>'2019-08-10 00:00:00']);
+            Sprint::create([
+                'backlog_id'=>$backlog_id, 
+                'sprint_no'=>$x, 
+                'start_date'=>'2019-08-08 00:00:00', 
+                'due_date'=>'2019-08-10 00:00:00'
+                ]);
+        }
+    }
+
+        //deletes all tasks inside a sprint
+    public static function emptySprint($sprintId)
+    {
+        $sprint = Sprint::find($sprintId);
+        $sprint->tasks()->delete();
+    }
+
+        //deletes all tasks, sprints inside a backlog
+    public static function emptyBacklog($backlogId)
+    {
+        $backlog = Backlog::find($backlogId);
+        foreach($backlog->sprints as $sprint)
+        {
+            emptySprint('')
         }
     }
 
