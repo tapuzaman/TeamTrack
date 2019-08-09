@@ -19,7 +19,7 @@ class TasksTableSeeder extends Seeder
         {
             $defaultNoOfTasksPerSprint = rand(4,8);
 
-            for($x==0; $x<$defaultNoOfTasksPerSprint; $x++)
+            for($x=0; $x<$defaultNoOfTasksPerSprint; $x++)
             {
                 Task::createTask(
                     $sprint->id, 
