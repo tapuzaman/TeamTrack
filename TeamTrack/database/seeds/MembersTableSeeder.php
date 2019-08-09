@@ -13,7 +13,7 @@ class MembersTableSeeder extends Seeder
      */
     public function run()
     {
-        for($x=0; $x<30; $x++)
+        for($x=0; $x<400; $x++)
         {
             Team::addMember(User::all()->random()->id, Team::all()->random()->id);
         }

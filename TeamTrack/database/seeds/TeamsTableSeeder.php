@@ -15,10 +15,10 @@ class TeamsTableSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        for($x=0; $x<10; $x++)
+        for($x=0; $x<5; $x++)
         {
             Team::createTeam($faker->company, User::all()->random()->id);
         }
-        
+
     }
 }
