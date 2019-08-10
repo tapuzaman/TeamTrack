@@ -45,6 +45,7 @@
                success:function(data){
                     //alert(data.message);
                     $('#newTaskModal').modal('hide');
+                    $('.py-4').load( '/teams/4 .py-4');
                }
                });
 
