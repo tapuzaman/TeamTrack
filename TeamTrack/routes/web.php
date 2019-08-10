@@ -40,6 +40,9 @@ Route::get('tasks/create/{sprintId}','TasksController@create');
 Route::post('tasks','TasksController@store');
 Route::post('tasks/create','TasksController@store');
 
+// Sprint Routes
+Route::resource('sprints', 'SprintsController');
+
 // Team Routes
 //Route::get('teams','TeamsController@index');
 Route::get('teamsmasterindex','TeamsController@masterindex');

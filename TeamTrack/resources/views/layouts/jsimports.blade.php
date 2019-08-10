@@ -45,11 +45,23 @@
                success:function(data){
                    $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)) );
                    
-               }
+               } 
+               });
 
-               // error: function(XMLHttpRequest, textStatus, errorThrown) { 
-               //      alert("Status: " + textStatus); alert("Error: " + errorThrown); 
-               //  }    
+          });
+
+
+          $(".new-sprint-submit").click(function(e){
+               e.preventDefault();
+
+               $.ajax({
+               type:'POST',
+               url:'/sprints',
+               data:{},
+               success:function(data){
+                    alert(window.location.pathname);
+                   $('.content').load( window.location.pathname.concat(' .content') );
+               } 
                });
 
           });

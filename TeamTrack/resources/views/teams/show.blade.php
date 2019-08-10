@@ -17,12 +17,21 @@
             @endforeach
         </div>
 
+
+
         <div>
+
+            {{count($team->backlog->sprints)}} Sprints
+            <hr>
+
+            <a class="new-sprint-submit">
+                <button class="btn btn-primary">Add Sprint</button>
+            </a>
+
             <!-- Add Exception for new user without team -->
             @foreach($team->backlog->sprints as $sprint)
                 <div class="well card m-3 p-3 ">
                     <div class="sprint{{$sprint->id}}">
-                    
 
                      <!-- Sprint -->
                      <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
@@ -32,7 +41,7 @@
                      </a> -->
 
                      <a href="{{$sprint->id}}"  class="add-task-modal"  data-toggle="modal" data-target="#newTaskModal">
-                        <button class="btn btn-primary">Add task</button>
+                        <button class="btn btn-primary">Add Task</button>
                      </a>
 
                      <hr>
