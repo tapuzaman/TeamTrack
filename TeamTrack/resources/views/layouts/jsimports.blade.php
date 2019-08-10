@@ -43,10 +43,14 @@
                url:'/tasks/create',
                data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
                success:function(data){
-                    //alert(data.message);
-                    $('#newTaskModal').modal('hide');
-                    $('.py-4').load( '/teams/4 .py-4');
+                   // alert(document.location.href); 
+                   $('.py-4').load( '/teams/4 .py-4');
+                   
                }
+
+               // error: function(XMLHttpRequest, textStatus, errorThrown) { 
+               //      alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+               //  }    
                });
 
           });

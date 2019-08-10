@@ -28,7 +28,7 @@
                         {{Form::textarea('description', 'Default Description', ['class' => 'form-control', 'placeholder' => 'Task Description'])}}
                     </div>
                 <div class="modal-footer">
-                    {{Form::submit('Add Task', ['class'=>'btn btn-primary new-task-submit'])}}
+                    {{Form::submit('Add Task', ['class'=>'btn btn-primary new-task-submit', 'data-dismiss'=>'modal'])}}
                 </div>
                 
             </div>
