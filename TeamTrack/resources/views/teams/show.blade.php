@@ -20,7 +20,9 @@
         <div>
             <!-- Add Exception for new user without team -->
             @foreach($team->backlog->sprints as $sprint)
-                <div class="well card m-3 p-3" id="sprint {{$sprint->sprint_no}}">
+                <div class="well card m-3 p-3 ">
+                    <div class="sprint{{$sprint->id}}">
+                    
 
                      <!-- Sprint -->
                      <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
@@ -55,7 +57,7 @@
                                     </small>
                             </div>
                         @endforeach
-                             
+                        </div>
                         
                 </div>
             @endforeach 

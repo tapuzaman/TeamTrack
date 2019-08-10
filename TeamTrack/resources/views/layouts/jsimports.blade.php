@@ -43,7 +43,7 @@
                url:'/tasks/create',
                data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
                success:function(data){
-                   $('.content').load( window.location.pathname.concat(' .content') );
+                   $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)) );
                    
                }
 
