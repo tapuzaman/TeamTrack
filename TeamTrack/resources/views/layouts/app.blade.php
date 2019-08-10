@@ -45,16 +45,9 @@
         </main>
       </div>
     </div>
-    
-
-    
-   
-    
 
   </body>
 
   @include('layouts.jsimports')
-  
-  @yield('scripts')
 
 </html>

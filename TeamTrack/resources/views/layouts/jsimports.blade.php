@@ -17,88 +17,121 @@
                }
           });
 
+          document.onload = initializeFunctions();
+
+          function initializeFunctions()
+          {
+               //setSidebar();
+               newSprint();
+               setSprintId();
+               newTask();
+               newMember();
+          }
 
 
-          $(".sidebar-link").click(function(e){
-               e.preventDefault();
+          function setSidebar()
+          {
+               console.log('setSidebar');
+               $(".sidebar-link").click(function(e){
+                    e.preventDefault();
+                    // Load the content from the link's href attribute
+                    $('.content').load( $(this).attr('href').concat(' .content'), function(responseText, textStatus, XMLHttpRequest){
+                              newSprint();
+                              //newMember();
+                         });
 
-               // Load the content from the link's href attribute
-               $('.content').load( $(this).attr('href').concat(' .content') );
-               //Change window location
-               window.location.replace($(this).attr('href'));
-          });
-
-
-
-          $(".add-task-modal").click(function(e){
-               console.log("hit change sprintId func");
-               document.getElementById("sprint-id-text-field").value = $(this).attr('href');
-          });
-
-          $(".content").on("click",function(e){
-               console.log(e);
-              // document.getElementById("sprint-id-text-field").value = $(this).attr('href');
-          });
-
-
-
-          $(".new-task-submit").click(function(e){
-               e.preventDefault();
-
-               var sprintId = $("input[name=sprintId]").val();
-               var assignedTo = $("select[name=assignedTo]").val();
-               var title = $("input[name=title]").val();
-               var description = $("textarea[name=description]").val();
-
-               $.ajax({
-               type:'POST',
-               url:'/tasks/create',
-               data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
-               success:function(data){
-                   $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)) );
-                   
-               } 
+                    //Change window location
+                    //window.location.replace($(this).attr('href'));
+                    window.history.pushState('', 'Title', $(this).attr('href'));
                });
-          });
+          }
+          
 
 
 
-          $(".new-sprint-submit").click(function(e){
-               e.preventDefault();
-
-               console.log("new sprint called");
-
-               $.ajax({
-               type:'POST',
-               url:'/sprints',
-               success:function(data){
-                    console.log(window.location.pathname);
-                    console.log(data.message);
-                    location.reload();
-                    //$('.sprint-view').load( window.location.pathname.concat(' .sprint-view') );
-               } 
+          function setSprintId()
+          {
+               console.log('setSprintId');
+               $(".add-task-modal").click(function(e){
+                    console.log("hit sprintId ");
+                    document.getElementById("sprint-id-text-field").value = $(this).attr('href');
                });
-          });
+          }
+          
 
 
+          function newTask()
+          {
+               console.log('newTask');
+               $(".new-task-submit").click(function(e){
+                    e.preventDefault();
 
-          $(".new-member-submit").click(function(e){
-               e.preventDefault();
+                    var sprintId = $("input[name=sprintId]").val();
+                    var assignedTo = $("select[name=assignedTo]").val();
+                    var title = $("input[name=title]").val();
+                    var description = $("textarea[name=description]").val();
 
-               console.log("new member called");
-               var email = $("input[name=email]").val();
-
-               $.ajax({
-               type:'POST',
-               url:'/members',
-               data:{email:email},
-               success:function(data){
-                    console.log(window.location.pathname);
-                    console.log(data.message);
-                    $('.team-member').load( window.location.pathname.concat(' .team-member') );
-               } 
+                    $.ajax({
+                    type:'POST',
+                    url:'/tasks/create',
+                    data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
+                    success:function(data){
+                    $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)) );
+                    
+                    } 
+                    });
                });
-          });
+          }
+
+          
+
+          function newSprint()
+          {
+               console.log('newSprint');
+               $(".new-sprint-submit").click(function(e){
+                    e.preventDefault();
+
+                    console.log("new sprint called");
+
+                    $.ajax({
+                    type:'POST',
+                    url:'/sprints',
+                    success:function(data){
+                         console.log(window.location.pathname);
+                         //console.log(data.message);
+                         //location.reload();
+                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
+                              setSprintId();
+                         });
+
+                    } 
+                    });
+               });
+          }
+
+
+          function newMember()
+          {
+               console.log('newMember');
+               $(".new-member-submit").click(function(e){
+                    e.preventDefault();
+
+                    console.log("new member called");
+                    var email = $("input[name=email]").val();
+
+                    $.ajax({
+                    type:'POST',
+                    url:'/members',
+                    data:{email:email},
+                    success:function(data){
+                         console.log(window.location.pathname);
+                         console.log(data.message);
+                         $('.team-member').load( window.location.pathname.concat(' .team-member') );
+                    } 
+                    });
+               });
+          }
+          
 
 
      </script>

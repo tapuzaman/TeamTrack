@@ -38,7 +38,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link sidebar-link" href="/teams/{{$teamId}}">
+                <a class="nav-link sidebar-link" href="/teams/{{$teamId}}" id="dashboard">
                   <i class="material-icons">view_module</i>
                   <span>Dashboard</span>
                 </a>
