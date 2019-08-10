@@ -26,4 +26,8 @@
                window.history.pushState("object or string", "Title", $(this).attr('href') );
           });
 
+          $(".add-task-modal").click(function(e){
+               document.getElementById("sprintIdTextField").value = $(this).attr('href');
+          });
+
      </script>

@@ -21,11 +21,18 @@
             <!-- Add Exception for new user without team -->
             @foreach($team->backlog->sprints as $sprint)
                 <div class="well card m-3 p-3" id="sprint {{$sprint->sprint_no}}">
-                    <!-- Sprint -->
+
+                     <!-- Sprint -->
                      <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
+
                      <a href="/tasks/create/{{$sprint->id}}">
                         <button class="btn btn-primary">Add Task</button>
                      </a>
+
+                     <a href="{{$sprint->id}}"  class="add-task-modal"  data-toggle="modal" data-target="#newTaskModal">
+                        <button class="btn btn-primary">Add task Modal</button>
+                     </a>
+
                      <hr>
                      Tasks ({{count($sprint->tasks)}}) :
                         @foreach($sprint->tasks as $task)
@@ -55,5 +62,7 @@
             
         </div>
     </div>
+
+    @include('modals.new_task_modal')
 
 @endsection
