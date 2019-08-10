@@ -43,8 +43,7 @@
                url:'/tasks/create',
                data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
                success:function(data){
-                   // alert(document.location.href); 
-                   $('.py-4').load( '/teams/4 .py-4');
+                   $('.py-4').load( window.location.pathname.concat(' .py-4') );
                    
                }
 
