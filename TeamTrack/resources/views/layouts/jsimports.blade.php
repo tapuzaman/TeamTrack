@@ -22,7 +22,8 @@
 
                // Load the content from the link's href attribute
                $('.py-4').load( $(this).attr('href').concat(' .py-4') );
-               //$("#pageTitle").load( $(this).attr('href')." #pageTitle");
+               //Change url in browser addressbar
+               window.history.pushState("object or string", "Title", $(this).attr('href') );
           });
 
      </script>
