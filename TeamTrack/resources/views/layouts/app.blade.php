@@ -27,7 +27,10 @@
 
               <!-- Content -->
                 <main class="py-4">
+                  <div class="content">
                     @yield('content')
+                  </div>
+                    
                 </main>
            
           </div>
