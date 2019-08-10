@@ -43,6 +43,9 @@ Route::post('tasks/create','TasksController@store');
 // Sprint Routes
 Route::resource('sprints', 'SprintsController');
 
+// Members Routes
+Route::resource('members', 'MembersController');
+
 // Team Routes
 //Route::get('teams','TeamsController@index');
 Route::get('teamsmasterindex','TeamsController@masterindex');

@@ -72,7 +72,8 @@ class TasksController extends Controller
 
             return response()->json(['message'=>'done']);
         }
-        else if($validator->fails()){
+        else if($validator->fails())
+        {
             return response()->json(['message'=>$validator->errors()->all()]);
         }
 

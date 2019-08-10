@@ -22,7 +22,7 @@
         <hr>
 
         <!-- Button trigger newMemberModal -->
-        <a class="new-member-submit">
+       
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newMemberModal">
                 Add Member
             </button>

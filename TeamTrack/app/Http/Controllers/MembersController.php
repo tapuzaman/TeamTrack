@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Validator;
+use App\Team;
 
 class MembersController extends Controller
 {
@@ -34,7 +37,22 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validator = Validator::make($request->all(), [
+            'email'=>'required',
+        ]);
+
+
+        if ($validator->passes()) 
+        {
+            Team::addMemberByEmail($request->email, Auth::user()->getCurrentTeamId() );
+            return response()->json(['message'=>$request->email]);
+        }
+        else if($validator->fails())
+        {
+            return response()->json(['message'=>$validator->errors()->all()]);
+        }
+        
     }
 
     /**

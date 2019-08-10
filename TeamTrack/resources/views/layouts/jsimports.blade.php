@@ -79,10 +79,12 @@
                e.preventDefault();
 
                console.log("new member called");
+               var email = $("input[name=email]").val();
 
                $.ajax({
                type:'POST',
-               url:'/sprints',
+               url:'/members',
+               data:{email:email},
                success:function(data){
                     console.log(window.location.pathname);
                     console.log(data.message);

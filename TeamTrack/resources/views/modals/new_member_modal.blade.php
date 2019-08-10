@@ -14,8 +14,11 @@
                     <div class="form-group">
                         {{Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Email address'])}}
                     </div>
+                   
                 <div class="modal-footer">
+                <a class="new-member-submit">
                     {{Form::submit('Add Member', ['class'=>'btn btn-primary new-task-submit', 'data-dismiss'=>'modal'])}}
+                </a>
                 </div>
                 
             </div>
