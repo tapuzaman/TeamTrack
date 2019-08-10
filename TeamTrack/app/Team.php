@@ -100,16 +100,6 @@ class Team extends Model
         $sprint->tasks()->delete();
     }
 
-        //deletes all tasks, sprints inside a backlog
-    public static function emptyBacklog($backlogId)
-    {
-        $backlog = Backlog::find($backlogId);
-        foreach($backlog->sprints as $sprint)
-        {
-            emptySprint('')
-        }
-    }
-
 
     // Eloquent Relationships 
 

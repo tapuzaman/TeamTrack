@@ -29,6 +29,10 @@ Route::get('/empty_data','DataController@emptyData'); // empty database
 
 Route::get('/contact', 'PagesController@contact');
 Route::get('/about', 'PagesController@about');
+Route::post('/ajaxRequest', function () {
+    //return response()->json(array('msg'=>'yoyoyo'),200);
+    return response()->json(['success'=>'Got Simple Ajax Request. baby']);
+});
 
 // Task Routes
 Route::resource('tasks', 'TasksController');
