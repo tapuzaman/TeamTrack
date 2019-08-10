@@ -7,3 +7,21 @@
 <script src="{{ asset('template/scripts/extras.1.1.0.min.js') }}"></script>
 <script src="{{ asset('template/scripts/shards-dashboards.1.1.0.min.js') }}"></script>
 <script src="{{ asset('template/scripts/app/app-blog-overview.1.1.0.js') }}"></script>
+
+
+<script type="text/javascript">
+
+          $.ajaxSetup({
+               headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+               }
+          });
+
+          $(".nav-link").click(function(e){
+               e.preventDefault();
+
+               // Load the content from the link's href attribute
+               $('.py-4').load($(this).attr('href'));
+          });
+
+     </script>
