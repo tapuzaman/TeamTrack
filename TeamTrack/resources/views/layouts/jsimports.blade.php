@@ -27,7 +27,27 @@
           });
 
           $(".add-task-modal").click(function(e){
-               document.getElementById("sprintIdTextField").value = $(this).attr('href');
+               document.getElementById("sprint-id-text-field").value = $(this).attr('href');
           });
+
+          $(".new-task-submit").click(function(e){
+               e.preventDefault();
+
+               var sprintId = $("input[name=sprintId]").val();
+               var assignedTo = $("select[name=assignedTo]").val();
+               var title = $("input[name=title]").val();
+               var description = $("textarea[name=description]").val();
+
+               $.ajax({
+               type:'POST',
+               url:'/tasks/create',
+               data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
+               success:function(data){
+                    alert(data.message);
+               }
+               });
+
+          });
+
 
      </script>

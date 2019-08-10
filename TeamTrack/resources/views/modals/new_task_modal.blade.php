@@ -13,11 +13,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         {{Form::label('sprintId', 'Sprint Id')}}
-                        {{Form::text('sprintId', 9, ['class' => 'form-control', 'id'=>'sprintIdTextField','placeholder' => 'Sprint Id'])}}
+                        {{Form::text('sprintId', 9, ['class' => 'form-control', 'id'=>'sprint-id-text-field','placeholder' => 'Sprint Id'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('assignedTo', 'Assign Task to')}}
-                        {{Form::select('assignedTo', [], 12, ['class' => 'form-control', "placeholder" => "Pick member"])}}
+                        {{Form::select('assignedTo', ['12'=>'12'], null, ['class' => 'form-control', "placeholder" => "Pick member"])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('title', 'Task Name')}}
@@ -25,10 +25,10 @@
                     </div>
                     <div class="form-group">
                         {{Form::label('description', 'Task Description')}}
-                        {{Form::textarea('description', 'Default Descrption', ['class' => 'form-control', 'placeholder' => 'Task Description'])}}
+                        {{Form::textarea('description', 'Default Description', ['class' => 'form-control', 'placeholder' => 'Task Description'])}}
                     </div>
                 <div class="modal-footer">
-                    {{Form::submit('Add Task', ['class'=>'btn btn-primary'])}}
+                    {{Form::submit('Add Task', ['class'=>'btn btn-primary new-task-submit'])}}
                 </div>
                 
             </div>

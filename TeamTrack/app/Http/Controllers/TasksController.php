@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use DB;
 use App\Task;
 use App\Team;
+use Validator;
 
 class TasksController extends Controller
 {
@@ -51,25 +52,31 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        
 
-        $this->validate($request,[
+        $validator = Validator::make($request->all(), [
             'title'=>'required',
-            'description'=> 'required',
+            'description'=>'required',
             'sprintId'=>'required',
-            'assignedTo'=>'required'
+            'assignedTo'=>'required',
         ]);
 
-        //return 'fin';
 
-        //Create Task 
-        $title = $request->input('title');
-        $description = $request->input('description');
-        $sprintId = $request->input('sprintId');
-        $assignedTo = $request->input('assignedTo');
-        Task::createTask($sprintId, $assignedTo, Auth::id(), $title, $description); //TODO : change input
+        if ($validator->passes()) {
 
-        return redirect('/teams/'.Auth::user()->getCurrentTeamId());
+            //Create Task 
+            $title = $request->title;
+            $description = $request->description;
+            $sprintId = $request->sprintId;
+            $assignedTo = $request->assignedTo;
+           Task::createTask($sprintId, $assignedTo, Auth::id(), $title, $description); //TODO : change input
+
+            return response()->json(['message'=>'done']);
+        }
+        else if($validator->fails()){
+            return response()->json(['message'=>$validator->errors()->all()]);
+        }
+
+        //return redirect('/teams/'.Auth::user()->getCurrentTeamId());
     }
 
     /**
