@@ -63,6 +63,7 @@
         </div>
     </div>
 
-    @include('modals.new_task_modal')
+   
+    
 
 @endsection
