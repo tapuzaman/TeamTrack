@@ -25,12 +25,12 @@
                      <!-- Sprint -->
                      <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
 
-                     <a href="/tasks/create/{{$sprint->id}}">
+                     <!-- <a href="/tasks/create/{{$sprint->id}}">
                         <button class="btn btn-primary">Add Task</button>
-                     </a>
+                     </a> -->
 
                      <a href="{{$sprint->id}}"  class="add-task-modal"  data-toggle="modal" data-target="#newTaskModal">
-                        <button class="btn btn-primary">Add task Modal</button>
+                        <button class="btn btn-primary">Add task</button>
                      </a>
 
                      <hr>

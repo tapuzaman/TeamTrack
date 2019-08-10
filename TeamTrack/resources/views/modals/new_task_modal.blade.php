@@ -12,8 +12,8 @@
 
                 <div class="modal-body">
                     <div class="form-group">
-                        {{Form::label('sprintId', 'Sprint Id')}}
-                        {{Form::text('sprintId', 9, ['class' => 'form-control', 'id'=>'sprint-id-text-field','placeholder' => 'Sprint Id'])}}
+                        {{Form::label('sprintId', 'Sprint Id',[ 'hidden'])}}
+                        {{Form::text('sprintId', 9, ['class' => 'form-control hidden', 'id'=>'sprint-id-text-field','placeholder' => 'Sprint Id', 'hidden'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('assignedTo', 'Assign Task to')}}
