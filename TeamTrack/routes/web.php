@@ -31,11 +31,14 @@ Route::get('/contact', 'PagesController@contact');
 Route::get('/about', 'PagesController@about');
 Route::post('/ajaxRequest', function () {
     //return response()->json(array('msg'=>'yoyoyo'),200);
-    return response()->json(['success'=>'Got Simple Ajax Request. baby']);
+    return response()->json(['success'=>'Got Simple Ajax Request.']);
 });
 
 // Task Routes
 Route::resource('tasks', 'TasksController');
+Route::get('tasks/create/{sprintId}','TasksController@create');
+Route::post('tasks','TasksController@store');
+Route::post('tasks/create','TasksController@store');
 
 // Team Routes
 //Route::get('teams','TeamsController@index');

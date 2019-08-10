@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use DB;
 use App\Task;
+use App\Team;
 
 class TasksController extends Controller
 {
@@ -27,10 +28,20 @@ class TasksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($sprintId)
     {
+        $sprintId = 9;
+        $members = Team::find(Auth::user()->getCurrentTeamId())->members;
+        $membersArray;
+
+        foreach($members as $member)
+        {
+            $membersArray[$member->id] = $member->name;
+        }
+
         //create the task form
-        return view('tasks.create');
+        return view('tasks.create')->with('sprintId', $sprintId)
+                                   ->with('members', $membersArray);
     }
 
     /**
@@ -41,18 +52,23 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
+        
+
         $this->validate($request,[
             'title'=>'required',
-            'description'=> 'required'
+            'description'=> 'required',
+            'sprintId'=>'required',
+            'assignedTo'=>'required'
         ]);
+
+        //return 'fin';
 
         //Create Task 
         $title = $request->input('title');
         $description = $request->input('description');
-        Task::createTask(1, 11, Auth::id(), $title, $description); //TODO : change inputs
-
-
-        // return redirect('/tasks');
+        $sprintId = $request->input('sprintId');
+        $assignedTo = $request->input('assignedTo');
+        Task::createTask($sprintId, $assignedTo, Auth::id(), $title, $description); //TODO : change input
     }
 
     /**

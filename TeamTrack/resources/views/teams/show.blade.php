@@ -21,11 +21,13 @@
             <!-- Add Exception for new user without team -->
             @foreach($team->backlog->sprints as $sprint)
                 <div class="well card m-3 p-3" id="sprint {{$sprint->sprint_no}}">
-                     <h3>Sprint {{$sprint->sprint_no}}</h3>
+                    <!-- Sprint -->
+                     <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
                      <hr>
                      Tasks ({{count($sprint->tasks)}}) :
                         @foreach($sprint->tasks as $task)
                             <div class="card m-1 p-3">
+                                <!-- Task -->
                                 <h5> {{$task->title}} </h5>
                                     {{$task->description}}
                                 <br>
@@ -40,6 +42,12 @@
                                     </small>
                             </div>
                         @endforeach
+                        <div>
+                            <a href="">
+                                <button>Add Task</button>
+                            </a> 
+                        </div>
+                        
                 </div>
             @endforeach 
             

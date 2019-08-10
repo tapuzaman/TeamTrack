@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+
+
 @section('content')
 
     <div class="page-header row no-gutters py-0">
@@ -10,6 +12,14 @@
 
     <div class="container">
         {!! Form::open(['action' => 'TasksController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+            <div class="form-group">
+                {{Form::label('sprintId', 'Sprint Id')}}
+                {{Form::text('sprintId', $sprintId, ['class' => 'form-control', 'placeholder' => 'Sprint Id'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('assignedTo', 'Assigned to')}}
+                {{Form::select('assignedTo', array($members), null, ['class' => 'form-control', "placeholder" => "Pick assigned to..."])}}
+            </div>
             <div class="form-group">
                 {{Form::label('title', 'Task Name')}}
                 {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Task Name'])}}
