@@ -17,7 +17,7 @@
                }
           });
 
-          $(".nav-link").click(function(e){
+          $(".sidebar-link").click(function(e){
                e.preventDefault();
 
                // Load the content from the link's href attribute
