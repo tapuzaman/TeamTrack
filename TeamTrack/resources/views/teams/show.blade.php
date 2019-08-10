@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
     <div id="container">
 
         <h1 id="pageTitle">{{$team->name}} Dashboard</h1>
@@ -27,10 +29,12 @@
 
             <a class="new-sprint-submit">
                 <button class="btn btn-primary">Add Sprint</button>
-            </a>
+            </a> 
             <br><br>
 
             <div class="sprint-view">
+
+            
 
                 {{count($team->backlog->sprints)}} Sprints
                 <hr>
@@ -47,7 +51,7 @@
                             <button class="btn btn-primary">Add Task</button>
                         </a> -->
 
-                        <a href="{{$sprint->id}}"  class="add-task-modal"  data-toggle="modal" data-target="#newTaskModal">
+                        <a href="{{$sprint->id}}"  class="add-task-modal"  id="add-task-modal" data-toggle="modal" data-target="#newTaskModal">
                             <button class="btn btn-primary">Add Task</button>
                         </a>
 
@@ -73,7 +77,7 @@
                                         </small>
                                 </div>
                             @endforeach
-                            </div>
+                        </div>
                             
                     </div>
                 @endforeach 
@@ -81,7 +85,11 @@
         </div>
     </div>
 
-   
+    <style type="text/javascript">
+        
+    </style>
+
+    @include('modals.new_task_modal')
     
 
 @endsection

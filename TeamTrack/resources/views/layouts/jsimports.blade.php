@@ -31,7 +31,13 @@
 
 
           $(".add-task-modal").click(function(e){
+               console.log("hit change sprintId func");
                document.getElementById("sprint-id-text-field").value = $(this).attr('href');
+          });
+
+          $(".content").on("click",function(e){
+               console.log(e);
+              // document.getElementById("sprint-id-text-field").value = $(this).attr('href');
           });
 
 
@@ -68,7 +74,8 @@
                success:function(data){
                     console.log(window.location.pathname);
                     console.log(data.message);
-                    $('.sprint-view').load( window.location.pathname.concat(' .sprint-view') );
+                    location.reload();
+                    //$('.sprint-view').load( window.location.pathname.concat(' .sprint-view') );
                } 
                });
           });

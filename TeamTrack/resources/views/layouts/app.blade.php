@@ -46,12 +46,15 @@
       </div>
     </div>
     
-    @include('inc.teammodal')
-    @include('modals.new_task_modal')
+
     
-    
-    @include('layouts.jsimports')
+   
     
 
   </body>
+
+  @include('layouts.jsimports')
+  
+  @yield('scripts')
+
 </html>
