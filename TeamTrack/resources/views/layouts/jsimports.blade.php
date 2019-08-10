@@ -43,7 +43,8 @@
                url:'/tasks/create',
                data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
                success:function(data){
-                    alert(data.message);
+                    //alert(data.message);
+                    $('#newTaskModal').modal('hide');
                }
                });
 
