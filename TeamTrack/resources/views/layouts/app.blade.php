@@ -49,6 +49,7 @@
     @include('inc.teammodal')
     @include('modals.new_task_modal')
     
+    
     @include('layouts.jsimports')
     
 

@@ -17,6 +17,8 @@
                }
           });
 
+
+
           $(".sidebar-link").click(function(e){
                e.preventDefault();
 
@@ -26,9 +28,13 @@
                window.history.pushState("object or string", "Title", $(this).attr('href') );
           });
 
+
+
           $(".add-task-modal").click(function(e){
                document.getElementById("sprint-id-text-field").value = $(this).attr('href');
           });
+
+
 
           $(".new-task-submit").click(function(e){
                e.preventDefault();
@@ -47,8 +53,8 @@
                    
                } 
                });
-
           });
+
 
 
           $(".new-sprint-submit").click(function(e){
@@ -65,7 +71,24 @@
                     $('.sprint-view').load( window.location.pathname.concat(' .sprint-view') );
                } 
                });
+          });
 
+
+
+          $(".new-member-submit").click(function(e){
+               e.preventDefault();
+
+               console.log("new member called");
+
+               $.ajax({
+               type:'POST',
+               url:'/sprints',
+               success:function(data){
+                    console.log(window.location.pathname);
+                    console.log(data.message);
+                    $('.sprint-view').load( window.location.pathname.concat(' .sprint-view') );
+               } 
+               });
           });
 
 
