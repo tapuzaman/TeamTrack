@@ -23,6 +23,9 @@
                 <div class="well card m-3 p-3" id="sprint {{$sprint->sprint_no}}">
                     <!-- Sprint -->
                      <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
+                     <a href="/tasks/create/{{$sprint->id}}">
+                        <button class="btn btn-primary">Add Task</button>
+                     </a>
                      <hr>
                      Tasks ({{count($sprint->tasks)}}) :
                         @foreach($sprint->tasks as $task)
@@ -30,7 +33,10 @@
                                 <!-- Task -->
                                 <h5> {{$task->title}} </h5>
                                     {{$task->description}}
-                                <br>
+                                <hr>
+                                    Assigned to : {{App\User::find($task->user_id)->name}} <br>
+                                    Created by : {{App\User::find($task->created_by)->name}}
+                                <hr>
                                     <i>Comments : </i>
                                     <small>
                                         @foreach($task->comments as $comment)
@@ -42,11 +48,7 @@
                                     </small>
                             </div>
                         @endforeach
-                        <div>
-                            <a href="">
-                                <button>Add Task</button>
-                            </a> 
-                        </div>
+                             
                         
                 </div>
             @endforeach 

@@ -30,7 +30,6 @@ class TasksController extends Controller
      */
     public function create($sprintId)
     {
-        $sprintId = 9;
         $members = Team::find(Auth::user()->getCurrentTeamId())->members;
         $membersArray;
 
@@ -69,6 +68,8 @@ class TasksController extends Controller
         $sprintId = $request->input('sprintId');
         $assignedTo = $request->input('assignedTo');
         Task::createTask($sprintId, $assignedTo, Auth::id(), $title, $description); //TODO : change input
+
+        return redirect('/teams/'.Auth::user()->getCurrentTeamId());
     }
 
     /**
