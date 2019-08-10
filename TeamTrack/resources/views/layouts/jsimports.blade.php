@@ -21,7 +21,8 @@
                e.preventDefault();
 
                // Load the content from the link's href attribute
-               $('.py-4').load($(this).attr('href'));
+               $('.py-4').load( $(this).attr('href').concat(' .py-4') );
+               //$("#pageTitle").load( $(this).attr('href')." #pageTitle");
           });
 
      </script>

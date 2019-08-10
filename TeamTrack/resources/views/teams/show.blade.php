@@ -4,7 +4,7 @@
 
     <div id="container">
 
-        <h1>{{$team->name}} Dashboard</h1>
+        <h1 id="pageTitle">{{$team->name}} Dashboard</h1>
         <div>
             <i>Team leader:</i>
             <br>

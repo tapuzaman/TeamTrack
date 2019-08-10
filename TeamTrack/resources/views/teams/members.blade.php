@@ -1,7 +1,10 @@
+@extends('layouts.app')
+
+@section('content')
 
     <div id="container">
 
-        <h1>{{$team->name}} Members</h1>
+        <h1 id="pageTitle">{{$team->name}} Members</h1>
         <div>
             <i>Team leader:</i>
             <br>
@@ -85,3 +88,5 @@
         </div>
 
     </div>
+
+@endsection

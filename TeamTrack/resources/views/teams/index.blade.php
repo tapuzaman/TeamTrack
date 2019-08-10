@@ -1,4 +1,6 @@
-@include('layouts.cssimports')
+@extends('layouts.app')
+
+@section('content')
 
     <div class="page-header row no-gutters py-0">
         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
@@ -28,4 +30,4 @@
     <p> No Teams Found</p>
     @endif
 
-@include('layouts.jsimports')
+@endsection
