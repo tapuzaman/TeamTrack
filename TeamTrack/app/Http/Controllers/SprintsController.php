@@ -36,7 +36,7 @@ class SprintsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         $backlog_id = Team::find(Auth::user()->getCurrentTeamId())->backlog->id;
         $x = count( Team::find(Auth::user()->getCurrentTeamId())->backlog->sprints ) + 1 ;

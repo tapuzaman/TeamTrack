@@ -18,59 +18,61 @@
         </div>
 
 
-
         <div>
-
-            {{count($team->backlog->sprints)}} Sprints
-            <hr>
 
             <a class="new-sprint-submit">
                 <button class="btn btn-primary">Add Sprint</button>
             </a>
+            <br><br>
 
-            <!-- Add Exception for new user without team -->
-            @foreach($team->backlog->sprints as $sprint)
-                <div class="well card m-3 p-3 ">
-                    <div class="sprint{{$sprint->id}}">
+            <div class="sprint-view">
 
-                     <!-- Sprint -->
-                     <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
+                {{count($team->backlog->sprints)}} Sprints
+                <hr>
 
-                     <!-- <a href="/tasks/create/{{$sprint->id}}">
-                        <button class="btn btn-primary">Add Task</button>
-                     </a> -->
+                <!-- Add Exception for new user without team -->
+                @foreach($team->backlog->sprints as $sprint)
+                    <div class="well card m-3 p-3 ">
+                        <div class="sprint{{$sprint->id}}">
 
-                     <a href="{{$sprint->id}}"  class="add-task-modal"  data-toggle="modal" data-target="#newTaskModal">
-                        <button class="btn btn-primary">Add Task</button>
-                     </a>
+                        <!-- Sprint -->
+                        <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
 
-                     <hr>
-                     Tasks ({{count($sprint->tasks)}}) :
-                        @foreach($sprint->tasks as $task)
-                            <div class="card m-1 p-3">
-                                <!-- Task -->
-                                <h5> {{$task->title}} </h5>
-                                    {{$task->description}}
-                                <hr>
-                                    Assigned to : {{App\User::find($task->user_id)->name}} <br>
-                                    Created by : {{App\User::find($task->created_by)->name}}
-                                <hr>
-                                    <i>Comments : </i>
-                                    <small>
-                                        @foreach($task->comments as $comment)
-                                            <div>
-                                                <b>{{App\User::find($comment->commentor_id)->name}}</b> <br>
-                                                {{$comment->content}}
-                                            </div>
-                                        @endforeach
-                                    </small>
+                        <!-- <a href="/tasks/create/{{$sprint->id}}">
+                            <button class="btn btn-primary">Add Task</button>
+                        </a> -->
+
+                        <a href="{{$sprint->id}}"  class="add-task-modal"  data-toggle="modal" data-target="#newTaskModal">
+                            <button class="btn btn-primary">Add Task</button>
+                        </a>
+
+                        <hr>
+                        Tasks ({{count($sprint->tasks)}}) :
+                            @foreach($sprint->tasks as $task)
+                                <div class="card m-1 p-3">
+                                    <!-- Task -->
+                                    <h5> {{$task->title}} </h5>
+                                        {{$task->description}}
+                                    <hr>
+                                        Assigned to : {{App\User::find($task->user_id)->name}} <br>
+                                        Created by : {{App\User::find($task->created_by)->name}}
+                                    <hr>
+                                        <i>Comments : </i>
+                                        <small>
+                                            @foreach($task->comments as $comment)
+                                                <div>
+                                                    <b>{{App\User::find($comment->commentor_id)->name}}</b> <br>
+                                                    {{$comment->content}}
+                                                </div>
+                                            @endforeach
+                                        </small>
+                                </div>
+                            @endforeach
                             </div>
-                        @endforeach
-                        </div>
-                        
-                </div>
-            @endforeach 
-            
+                            
+                    </div>
+                @endforeach 
+            </div>
         </div>
     </div>
 

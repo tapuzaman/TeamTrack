@@ -54,13 +54,15 @@
           $(".new-sprint-submit").click(function(e){
                e.preventDefault();
 
+               console.log("new sprint called");
+
                $.ajax({
                type:'POST',
                url:'/sprints',
-               data:{},
                success:function(data){
-                    alert(window.location.pathname);
-                   $('.content').load( window.location.pathname.concat(' .content') );
+                    console.log(window.location.pathname);
+                    console.log(data.message);
+                    $('.sprint-view').load( window.location.pathname.concat(' .sprint-view') );
                } 
                });
 
