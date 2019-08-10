@@ -24,8 +24,8 @@
 
                // Load the content from the link's href attribute
                $('.content').load( $(this).attr('href').concat(' .content') );
-               //Change url in browser addressbar
-               window.history.pushState("object or string", "Title", $(this).attr('href') );
+               //Change window location
+               window.location.replace($(this).attr('href'));
           });
 
 
@@ -88,7 +88,7 @@
                success:function(data){
                     console.log(window.location.pathname);
                     console.log(data.message);
-                    $('.sprint-view').load( window.location.pathname.concat(' .sprint-view') );
+                    $('.team-member').load( window.location.pathname.concat(' .team-member') );
                } 
                });
           });
