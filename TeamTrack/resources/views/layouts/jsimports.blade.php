@@ -32,22 +32,22 @@
           }
 
 
-          function setSidebar()
-          {
-               console.log('setSidebar');
-               $(".sidebar-link").click(function(e){
-                    e.preventDefault();
-                    // Load the content from the link's href attribute
-                    $('.content').load( $(this).attr('href').concat(' .content'), function(responseText, textStatus, XMLHttpRequest){
-                              newSprint();
-                              //newMember();
-                         });
+          // function setSidebar()
+          // {
+          //      console.log('setSidebar');
+          //      $(".sidebar-link").click(function(e){
+          //           e.preventDefault();
+          //           // Load the content from the link's href attribute
+          //           $('.content').load( $(this).attr('href').concat(' .content'), function(responseText, textStatus, XMLHttpRequest){
+          //                     newSprint();
+          //                     //newMember();
+          //                });
 
-                    //Change window location
-                    //window.location.replace($(this).attr('href'));
-                    window.history.pushState('', 'Title', $(this).attr('href'));
-               });
-          }
+          //           //Change window location
+          //           //window.location.replace($(this).attr('href'));
+          //           window.history.pushState('', 'Title', $(this).attr('href'));
+          //      });
+          // }
           
 
 
@@ -96,11 +96,11 @@
                     url:'/tasks/'.concat(taskId),
                     data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
                     success:function(data){
-                         $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)), function(responseText, textStatus, XMLHttpRequest){
+                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
                               setSprintId();
                               setEditTaskModalInfo();
                               deleteTask();
-                          });
+                         });
                          console.log(data.message);
                     } 
                     });
@@ -124,11 +124,11 @@
                     url:'/tasks/create',
                     data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
                     success:function(data){
-                         $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)), function(responseText, textStatus, XMLHttpRequest){
+                          $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
                               setSprintId();
                               setEditTaskModalInfo();
                               deleteTask();
-                          });
+                         });
                     } 
                     });
                });
@@ -147,11 +147,11 @@
                     type:'DELETE',
                     url: '/tasks/'.concat( $(this).attr('href') ),
                     success:function(data){
-                         $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)), function(responseText, textStatus, XMLHttpRequest){
+                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
                               setSprintId();
                               setEditTaskModalInfo();
                               deleteTask();
-                          });
+                         });
                          console.log(data.message);  
                          console.log(window.location.pathname);
                     } 
