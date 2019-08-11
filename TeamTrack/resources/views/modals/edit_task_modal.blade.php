@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group">
                         {{Form::label('title', 'Task Title')}}
-                        {{Form::text('title', 'Default Title' , ['class' => 'form-control', 'id'=>'title-text-field','placeholder' => 'Task Name'])}}
+                        {{Form::text('title', '' , ['class' => 'form-control', 'id'=>'title-text-field','placeholder' => 'Task Name'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('assignedTo', 'Assign Task to')}}
@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         {{Form::label('description', 'Task Description')}}
-                        {{Form::textarea('description', 'Default Description', ['class' => 'form-control', 'id'=>'description-text-field', 'placeholder' => 'Task Description'])}}
+                        {{Form::textarea('description', '', ['class' => 'form-control', 'id'=>'description-text-field', 'placeholder' => 'Task Description'])}}
                     </div>
                 </div>
                 <div class="modal-footer">

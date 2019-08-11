@@ -68,10 +68,11 @@
 
                     taskId = $(this).attr('task')
                     console.log('setEditTaskModalInfo. task: '.concat(taskId));
-
-                    console.log("hit edittask modal");
+                    title = document.getElementById("task".concat(taskId).concat("Title")).innerHTML;
+                    description = document.getElementById("task".concat(taskId).concat("Description")).innerHTML;
                     document.getElementById("sprint-id-text-field2").value = $(this).attr('sprint');
-                    console.log
+                    document.getElementById("title-text-field").value = title;
+                    document.getElementById("description-text-field").value = description;
                });
           }
           
