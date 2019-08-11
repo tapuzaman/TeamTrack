@@ -27,6 +27,7 @@
                newTask();
                newMember();
                deleteTask();
+               setEditTaskModalInfo();
           }
 
 
@@ -58,6 +59,21 @@
                     document.getElementById("sprint-id-text-field").value = $(this).attr('href');
                });
           }
+
+
+
+          function setEditTaskModalInfo()
+          {
+               $(".edit-task-modal").click(function(e){
+
+                    taskId = $(this).attr('task')
+                    console.log('setEditTaskModalInfo. task: '.concat(taskId));
+
+                    console.log("hit edittask modal");
+                    document.getElementById("sprint-id-text-field2").value = $(this).attr('sprint');
+                    console.log
+               });
+          }
           
 
 
@@ -79,6 +95,7 @@
                     success:function(data){
                          $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)), function(responseText, textStatus, XMLHttpRequest){
                               setSprintId();
+                              setEditTaskModalInfo();
                               deleteTask();
                           });
                     } 
@@ -101,6 +118,7 @@
                     success:function(data){
                          $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)), function(responseText, textStatus, XMLHttpRequest){
                               setSprintId();
+                              setEditTaskModalInfo();
                               deleteTask();
                           });
                          console.log(data.message);  
@@ -129,6 +147,7 @@
                          //location.reload();
                          $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
                               setSprintId();
+                              setEditTaskModalInfo();
                               deleteTask();
                          });
 

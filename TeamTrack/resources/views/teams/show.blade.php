@@ -60,11 +60,11 @@
                             @foreach($sprint->tasks as $task)
                                 <div class="card m-1 p-3">
                                     <!-- Task -->
-                                    <h5> {{$task->title}} </h5>
-                                        {{$task->description}} 
+                                    <h5 id="task{{$task->id}}Title"> {{$task->title}} </h5>
+                                     <h6 id="task{{$task->id}}Description"> {{$task->description}} </h6>
                                     <br>
                                     <div>
-                                        <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="edit-task" data-toggle="modal" data-target="#editTaskModal">
+                                        <a task="{{$task->id}}" sprint="{{$sprint->id}}" class="edit-task-modal" data-toggle="modal" data-target="#editTaskModal">
                                             <button class="btn btn-primary">Edit</button>
                                         </a>
 
@@ -100,7 +100,8 @@
         
     </style>
 
-    @include('modals.edit_task_modal')
+    
     @include('modals.new_task_modal')
+    @include('modals.edit_task_modal')
 
 @endsection

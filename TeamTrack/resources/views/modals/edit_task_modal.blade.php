@@ -1,6 +1,6 @@
 <!-- Edit Task Modal -->
 <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    {!! Form::open(['action' => 'TasksController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    {!! Form::open(['action' =>  ['TasksController@update', $task->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -13,11 +13,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         {{Form::label('sprintId', 'Sprint Id',[ 'hidden'])}}
-                        {{Form::text('sprintId', null, ['class' => 'form-control hidden', 'id'=>'sprint-id-text-field','placeholder' => 'Sprint Id'])}}
+                        {{Form::text('sprintId', null, [ 'class' => 'form-control hidden', 'id'=>'sprint-id-text-field2','placeholder' => 'Sprint Id'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('title', 'Task Title')}}
-                        {{Form::text('title', 'Default Title' , ['class' => 'form-control', 'placeholder' => 'Task Name'])}}
+                        {{Form::text('title', 'Default Title' , ['class' => 'form-control', 'id'=>'title-text-field','placeholder' => 'Task Name'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('assignedTo', 'Assign Task to')}}
@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         {{Form::label('description', 'Task Description')}}
-                        {{Form::textarea('description', 'Default Description', ['class' => 'form-control', 'placeholder' => 'Task Description'])}}
+                        {{Form::textarea('description', 'Default Description', ['class' => 'form-control', 'id'=>'description-text-field', 'placeholder' => 'Task Description'])}}
                     </div>
                 </div>
                 <div class="modal-footer">
