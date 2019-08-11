@@ -3,15 +3,15 @@
     <div class="input-group input-group-seamless ml-3">
       <div class="input-group-prepend">
         <div class="input-group-text">
-          <i class="fas fa-search"></i>
+          <!-- <i class="fas fa-search"></i> -->
         </div>
       </div>
-      <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>
+      <input class="navbar-search form-control" type="text" placeholder="." aria-label="Search"> </div>
   </form>
 
-  <div class="btn "> <a href="/empty_data">Empty Data</a> </div>
+  <!-- <div class="btn "> <a href="/empty_data">Empty Data</a> </div>
   <div class="btn "> <a href="/import_data">Import Data</a> </div>
-  
+   -->
   <ul class="navbar-nav border-left flex-row ">
 
     
