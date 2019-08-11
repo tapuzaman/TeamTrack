@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="{{ asset('template/styles/shards-dashboards.1.1.0.min.css')  }}">
     <link rel="stylesheet" href="{{ asset('template/styles/extras.1.1.0.min.css') }}">
+
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-
-    
