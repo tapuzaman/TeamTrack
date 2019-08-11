@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Button trigger modal newTaskModal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newTaskModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">
     Launch demo modal
     </button>
 
@@ -12,9 +12,10 @@
     </button>
 
 <!-- Add Team Modal -->
-<div class="modal fade" id="newTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    {!! Form::open(['action' => 'TasksController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    
         <div class="modal-dialog modal-dialog-centered" role="document">
+        
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Add Task</h5>
@@ -24,6 +25,7 @@
                 </div>
 
                 <div class="modal-body">
+                {!! Form::open(['action' => 'TasksController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                     <div class="form-group">
                         {{Form::label('sprintId', 'Sprint Id')}}
                         {{Form::text('sprintId', 9, ['class' => 'form-control', 'placeholder' => 'Sprint Id'])}}
@@ -40,17 +42,19 @@
                         {{Form::label('description', 'Task Description')}}
                         {{Form::textarea('description', 'Default Descrption', ['class' => 'form-control', 'placeholder' => 'Task Description'])}}
                     </div>
+                </div>
                 <div class="modal-footer">
                     {{Form::submit('Add Task', ['class'=>'btn btn-primary'])}}
+                {!! Form::close() !!}
                 </div>
-                
+               
             </div>
         </div>
-    {!! Form::close() !!}
+    
 </div>
 
     <!-- Modal 1-->
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="modal11" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
         <div class="modal-header">
@@ -71,7 +75,7 @@
     </div>
 
     <!-- Modal 2-->
-    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="modal2" tabindex="-2" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
         <div class="modal-header">

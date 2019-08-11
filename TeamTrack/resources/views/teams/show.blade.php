@@ -63,9 +63,16 @@
                                     <h5> {{$task->title}} </h5>
                                         {{$task->description}} 
                                     <br>
-                                    <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="delete-task">
-                                        <button class="btn btn-danger">Delete</button>
-                                    </a>
+                                    <div>
+                                        <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="edit-task" data-toggle="modal" data-target="#editTaskModal">
+                                            <button class="btn btn-primary">Edit</button>
+                                        </a>
+
+                                        <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="delete-task">
+                                            <button class="btn btn-danger">Delete</button>
+                                        </a>
+                                    </div>
+                                   
                                     <hr>
                                         Assigned to : {{App\User::find($task->user_id)->name}} <br>
                                         Created by : {{App\User::find($task->created_by)->name}}
@@ -93,7 +100,7 @@
         
     </style>
 
+    @include('modals.edit_task_modal')
     @include('modals.new_task_modal')
-    
 
 @endsection
