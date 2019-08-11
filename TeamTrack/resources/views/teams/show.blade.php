@@ -74,6 +74,7 @@
                                     </div>
                                    
                                     <hr>
+                                        <div id="task{{$task->id}}AssignedTo" hidden>{{App\User::find($task->user_id)->id}}</div>
                                         Assigned to : {{App\User::find($task->user_id)->name}} <br>
                                         Created by : {{App\User::find($task->created_by)->name}}
                                     <hr>

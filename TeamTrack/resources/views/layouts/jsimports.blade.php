@@ -69,10 +69,13 @@
 
                     taskId = $(this).attr('task')
                     console.log('setEditTaskModalInfo. task: '.concat(taskId));
+                    assignedTo = document.getElementById("task".concat(taskId).concat("AssignedTo")).innerHTML;
+                    console.log(assignedTo);
                     title = document.getElementById("task".concat(taskId).concat("Title")).innerHTML;
                     description = document.getElementById("task".concat(taskId).concat("Description")).innerHTML;
                     document.getElementById("sprint-id-text-field2").value = $(this).attr('sprint');
                     document.getElementById("task-id-text-field").value = taskId;
+                    document.getElementById("assigned-to-field").value = assignedTo;
                     document.getElementById("title-text-field").value = title;
                     document.getElementById("description-text-field").value = description;
                });

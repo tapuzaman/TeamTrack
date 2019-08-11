@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         {{Form::label('assignedTo2', 'Assign Task to')}}
-                        {{Form::select('assignedTo2', array($members), null, ['class' => 'form-control', "placeholder" => "Pick member"])}}
+                        {{Form::select('assignedTo2', array($members), null, ['class' => 'form-control', 'id'=>'assigned-to-field', "placeholder" => "Pick member"])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('description2', 'Task Description')}}
