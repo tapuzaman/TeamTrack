@@ -145,6 +145,6 @@ class TasksController extends Controller
     {
         $task = Task::find($id);
         $task->delete();
-        return redirect('/tasks')->with('success','Book deleted');
+        return response()->json(['message'=>'done']);
     }
 }

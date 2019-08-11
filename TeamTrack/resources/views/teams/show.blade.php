@@ -51,7 +51,7 @@
                             <button class="btn btn-primary">Add Task</button>
                         </a>
 
-                        <a href="{{$sprint->id}}"  class="add-task-modal"  id="add-task-modal" data-toggle="modal" data-target="#newTaskModal">
+                        <a href="{{$sprint->id}}"  class="add-task-modal" data-toggle="modal" data-target="#newTaskModal">
                             <button class="btn btn-primary">Add Task</button>
                         </a>
 
@@ -61,12 +61,16 @@
                                 <div class="card m-1 p-3">
                                     <!-- Task -->
                                     <h5> {{$task->title}} </h5>
-                                        {{$task->description}}
+                                        {{$task->description}} 
+                                    <br>
+                                    <a href="{{$task->id}}"  class="delete-task">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </a>
                                     <hr>
                                         Assigned to : {{App\User::find($task->user_id)->name}} <br>
                                         Created by : {{App\User::find($task->created_by)->name}}
                                     <hr>
-                                        <i>Comments : </i>
+                                        <i>Comments </i>
                                         <small>
                                             @foreach($task->comments as $comment)
                                                 <div>

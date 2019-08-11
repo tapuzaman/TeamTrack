@@ -26,6 +26,7 @@
                setSprintId();
                newTask();
                newMember();
+               deleteTask();
           }
 
 
@@ -76,8 +77,34 @@
                     url:'/tasks/create',
                     data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
                     success:function(data){
-                    $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)) );
-                    
+                         $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)), function(responseText, textStatus, XMLHttpRequest){
+                              setSprintId();
+                              deleteTask();
+                          }
+                         );
+                    } 
+                    });
+               });
+          }
+
+          function deleteTask()
+          {
+               console.log('deleteTask');
+               $(".delete-task").click(function(e){
+                    e.preventDefault();
+                    console.log("Delete task : ".concat($(this).attr('href')));
+                    console.log(window.location.pathname);
+
+                    $.ajax({
+                    type:'DELETE',
+                    url: '/tasks/'.concat( $(this).attr('href') ),
+                    success:function(data){
+                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
+                              setSprintId();
+                              deleteTask();
+                          });
+                         console.log(data.message);  
+                         console.log(window.location.pathname);
                     } 
                     });
                });
@@ -102,6 +129,7 @@
                          //location.reload();
                          $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
                               setSprintId();
+                              deleteTask();
                          });
 
                     } 
