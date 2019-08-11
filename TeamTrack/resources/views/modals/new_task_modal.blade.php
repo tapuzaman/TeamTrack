@@ -16,12 +16,12 @@
                         {{Form::text('sprintId', null, ['class' => 'form-control hidden', 'id'=>'sprint-id-text-field','placeholder' => 'Sprint Id'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::label('assignedTo', 'Assign Task to')}}
-                        {{Form::select('assignedTo', ['12'=>'12'], null, ['class' => 'form-control', "placeholder" => "Pick member"])}}
+                        {{Form::label('title', 'Task Title')}}
+                        {{Form::text('title', 'Default Title' , ['class' => 'form-control', 'placeholder' => 'Task Name'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::label('title', 'Task Name')}}
-                        {{Form::text('title', 'Default Title', ['class' => 'form-control', 'placeholder' => 'Task Name'])}}
+                        {{Form::label('assignedTo', 'Assign Task to')}}
+                        {{Form::select('assignedTo', array($members), null, ['class' => 'form-control', "placeholder" => "Pick member"])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('description', 'Task Description')}}

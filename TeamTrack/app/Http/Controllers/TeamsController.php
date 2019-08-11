@@ -69,7 +69,16 @@ class TeamsController extends Controller
     {
         $team = Team::find($id);
         Auth::user()->setCurrentTeamId($id);
-        return view('teams.show')->with('team',$team);
+
+        $members = Team::find(Auth::user()->getCurrentTeamId())->members;
+        $membersArray;
+
+        foreach($members as $member)
+        {
+            $membersArray[$member->id] = $member->name;
+        }
+
+        return view('teams.show')->with('team',$team)->with('members', $membersArray);
     }
 
     /**
