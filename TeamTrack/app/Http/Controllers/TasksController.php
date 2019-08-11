@@ -112,25 +112,41 @@ class TasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $taskId)
     {
-        $this->validate($request,[
+
+        $validator = Validator::make($request->all(), [
             'title'=>'required',
-            'description'=> 'required'
+            'description'=>'required',
+            'assignedTo'=>'required',
         ]);
 
-        //update Task 
-        //Task::updateTask()
-        // $task = Task::find($id);
-        // $task->team_id = 1; // Dummy team_id
-        // $task->user_id = 0; // Dummy user_id (assigned by)
-        // $task->created_by = 1; // Dummy cretaed_by
-        // $task->title = $request->input('title');
-        // $task->description = $request->input('description');
-        // $task->sprint_no = 1; //Dummy sprint ID
-        // $task->due_date = now();
-        // $task->is_completed = false;
-        // $task->save();
+
+        if ($validator->passes()) {
+
+            //Create Task 
+            // $title = $request->title;
+            // $description = $request->description;
+            // $sprintId = $request->sprintId;
+            // $assignedTo = $request->assignedTo;
+            
+            //update Task 
+            $task = Task::find($taskId);
+            $task->title = $request->title;
+            $task->description = $request->description;
+            $task->user_id = $request->assignedTo;
+            //$task->due_date = now();
+           // $task->is_completed = false;
+            $task->save();
+
+            return response()->json(['message'=>'updated']);
+        }
+        else if($validator->fails())
+        {
+            return response()->json(['message'=>$validator->errors()->all()]);
+        }
+
+        
 
         return redirect('/tasks');
     }

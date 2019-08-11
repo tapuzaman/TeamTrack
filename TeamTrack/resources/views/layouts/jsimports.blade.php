@@ -25,6 +25,7 @@
                newSprint();
                setSprintId();
                newTask();
+               editTask();
                newMember();
                deleteTask();
                setEditTaskModalInfo();
@@ -71,12 +72,40 @@
                     title = document.getElementById("task".concat(taskId).concat("Title")).innerHTML;
                     description = document.getElementById("task".concat(taskId).concat("Description")).innerHTML;
                     document.getElementById("sprint-id-text-field2").value = $(this).attr('sprint');
+                    document.getElementById("task-id-text-field").value = taskId;
                     document.getElementById("title-text-field").value = title;
                     document.getElementById("description-text-field").value = description;
                });
           }
           
+          function editTask()
+          {
+               
+               $(".edit-task-submit").click(function(e){
+                    e.preventDefault();
+                    console.log('editTask');
 
+                    var sprintId = $("input[name=sprintId2]").val();
+                    var taskId = $("input[name=taskId2]").val();
+                    var assignedTo = $("select[name=assignedTo2]").val();
+                    var title = $("input[name=title2]").val();
+                    var description = $("textarea[name=description2]").val();
+
+                    $.ajax({
+                    type:'PUT',
+                    url:'/tasks/'.concat(taskId),
+                    data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
+                    success:function(data){
+                         $('.sprint'.concat(sprintId)).load( window.location.pathname.concat(' .sprint'.concat(sprintId)), function(responseText, textStatus, XMLHttpRequest){
+                              setSprintId();
+                              setEditTaskModalInfo();
+                              deleteTask();
+                          });
+                         console.log(data.message);
+                    } 
+                    });
+               });
+          }
 
           function newTask()
           {
@@ -85,6 +114,7 @@
                     e.preventDefault();
 
                     var sprintId = $("input[name=sprintId]").val();
+                    var taskId = $("input[name=taskId]").val();
                     var assignedTo = $("select[name=assignedTo]").val();
                     var title = $("input[name=title]").val();
                     var description = $("textarea[name=description]").val();

@@ -12,24 +12,28 @@
 
                 <div class="modal-body">
                     <div class="form-group">
-                        {{Form::label('sprintId', 'Sprint Id',[ 'hidden'])}}
-                        {{Form::text('sprintId', null, [ 'class' => 'form-control hidden', 'id'=>'sprint-id-text-field2','placeholder' => 'Sprint Id'])}}
+                        {{Form::label('sprintId2', 'Sprint Id',[ 'hidden'])}}
+                        {{Form::text('sprintId2', null, [ 'class' => 'form-control hidden', 'id'=>'sprint-id-text-field2','placeholder' => 'Sprint Id'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::label('title', 'Task Title')}}
-                        {{Form::text('title', '' , ['class' => 'form-control', 'id'=>'title-text-field','placeholder' => 'Task Name'])}}
+                        {{Form::label('taskId2', 'Sprint Id',[ 'hidden'])}}
+                        {{Form::text('taskId2', null, [ 'class' => 'form-control hidden', 'id'=>'task-id-text-field','placeholder' => 'Sprint Id'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::label('assignedTo', 'Assign Task to')}}
-                        {{Form::select('assignedTo', array($members), null, ['class' => 'form-control', "placeholder" => "Pick member"])}}
+                        {{Form::label('title2', 'Task Title')}}
+                        {{Form::text('title2', '' , ['class' => 'form-control', 'id'=>'title-text-field','placeholder' => 'Task Name'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::label('description', 'Task Description')}}
-                        {{Form::textarea('description', '', ['class' => 'form-control', 'id'=>'description-text-field', 'placeholder' => 'Task Description'])}}
+                        {{Form::label('assignedTo2', 'Assign Task to')}}
+                        {{Form::select('assignedTo2', array($members), null, ['class' => 'form-control', "placeholder" => "Pick member"])}}
+                    </div>
+                    <div class="form-group">
+                        {{Form::label('description2', 'Task Description')}}
+                        {{Form::textarea('description2', '', ['class' => 'form-control', 'id'=>'description-text-field', 'placeholder' => 'Task Description'])}}
                     </div>
                 </div>
                 <div class="modal-footer">
-                    {{Form::submit('Save', ['class'=>'btn btn-primary new-task-submit', 'data-dismiss'=>'modal'])}}
+                    {{Form::submit('Save', ['class'=>'btn btn-primary edit-task-submit', 'data-dismiss'=>'modal'])}}
                 </div>
                 
             </div>
