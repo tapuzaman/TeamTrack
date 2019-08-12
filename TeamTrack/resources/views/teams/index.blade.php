@@ -2,11 +2,9 @@
 
 @section('content')
 
-    <div class="page-header row no-gutters py-0">
-        <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-            <span class="text-uppercase page-subtitle">ALL TEAMS MASTERVIEW</span>
-        </div>
-    </div>
+    <h1>All Teams Masterview</h1>
+    
+    <hr>
 
     @if(count($teams)>0)
         @foreach($teams as $team)

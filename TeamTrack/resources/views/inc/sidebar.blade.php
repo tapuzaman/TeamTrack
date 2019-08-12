@@ -30,14 +30,13 @@
             <li > Team id : {{ $teamId = Auth::user()->getCurrentTeamId() }} </li>
             <li > Team name : {{ $teamName = Auth::user()->getCurrentTeamName() }} </li>
 
-            <div class="linz">
               <li class="nav-item">
                 <a class="nav-link sidebar-link" href="/teamsmasterindex">
                   <i class="material-icons">view_module</i>
                   <span>Teams masterview</span>
                 </a>
               </li>
-
+  
               <li class="nav-item">
                 <a class="nav-link sidebar-link" href="/teams/{{$teamId}}" id="dashboard">
                   <i class="material-icons">view_module</i>
@@ -51,7 +50,7 @@
                   <span>Members</span>
                 </a>
               </li>
-              </div>
+              
             </ul>
           </div>
         </aside>

@@ -6,6 +6,8 @@
 
         <h1 id="pageTitle">{{$team->name}} Members</h1>
 
+        <hr>
+
         <div class="well card m-3 p-3">
             <div class="team-leader">
                 <h4>Team leader:</h4>
