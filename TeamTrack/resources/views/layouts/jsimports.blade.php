@@ -41,15 +41,7 @@
                     // Load the content from the link's href attribute
                     $('.content').load( $(this).attr('href').concat(' .content'), function(responseText, textStatus, XMLHttpRequest){
                          initializeFunctions();
-                              // newSprint();
-                              // newMember();
-                              // newTask();
-                              // editTask();
-                              // setSprintId();
-                              // setEditTaskModalInfo();
-                              // deleteTask();
                          });
-
                     //Change window location
                     //window.location.replace($(this).attr('href'));
                     window.history.pushState('', 'Title', $(this).attr('href'));
