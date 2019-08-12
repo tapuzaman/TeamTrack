@@ -34,16 +34,20 @@
 
           function setSidebar()
           {
-               console.log('setSidebar');
+               
                $(".sidebar-link").off('click').click(function(e){
+                    console.log('setSidebar called');
                     e.preventDefault();
                     // Load the content from the link's href attribute
                     $('.content').load( $(this).attr('href').concat(' .content'), function(responseText, textStatus, XMLHttpRequest){
-                              newSprint();
-                              newMember();
-                              setSprintId();
-                              setEditTaskModalInfo();
-                              deleteTask();
+                         initializeFunctions();
+                              // newSprint();
+                              // newMember();
+                              // newTask();
+                              // editTask();
+                              // setSprintId();
+                              // setEditTaskModalInfo();
+                              // deleteTask();
                          });
 
                     //Change window location
@@ -59,7 +63,7 @@
           {
                console.log('setSprintId');
                $(".add-task-modal").off('click').click(function(e){
-                    console.log("hit sprintId ");
+                    console.log("setSprintId called");
                     document.getElementById("sprint-id-text-field").value = $(this).attr('href');
                });
           }
@@ -71,9 +75,10 @@
                $(".edit-task-modal").off('click').click(function(e){
 
                     taskId = $(this).attr('task')
-                    console.log('setEditTaskModalInfo. task: '.concat(taskId));
+                    console.log('setEditTaskModalInfo called. task: '.concat(taskId));
+
                     assignedTo = document.getElementById("task".concat(taskId).concat("AssignedTo")).innerHTML;
-                    console.log(assignedTo);
+                    //console.log(assignedTo);
                     title = document.getElementById("task".concat(taskId).concat("Title")).innerHTML;
                     description = document.getElementById("task".concat(taskId).concat("Description")).innerHTML;
                     document.getElementById("sprint-id-text-field2").value = $(this).attr('sprint');
@@ -89,7 +94,7 @@
                
                $(".edit-task-submit").off('click').click(function(e){
                     e.preventDefault();
-                    console.log('editTask');
+                    console.log('editTask called');
 
                     var sprintId = $("input[name=sprintId2]").val();
                     var taskId = $("input[name=taskId2]").val();
