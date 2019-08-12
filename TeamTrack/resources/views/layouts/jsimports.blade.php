@@ -74,24 +74,23 @@
           {
                $(".edit-task-modal").off('click').click(function(e){
 
-                    taskId = $(this).attr('task')
+                    taskId = $(this).attr('taskId');
+                    sprintId = e.target.parentElement.parentElement.querySelector('#taskSprintId').innerHTML;
+                    assignedTo = e.target.parentElement.parentElement.querySelector('#taskAssignedToId').innerHTML;
+                    title = e.target.parentElement.parentElement.querySelector('#taskTitle').innerHTML;
+                    description = e.target.parentElement.parentElement.querySelector('#taskDescription').innerHTML;
                     console.log('setEditTaskModalInfo called. task: '.concat(taskId));
 
-                    assignedTo = document.getElementById("task".concat(taskId).concat("AssignedTo")).innerHTML;
-                    //console.log(assignedTo);
-                    title = document.getElementById("task".concat(taskId).concat("Title")).innerHTML;
-                    description = document.getElementById("task".concat(taskId).concat("Description")).innerHTML;
-                    document.getElementById("sprint-id-text-field2").value = $(this).attr('sprint');
-                    document.getElementById("task-id-text-field").value = taskId;
-                    document.getElementById("assigned-to-field").value = assignedTo;
-                    document.getElementById("title-text-field").value = title;
-                    document.getElementById("description-text-field").value = description;
+                     document.getElementById("sprint-id-text-field2").value = sprintId;
+                     document.getElementById("task-id-text-field").value = taskId;
+                     document.getElementById("assigned-to-field").value = assignedTo;
+                     document.getElementById("title-text-field").value = title;
+                     document.getElementById("description-text-field").value = description;
                });
           }
           
           function editTask()
           {
-               
                $(".edit-task-submit").off('click').click(function(e){
                     e.preventDefault();
                     console.log('editTask called');

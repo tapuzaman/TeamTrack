@@ -58,13 +58,18 @@
                             @foreach($sprint->tasks as $task)
                                 <div class="card m-1 p-3">
                                     <!-- Task -->
-                                    <h5 id="task{{$task->id}}Title"> {{$task->title}} </h5>
-                                     <h6 id="task{{$task->id}}Description"> {{$task->description}} </h6>
+        
+                                    <h5 id="taskTitle"> {{$task->title}} </h5>
+                                     <h6 id="taskDescription"> {{$task->description}} </h6>
+                                     <h6 id="taskSprintId">{{$sprint->id}}</h6>
+                                     <h6 id="taskAssignedToId">{{$task->user_id}}</h6>
                                     <br>
                                     <div>
-                                        <a task="{{$task->id}}" sprint="{{$sprint->id}}" class="edit-task-modal" data-toggle="modal" data-target="#editTaskModal">
-                                            <button class="btn btn-primary">Edit</button>
-                                        </a>
+                                        
+                                        <button class="btn btn-primary edit-task-modal" taskId="{{$task->id}}" sprint="{{$sprint->id}}" data-toggle="modal" data-target="#editTaskModal">
+                                            Edit
+                                        </button>
+                                        
 
                                         <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="delete-task">
                                             <button class="btn btn-danger">Delete</button>
