@@ -7,7 +7,7 @@
     <div id="container">
 
         <h1 id="pageTitle">{{$team->name}} Dashboard</h1>
-
+<!-- 
         <div class="well card m-3 p-3">
             <div class="team-leader">
                 <h4>Team leader:</h4>
@@ -17,13 +17,14 @@
         <div class="well card m-3 p-3 ">
             <div class="team-member">
                 <h4>Team members :</h4>
-                <!-- Member list -->
+                
                 @foreach($team->users as $user)
                     {{$user->id}} : {{$user->name}} <br>
                 @endforeach
             </div>
-        </div>
+        </div> -->
 
+        <hr>
 
         <div>
 
@@ -57,13 +58,14 @@
                         Tasks ({{count($sprint->tasks)}}) :
                             @foreach($sprint->tasks as $task)
                                 <div class="card m-1 p-3">
+                                    <div id="task{{$task->id}}">
                                     <!-- Task -->
         
                                     <h5 id="taskTitle"> {{$task->title}} </h5>
                                      <h6 id="taskDescription"> {{$task->description}} </h6>
-                                     <h6 id="taskSprintId">{{$sprint->id}}</h6>
-                                     <h6 id="taskAssignedToId">{{$task->user_id}}</h6>
-                                    <br>
+                                     <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
+                                     <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
+                                    
                                     <div>
                                         
                                         <button class="btn btn-primary edit-task-modal" taskId="{{$task->id}}" sprint="{{$sprint->id}}" data-toggle="modal" data-target="#editTaskModal">
@@ -80,8 +82,8 @@
                                         <div id="task{{$task->id}}AssignedTo" hidden>{{App\User::find($task->user_id)->id}}</div>
                                         Assigned to : {{App\User::find($task->user_id)->name}} <br>
                                         Created by : {{App\User::find($task->created_by)->name}}
-                                    <hr>
-                                        <i>Comments </i>
+                                    
+                                        <!-- <hr> <i>Comments </i> -->
                                         <small>
                                             @foreach($task->comments as $comment)
                                                 <div>
@@ -90,6 +92,7 @@
                                                 </div>
                                             @endforeach
                                         </small>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>

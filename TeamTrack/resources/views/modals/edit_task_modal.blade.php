@@ -13,11 +13,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         {{Form::label('sprintId2', 'Sprint Id',[ 'hidden'])}}
-                        {{Form::text('sprintId2', null, [ 'class' => 'form-control hidden', 'id'=>'sprint-id-text-field2','placeholder' => 'Sprint Id', ])}}
+                        {{Form::text('sprintId2', null, [ 'class' => 'form-control hidden', 'id'=>'sprint-id-text-field2','placeholder' => 'Sprint Id', 'hidden'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('taskId2', 'Task Id',[ 'hidden'])}}
-                        {{Form::text('taskId2', null, [ 'class' => 'form-control hidden', 'id'=>'task-id-text-field','placeholder' => 'Task Id', ])}}
+                        {{Form::text('taskId2', null, [ 'class' => 'form-control hidden', 'id'=>'task-id-text-field','placeholder' => 'Task Id', 'hidden'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('title2', 'Task Title')}}

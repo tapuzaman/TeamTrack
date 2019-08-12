@@ -53,7 +53,7 @@
 
           function setSprintId()
           {
-               console.log('setSprintId');
+               //console.log('setSprintId');
                $(".add-task-modal").off('click').click(function(e){
                     console.log("setSprintId called");
                     document.getElementById("sprint-id-text-field").value = $(this).attr('href');
@@ -176,7 +176,6 @@
                     type:'POST',
                     url:'/sprints',
                     success:function(data){
-                         console.log(window.location.pathname);
                          //console.log(data.message);
                          //location.reload();
                          $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
