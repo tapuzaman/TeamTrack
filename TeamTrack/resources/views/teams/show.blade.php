@@ -34,8 +34,6 @@
 
             <div class="sprint-view">
 
-            
-
                 {{count($team->backlog->sprints)}} Sprints
                 <hr>
 

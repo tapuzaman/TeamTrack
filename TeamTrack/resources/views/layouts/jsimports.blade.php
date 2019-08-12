@@ -21,7 +21,7 @@
 
           function initializeFunctions()
           {
-               //setSidebar();
+               setSidebar();
                newSprint();
                setSprintId();
                newTask();
@@ -32,22 +32,25 @@
           }
 
 
-          // function setSidebar()
-          // {
-          //      console.log('setSidebar');
-          //      $(".sidebar-link").click(function(e){
-          //           e.preventDefault();
-          //           // Load the content from the link's href attribute
-          //           $('.content').load( $(this).attr('href').concat(' .content'), function(responseText, textStatus, XMLHttpRequest){
-          //                     newSprint();
-          //                     //newMember();
-          //                });
+          function setSidebar()
+          {
+               console.log('setSidebar');
+               $(".sidebar-link").off('click').click(function(e){
+                    e.preventDefault();
+                    // Load the content from the link's href attribute
+                    $('.content').load( $(this).attr('href').concat(' .content'), function(responseText, textStatus, XMLHttpRequest){
+                              newSprint();
+                              newMember();
+                              setSprintId();
+                              setEditTaskModalInfo();
+                              deleteTask();
+                         });
 
-          //           //Change window location
-          //           //window.location.replace($(this).attr('href'));
-          //           window.history.pushState('', 'Title', $(this).attr('href'));
-          //      });
-          // }
+                    //Change window location
+                    //window.location.replace($(this).attr('href'));
+                    window.history.pushState('', 'Title', $(this).attr('href'));
+               });
+          }
           
 
 
@@ -55,7 +58,7 @@
           function setSprintId()
           {
                console.log('setSprintId');
-               $(".add-task-modal").click(function(e){
+               $(".add-task-modal").off('click').click(function(e){
                     console.log("hit sprintId ");
                     document.getElementById("sprint-id-text-field").value = $(this).attr('href');
                });
@@ -65,7 +68,7 @@
 
           function setEditTaskModalInfo()
           {
-               $(".edit-task-modal").click(function(e){
+               $(".edit-task-modal").off('click').click(function(e){
 
                     taskId = $(this).attr('task')
                     console.log('setEditTaskModalInfo. task: '.concat(taskId));
@@ -84,7 +87,7 @@
           function editTask()
           {
                
-               $(".edit-task-submit").click(function(e){
+               $(".edit-task-submit").off('click').click(function(e){
                     e.preventDefault();
                     console.log('editTask');
 
@@ -112,10 +115,11 @@
 
           function newTask()
           {
-               console.log('newTask');
-               $(".new-task-submit").click(function(e){
+               //console.log('newTask');
+               $(".new-task-submit").off('click').click(function(e){
                     e.preventDefault();
 
+                    console.log('newTask called');
                     var sprintId = $("input[name=sprintId]").val();
                     var taskId = $("input[name=taskId]").val();
                     var assignedTo = $("select[name=assignedTo]").val();
@@ -139,11 +143,11 @@
 
           function deleteTask()
           {
-               console.log('deleteTask');
-               $(".delete-task").click(function(e){
+               //console.log('deleteTask');
+               $(".delete-task").off('click').click(function(e){
                     e.preventDefault();
-                    console.log("Delete task : ".concat($(this).attr('href')));
-                    console.log("Delete task sprint: ".concat($(this).attr('sprint')));
+                    console.log("Delete task called : ".concat($(this).attr('href')));
+                    //console.log("Delete task sprint: ".concat($(this).attr('sprint')));
                     sprintId = $(this).attr('sprint');
 
                     $.ajax({
@@ -166,11 +170,11 @@
 
           function newSprint()
           {
-               console.log('newSprint');
-               $(".new-sprint-submit").click(function(e){
+               //console.log('newSprint');
+               $(".new-sprint-submit").off('click').click(function(e){
                     e.preventDefault();
 
-                    console.log("new sprint called");
+                    console.log("newSprint called");
 
                     $.ajax({
                     type:'POST',
@@ -193,11 +197,11 @@
 
           function newMember()
           {
-               console.log('newMember');
-               $(".new-member-submit").click(function(e){
+               //console.log('newMember');
+               $(".new-member-submit").off('click').click(function(e){
                     e.preventDefault();
 
-                    console.log("new member called");
+                    console.log("newMember called");
                     var email = $("input[name=email]").val();
 
                     $.ajax({
