@@ -76,7 +76,7 @@
                                                 Edit
                                             </button>
                                             
-                                            <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="delete-task">
+                                                <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="delete-task">
                                                 <button class="btn btn-danger">Delete</button>
                                             </a>
                                         @endcan
