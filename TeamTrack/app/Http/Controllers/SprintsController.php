@@ -93,6 +93,8 @@ class SprintsController extends Controller
      */
     public function destroy($sprintId)
     {
+        $sprint = Sprint::find($sprintId);
+        $this->authorize('delete', $sprint);
         Team::deleteSprint($sprintId);
         return response()->json(['message'=>$sprintId]);
     }
