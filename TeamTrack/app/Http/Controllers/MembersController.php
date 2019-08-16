@@ -14,22 +14,9 @@ class MembersController extends Controller
     public function store(Request $request)
     {
         $team = Team::find(Auth::user()->getCurrentTeamId());
-        if(Auth::id() == $team->leader_id){
+        $this->authorize('addMember', $team);
 
-            $validator = Validator::make($request->all(), [
-                'email'=>'required',
-            ]);
-
-            if ($validator->passes()) 
-            {
-                Team::addMemberByEmail($request->email, Auth::user()->getCurrentTeamId() );
-                return response()->json(['message'=>$request->email]);
-            }
-            else if($validator->fails())
-            {
-                return response()->json(['message'=>$validator->errors()->all()]);
-            }
-        }
+        
     }
 
 
