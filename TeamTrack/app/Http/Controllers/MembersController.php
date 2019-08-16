@@ -59,6 +59,8 @@ class MembersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $memberId = $id;
+        $teamId = Auth::user()->getCurrentTeamId();
+        Team::removeMember($memberId, $teamId);
     }
 }
