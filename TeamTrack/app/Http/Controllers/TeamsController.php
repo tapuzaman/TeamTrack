@@ -62,9 +62,5 @@ class TeamsController extends Controller
     }
 
 
-    public function destroy($id)
-    {
-        
-    }
 
 }

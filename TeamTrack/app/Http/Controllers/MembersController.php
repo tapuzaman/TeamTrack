@@ -14,7 +14,7 @@ class MembersController extends Controller
     public function store(Request $request)
     {
         $team = Team::find(Auth::user()->getCurrentTeamId());
-        $this->authorize('addMember', $team);
+        //$this->authorize('addMember', $team);
 
         $validator = Validator::make($request->all(), [
             'email'=>'required',
@@ -36,6 +36,7 @@ class MembersController extends Controller
     public function show($id)
     {
         $team = Team::find($id);
+        $this->authorize('viewTeam', $team);
         return view('teams.members')->with('team',$team);
     }
 
