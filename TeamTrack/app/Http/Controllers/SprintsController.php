@@ -13,11 +13,11 @@ class SprintsController extends Controller
     public function store()
     {
         $backlog_id = Team::find(Auth::user()->getCurrentTeamId())->backlog->id;
-        $x = count( Team::find(Auth::user()->getCurrentTeamId())->backlog->sprints ) + 1 ;
+        $new_sprint_no = count( Team::find(Auth::user()->getCurrentTeamId())->backlog->sprints ) + 1 ;
 
         Sprint::create([
             'backlog_id'=>$backlog_id, 
-            'sprint_no'=>$x, 
+            'sprint_no'=>$new_sprint_no, 
             'start_date'=>'2019-08-08 00:00:00', 
             'due_date'=>'2019-08-10 00:00:00'
             ]);
