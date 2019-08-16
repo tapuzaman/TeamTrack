@@ -68,7 +68,13 @@
                                     
                                     <div>
                                         
-                                        <button class="btn btn-primary edit-task-modal" taskId="{{$task->id}}" sprint="{{$sprint->id}}" data-toggle="modal" data-target="#editTaskModal">
+                                        <button 
+                                            class="btn btn-primary edit-task-modal" 
+                                            taskId="{{$task->id}}" 
+                                            sprint="{{$sprint->id}}" 
+                                            data-toggle="modal" 
+                                            data-target="#editTaskModal"
+                                        >
                                             Edit
                                         </button>
                                         

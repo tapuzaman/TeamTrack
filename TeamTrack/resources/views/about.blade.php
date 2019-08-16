@@ -1,17 +1,17 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 
 @section('content')
-    <!-- Button trigger modal newTaskModal -->
+    <!-- Button trigger modal newTaskModal
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">
     Launch demo modal
     </button>
 
-    <!-- Button trigger modal 2-->
+    <!-- Button trigger modal 2
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">
     Launch demo modal
     </button>
 
-<!-- Add Team Modal -->
+<!-- Add Team Modal 
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -53,7 +53,7 @@
     
 </div>
 
-    <!-- Modal 1-->
+    <!-- Modal 1
     <div class="modal fade" id="modal11" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -74,7 +74,7 @@
     </div>
     </div>
 
-    <!-- Modal 2-->
+    <!-- Modal 2
     <div class="modal fade" id="modal2" tabindex="-2" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -99,7 +99,7 @@
 
 
 
-
+ -->
 
 
 
