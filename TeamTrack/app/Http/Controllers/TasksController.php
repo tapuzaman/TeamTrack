@@ -58,14 +58,13 @@ class TasksController extends Controller
     {
         //fetching task data from the task table database
         $task= Task::find($id);
-        
         return view('tasks.show')->with('task',$task);
     }
 
 
     public function edit($id)
     {
-         return redirect('/home');
+        return redirect('/home');
     }
 
     public function update(Request $request, $taskId)
@@ -100,7 +99,7 @@ class TasksController extends Controller
     public function destroy($id)
     {
         $task = Task::find($id);
-        $this->authorize('delete', $task);
+        $this->authorize('deleteTask', $task);
         $task->delete();
         return response()->json(['message'=>'done']);
     }
