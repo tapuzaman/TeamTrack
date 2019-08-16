@@ -30,15 +30,10 @@
                         <!-- Sprint -->
                         <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
 
-                        <!-- <a href="/tasks/create/{{$sprint->id}}">
-                            <button class="btn btn-primary">Add Task</button>
-                        </a> -->
-
                         <a href="{{$sprint->id}}"  class="add-task-modal" data-toggle="modal" data-target="#newTaskModal">
                             <button class="btn btn-primary">Add Task</button>
                         </a>
 
-                            
                         <button 
                             class="delete-sprint btn btn-danger"
                             sprintId="{{$sprint->id}}"
@@ -67,7 +62,7 @@
                                     <br><br>
 
                                     <div>
-                                        @can('update', $task)
+                                        @can('updateTask', $task)
                                             <button 
                                                 class="btn btn-primary edit-task-modal" 
                                                 taskId="{{$task->id}}" 

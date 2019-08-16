@@ -70,7 +70,7 @@ class TasksController extends Controller
     public function update(Request $request, $taskId)
     {
         $task = Task::find($taskId);
-        $this->authorize('update', $task);
+        $this->authorize('updateTask', $task);
 
         $validator = Validator::make($request->all(), [
             'title'=>'required',
