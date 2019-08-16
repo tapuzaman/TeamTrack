@@ -20,7 +20,7 @@ class MembersController extends Controller
         // Add a member to a team by email address
     public function store(Request $request)
     {
-
+        $team = Team::find(Auth::user()->getCurrentTeamId());
         if(Auth::id() == $team->leader_id){
 
             $validator = Validator::make($request->all(), [
