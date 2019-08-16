@@ -81,19 +81,6 @@ class TeamsController extends Controller
         return view('teams.show')->with('team',$team)->with('members', $membersArray);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // addMember() loads the view and storeMember() stores the data to DB
-    public function members($id)
-    {     
-        // $team = Team::find($id);
-        // return view('teams.members')->with('team',$team);
-    }
-
     public function storeMember(Request $request)
     {
         $this->validate($request,[
@@ -105,23 +92,6 @@ class TeamsController extends Controller
 
         return back();
     }
-
-    public function removeMember($id)
-    {
-
-    }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    // }
 
     /**
      * Remove the specified resource from storage.
