@@ -31,7 +31,7 @@
                             
                             <td>
                                 <button 
-                                    class="delete-sprint btn btn-outline-danger"
+                                    class="remove-member btn btn-outline-danger"
                                     userId="{{$user->id}}"
                                 >
                                     Remove 

@@ -64,6 +64,12 @@ class Team extends Model
         $team->members()->syncWithoutDetaching($newMember->id);
     }
 
+    public static function removeMember($memberId, $teamId)
+    {  
+        $team = Team::find($teamId);
+        $team->members()->detach($memberId);
+    }
+
 
     // Internal Functions
 
