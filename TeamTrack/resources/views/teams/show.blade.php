@@ -34,12 +34,14 @@
                             <button class="btn btn-primary">Add Task</button>
                         </a>
 
-                        <button 
-                            class="delete-sprint btn btn-danger"
-                            sprintId="{{$sprint->id}}"
-                        >
-                            Delete Sprint 
-                        </button>
+                        @can('deleteSprint', $sprint)
+                            <button 
+                                class="delete-sprint btn btn-danger"
+                                sprintId="{{$sprint->id}}"
+                            >
+                                Delete Sprint 
+                            </button>
+                        @endcan
 
                         <hr>
                         Tasks ({{count($sprint->tasks)}}) :
