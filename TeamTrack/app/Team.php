@@ -44,6 +44,13 @@ class Team extends Model
         $team->delete();
     }
 
+    public static function deleteSprint($sprintId)
+    {
+        $sprint = Sprint::find($sprintId);
+        $sprint->tasks()->delete(); //delete tasks in sprint
+        $sprint->delete();          //delete sprint
+    }
+
     public static function addMember($member_id, $team_id)
     {
         $team = Team::find($team_id);
