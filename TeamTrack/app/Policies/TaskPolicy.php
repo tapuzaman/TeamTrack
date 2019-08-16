@@ -53,7 +53,7 @@ class TaskPolicy
      */
     public function update(User $user, Task $task)
     {
-        //
+        return $user->id==$task->created_by;
     }
 
     /**

@@ -18,7 +18,7 @@ class TeamPolicy
      */
     public function viewAny(User $user)
     {
-        //
+       // return 0;
     }
 
     /**
@@ -30,7 +30,7 @@ class TeamPolicy
      */
     public function view(User $user, Team $team)
     {
-        //return $team->members->contains('id',$user->id);
+       // return $team->members->contains('id',$user->id);
         return 1;
     }
 

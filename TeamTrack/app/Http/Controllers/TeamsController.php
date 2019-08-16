@@ -15,8 +15,9 @@ class TeamsController extends Controller
      */
     public function index() //delete this later
     {
-        $teams = User::find(Auth::id())->teams;
-        return view('teams.index')->with('teams',$teams);
+      //  $teams = User::find(Auth::id())->teams;
+       // return view('teams.index')->with('teams',$teams);
+       return redirect('/home');
     }
 
     /**

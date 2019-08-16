@@ -20,8 +20,9 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks=Task::all();
-        return view('tasks.index')->with('tasks', $tasks);
+        // $tasks=Task::all();
+        // return view('tasks.index')->with('tasks', $tasks);
+        return redirect('/home');
     }
 
     /**
@@ -31,17 +32,17 @@ class TasksController extends Controller
      */
     public function create($sprintId)
     {
-        $members = Team::find(Auth::user()->getCurrentTeamId())->members;
-        $membersArray;
+        // $members = Team::find(Auth::user()->getCurrentTeamId())->members;
+        // $membersArray;
 
-        foreach($members as $member)
-        {
-            $membersArray[$member->id] = $member->name;
-        }
+        // foreach($members as $member)
+        // {
+        //     $membersArray[$member->id] = $member->name;
+        // }
 
-        //create the task form
-        return view('tasks.create')->with('sprintId', $sprintId)
-                                   ->with('members', $membersArray);
+        // //create the task form
+        // return view('tasks.create')->with('sprintId', $sprintId)
+        //                            ->with('members', $membersArray);
     }
 
     /**
@@ -90,6 +91,7 @@ class TasksController extends Controller
     {
         //fetching task data from the task table database
         $task= Task::find($id);
+        
         return view('tasks.show')->with('task',$task);
     }
 
@@ -101,8 +103,8 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        $task = Task::find($id);
-        return view('tasks.edit')->with('task',$task);
+        // $task = Task::find($id);
+        // return view('tasks.edit')->with('task',$task);
     }
 
     /**
@@ -115,6 +117,10 @@ class TasksController extends Controller
     public function update(Request $request, $taskId)
     {
 
+        $task = Task::find($taskId);
+
+        $this->authorize('update', $task);
+
         $validator = Validator::make($request->all(), [
             'title'=>'required',
             'description'=>'required',
@@ -123,15 +129,8 @@ class TasksController extends Controller
 
 
         if ($validator->passes()) {
-
-            //Create Task 
-            // $title = $request->title;
-            // $description = $request->description;
-            // $sprintId = $request->sprintId;
-            // $assignedTo = $request->assignedTo;
             
             //update Task 
-            $task = Task::find($taskId);
             $task->title = $request->title;
             $task->description = $request->description;
             $task->user_id = $request->assignedTo;

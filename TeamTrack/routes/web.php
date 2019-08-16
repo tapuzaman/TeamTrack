@@ -36,7 +36,7 @@ Route::post('/ajaxRequest', function () {
 
 // Task Routes
 Route::resource('tasks', 'TasksController');
-Route::get('tasks/create/{sprintId}','TasksController@create');
+//Route::get('tasks/create/{sprintId}','TasksController@create');
 Route::post('tasks','TasksController@store');
 Route::post('tasks/create','TasksController@store');
 
@@ -48,9 +48,11 @@ Route::resource('members', 'MembersController');
 
 // Team Routes
 //Route::get('teams','TeamsController@index');
+
 Route::get('teamsmasterindex','TeamsController@masterindex');
 Route::get('teams/create','TeamsController@create');
 Route::get('teams/{id}','TeamsController@show'); // Team deshboard page - currents shows member list
+Route::get('teams','TeamsController@index');
 // implement delete Team route and method
 //Route::get('teams/members/{id}','TeamsController@members'); // Show members in team + add/delete member option
 // implement delete Member route and method
