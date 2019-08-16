@@ -63,7 +63,7 @@ class SprintPolicy
      * @param  \App\Sprint  $sprint
      * @return mixed
      */
-    public function delete(User $user, Sprint $sprint)
+    public function deleteSprint(User $user, Sprint $sprint)
     {
         return $user->id == $sprint->backlog->team->leader_id;
     }
