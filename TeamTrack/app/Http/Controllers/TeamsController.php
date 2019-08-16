@@ -81,18 +81,6 @@ class TeamsController extends Controller
         return view('teams.show')->with('team',$team)->with('members', $membersArray);
     }
 
-    public function storeMember(Request $request)
-    {
-        $this->validate($request,[
-            'email'=>'required',
-            'team_id'=>'required'
-        ]);
-
-        Team::addMemberByEmail($request->input('email'), Auth::user()->getCurrentTeamId() );
-
-        return back();
-    }
-
     /**
      * Remove the specified resource from storage.
      *

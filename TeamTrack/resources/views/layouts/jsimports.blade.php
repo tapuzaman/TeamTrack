@@ -209,7 +209,6 @@
                     url:'/members',
                     data:{email:email},
                     success:function(data){
-                         console.log(window.location.pathname);
                          console.log(data.message);
                          $('.team-member').load( window.location.pathname.concat(' .team-member') );
                     } 
