@@ -127,9 +127,7 @@ class TasksController extends Controller
             'assignedTo'=>'required',
         ]);
 
-
         if ($validator->passes()) {
-            
             //update Task 
             $task->title = $request->title;
             $task->description = $request->description;
@@ -159,6 +157,8 @@ class TasksController extends Controller
     public function destroy($id)
     {
         $task = Task::find($id);
+
+        $this->authorize('delete', $task);
         $task->delete();
         return response()->json(['message'=>'done']);
     }
