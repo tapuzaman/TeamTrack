@@ -103,6 +103,7 @@
                               setSprintId();
                               setEditTaskModalInfo();
                               deleteTask();
+                              deleteSprint();
                          });
                          console.log(data.message);
                     } 
@@ -132,6 +133,7 @@
                               setSprintId();
                               setEditTaskModalInfo();
                               deleteTask();
+                              deleteSprint();
                          });
                     } 
                     });
@@ -155,6 +157,7 @@
                               setSprintId();
                               setEditTaskModalInfo();
                               deleteTask();
+                              deleteSprint();
                          });
                          console.log(data.message);  
                          console.log(window.location.pathname);
@@ -183,6 +186,7 @@
                               setSprintId();
                               setEditTaskModalInfo();
                               deleteTask();
+                              deleteSprint();
                          });
 
                     } 
@@ -226,6 +230,12 @@
                     data:{},
                     success:function(data){
                          console.log(data.message);
+                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
+                              setSprintId();
+                              setEditTaskModalInfo();
+                              deleteTask();
+                              deleteSprint();
+                         });
                     } 
                     });
                });

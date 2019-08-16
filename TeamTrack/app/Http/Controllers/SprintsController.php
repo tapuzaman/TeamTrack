@@ -91,8 +91,9 @@ class SprintsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($sprintId)
     {
-        return response()->json(['message'=>'working']);
+        Team::deleteSprint($sprintId);
+        return response()->json(['message'=>$sprintId]);
     }
 }
