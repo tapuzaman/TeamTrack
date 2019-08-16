@@ -63,7 +63,8 @@ class MembersController extends Controller
      */
     public function show($id)
     {
-        //
+        $team = Team::find($id);
+        return view('teams.members')->with('team',$team);
     }
 
     /**
