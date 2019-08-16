@@ -59,9 +59,14 @@ class MembersController extends Controller
      */
     public function destroy($id)
     {
-        $memberId = $id;
-        $teamId = Auth::user()->getCurrentTeamId();
-        Team::removeMember($memberId, $teamId);
-        return response()->json(['message'=>$memberId]);
+        $team = Team::find(Auth::user()->getCurrentTeamId());
+        if(Auth::id() == $team->leader_id){
+            //$this->authorize('delete', $team);
+            $memberId = $id;
+            $teamId = $team->id;
+            Team::removeMember($memberId, $teamId);
+            return response()->json(['message'=>$memberId]);
+        }
+
     }
 }
