@@ -20,15 +20,12 @@
 
                 <!-- Member list -->
                 <table>
-                
                     @foreach($team->users as $user)
-
                         <!-- Each Member -->
                         <tr>
                             <td class="px-2">
                             {{$user->id}} : {{$user->name}}
                             </td>
-                            
                             <td>
                                 <!-- Don't display remove btn if user is leader -->
                                 <button 
@@ -53,7 +50,6 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newMemberModal">
                 Add Member
             </button>
-        </a>
         
 
         @include('modals.new_member_modal')

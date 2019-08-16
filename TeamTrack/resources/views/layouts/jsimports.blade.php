@@ -254,11 +254,7 @@
                     data:{},
                     success:function(data){
                          console.log(data.message);
-                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
-                              setSprintId();
-                              setEditTaskModalInfo();
-                              deleteTask();
-                              deleteSprint();
+                         $('.team-member').load( window.location.pathname.concat(' .team-member'),function(responseText, textStatus, XMLHttpRequest){
                               removeMember();
                          });
                     } 
