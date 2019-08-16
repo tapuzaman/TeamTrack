@@ -30,6 +30,7 @@
                             </td>
                             
                             <td>
+                                <!-- Don't display remove btn if user is leader -->
                                 <button 
                                     class="remove-member btn btn-outline-danger"
                                     userId="{{$user->id}}"

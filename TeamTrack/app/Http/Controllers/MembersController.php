@@ -61,6 +61,7 @@ class MembersController extends Controller
     {
         $memberId = $id;
         $teamId = Auth::user()->getCurrentTeamId();
-        Team::removeMember($memberId, $teamId);
+        //Team::removeMember($memberId, $teamId);
+        return response()->json(['message'=>$memberId]);
     }
 }
