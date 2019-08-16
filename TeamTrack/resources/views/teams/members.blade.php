@@ -31,9 +31,8 @@
                                 @can('removeMember', $team)
                                     <button 
                                         class="remove-member btn btn-outline-danger"
-                                        userId="{{$user->id}}"
-                                    >
-                                        Remove 
+                                        userId="{{$user->id}}">
+                                            Remove 
                                     </button>
                                 @endcan
                             </td>
@@ -47,12 +46,12 @@
 
         <br>
 
-        <!-- Button trigger newMemberModal -->
-       
+        @can('removeMember', $team)
+            <!-- Button trigger newMemberModal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newMemberModal">
                 Add Member
             </button>
-        
+        @endcan
 
         @include('modals.new_member_modal')
 
