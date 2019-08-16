@@ -54,6 +54,13 @@
                             <button class="btn btn-primary">Add Task</button>
                         </a>
 
+                        <button 
+                            class="delete-sprint btn btn-primary"
+                            sprintId="{{$sprint->id}}"
+                        >
+                            Delete Sprint 
+                        </button>
+
                         <hr>
                         Tasks ({{count($sprint->tasks)}}) :
                             @foreach($sprint->tasks as $task)
