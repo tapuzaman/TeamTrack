@@ -19,8 +19,8 @@ class TeamPolicy
      */
     public function viewTeam(User $user, Team $team)
     {
-       // return $team->members->contains('id',$user->id);
-        return 1;
+        return $team->members->contains('id',$user->id);
+        //return 1;
     }
 
 }
