@@ -15,4 +15,6 @@ class TeamPolicy
         return $team->members->contains('id',$user->id);
     }
 
+
+
 }

@@ -14,7 +14,7 @@ class MembersController extends Controller
     public function store(Request $request)
     {
         $team = Team::find(Auth::user()->getCurrentTeamId());
-        //$this->authorize('addMember', $team);
+        $this->authorize('addMember', $team);
 
         $validator = Validator::make($request->all(), [
             'email'=>'required',

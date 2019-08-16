@@ -11,14 +11,4 @@ class MemberPolicy
 {
     use HandlesAuthorization;
 
-    public function addMember(User $user, Team $team)
-    {
-        return $user->id == $team->leader_id;
-    }
-
-    public function removeMember(User $user, Team $team)
-    {
-        return 1;
-    }
-
 }
