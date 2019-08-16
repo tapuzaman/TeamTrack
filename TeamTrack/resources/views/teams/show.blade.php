@@ -24,7 +24,7 @@
 
                 <!-- Add Exception for new user without team -->
                 @foreach($team->backlog->sprints as $sprint)
-                    <div class="well card m-3 p-3 ">
+                    <div class="well card m-2 p-3">
                         <div class="sprint{{$sprint->id}}">
 
                         <!-- Sprint -->
@@ -39,7 +39,7 @@
                         </a>
 
                         <button 
-                            class="delete-sprint btn btn-primary"
+                            class="delete-sprint btn btn-danger"
                             sprintId="{{$sprint->id}}"
                         >
                             Delete Sprint 
@@ -48,7 +48,7 @@
                         <hr>
                         Tasks ({{count($sprint->tasks)}}) :
                             @foreach($sprint->tasks as $task)
-                                <div class="card m-1 p-3">
+                                <div class="card m-2 p-3">
                                     <div id="task{{$task->id}}">
                                     <!-- Task -->
         
@@ -57,15 +57,21 @@
                                      <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
                                      <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
                                     
+                                    
+                                   
+                                    <hr>
+                                        <div id="task{{$task->id}}AssignedTo" hidden>{{App\User::find($task->user_id)->id}}</div>
+                                        Assigned to : {{App\User::find($task->user_id)->name}} <br>
+                                        Created by : {{App\User::find($task->created_by)->name}}
+                                    <br><br>
+
                                     <div>
-                                        
                                         <button 
                                             class="btn btn-primary edit-task-modal" 
                                             taskId="{{$task->id}}" 
                                             sprint="{{$sprint->id}}" 
                                             data-toggle="modal" 
-                                            data-target="#editTaskModal"
-                                        >
+                                            data-target="#editTaskModal">
                                             Edit
                                         </button>
                                         
@@ -73,12 +79,8 @@
                                         <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="delete-task">
                                             <button class="btn btn-danger">Delete</button>
                                         </a>
+                                        
                                     </div>
-                                   
-                                    <hr>
-                                        <div id="task{{$task->id}}AssignedTo" hidden>{{App\User::find($task->user_id)->id}}</div>
-                                        Assigned to : {{App\User::find($task->user_id)->name}} <br>
-                                        Created by : {{App\User::find($task->created_by)->name}}
                                     
                                         <!-- <hr> <i>Comments </i> -->
                                         <small>
@@ -99,10 +101,6 @@
             </div>
         </div>
     </div>
-
-    <style type="text/javascript">
-        
-    </style>
 
     
     @include('modals.new_task_modal')

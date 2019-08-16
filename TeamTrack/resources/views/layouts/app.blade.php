@@ -35,12 +35,12 @@
            
           </div>
 
-          <!-- Footer -->
+          <!-- Footer 
           <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
             <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
               <a href="teamtrack.me" rel="nofollow">TeamTrack</a>
             </span>
-          </footer>
+          </footer> -->
 
         </main>
       </div>
