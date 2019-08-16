@@ -100,11 +100,12 @@
                     url:'/tasks/'.concat(taskId),
                     data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
                     success:function(data){
-                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
-                              setSprintId();
-                              setEditTaskModalInfo();
-                              deleteTask();
-                              deleteSprint();
+                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),
+                              function(responseText, textStatus, XMLHttpRequest){
+                                   setSprintId();
+                                   setEditTaskModalInfo();
+                                   deleteTask();
+                                   deleteSprint();
                          });
                          console.log(data.message);
                     } 
@@ -130,11 +131,12 @@
                     url:'/tasks/create',
                     data:{sprintId:sprintId, assignedTo:assignedTo, title:title, description:description},
                     success:function(data){
-                          $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
-                              setSprintId();
-                              setEditTaskModalInfo();
-                              deleteTask();
-                              deleteSprint();
+                          $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),
+                              function(responseText, textStatus, XMLHttpRequest){
+                                   setSprintId();
+                                   setEditTaskModalInfo();
+                                   deleteTask();
+                                   deleteSprint();
                          });
                     } 
                     });
@@ -154,11 +156,12 @@
                     type:'DELETE',
                     url: '/tasks/'.concat( $(this).attr('href') ),
                     success:function(data){
-                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
-                              setSprintId();
-                              setEditTaskModalInfo();
-                              deleteTask();
-                              deleteSprint();
+                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),
+                              function(responseText, textStatus, XMLHttpRequest){
+                                   setSprintId();
+                                   setEditTaskModalInfo();
+                                   deleteTask();
+                                   deleteSprint();
                          });
                          console.log(data.message);  
                          console.log(window.location.pathname);
@@ -183,11 +186,12 @@
                     success:function(data){
                          //console.log(data.message);
                          //location.reload();
-                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
-                              setSprintId();
-                              setEditTaskModalInfo();
-                              deleteTask();
-                              deleteSprint();
+                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),
+                              function(responseText, textStatus, XMLHttpRequest){
+                                   setSprintId();
+                                   setEditTaskModalInfo();
+                                   deleteTask();
+                                   deleteSprint();
                          });
 
                     } 
@@ -211,7 +215,10 @@
                     data:{email:email},
                     success:function(data){
                          console.log(data.message);
-                         $('.team-member').load( window.location.pathname.concat(' .team-member') );
+                         $('.team-member').load( window.location.pathname.concat(' .team-member'),
+                              function(responseText, textStatus, XMLHttpRequest){
+                                   removeMember();
+                         });
                     } 
                     });
                });
@@ -230,11 +237,12 @@
                     data:{},
                     success:function(data){
                          console.log(data.message);
-                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),function(responseText, textStatus, XMLHttpRequest){
-                              setSprintId();
-                              setEditTaskModalInfo();
-                              deleteTask();
-                              deleteSprint();
+                         $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),
+                              function(responseText, textStatus, XMLHttpRequest){
+                                   setSprintId();
+                                   setEditTaskModalInfo();
+                                   deleteTask();
+                                   deleteSprint();
                          });
                     } 
                     });
@@ -254,8 +262,9 @@
                     data:{},
                     success:function(data){
                          console.log(data.message);
-                         $('.team-member').load( window.location.pathname.concat(' .team-member'),function(responseText, textStatus, XMLHttpRequest){
-                              removeMember();
+                         $('.team-member').load( window.location.pathname.concat(' .team-member'),
+                              function(responseText, textStatus, XMLHttpRequest){
+                                   removeMember();
                          });
                     } 
                     });
