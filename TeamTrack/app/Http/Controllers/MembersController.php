@@ -11,13 +11,6 @@ class MembersController extends Controller
 {
 
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-        // Add a member to a team by email address
     public function store(Request $request)
     {
         $team = Team::find(Auth::user()->getCurrentTeamId());
@@ -41,12 +34,7 @@ class MembersController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         $team = Team::find($id);
@@ -54,12 +42,6 @@ class MembersController extends Controller
     }
 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $team = Team::find(Auth::user()->getCurrentTeamId());

@@ -12,7 +12,7 @@ class MemberPolicy
     use HandlesAuthorization;
 
 
-    public function remove(User $user, Team $team)
+    public function removeMember(User $user, Team $team)
     {
         return $user->id == $team->leader_id;
     }
