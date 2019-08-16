@@ -66,19 +66,20 @@
                                     <br><br>
 
                                     <div>
-                                        <button 
-                                            class="btn btn-primary edit-task-modal" 
-                                            taskId="{{$task->id}}" 
-                                            sprint="{{$sprint->id}}" 
-                                            data-toggle="modal" 
-                                            data-target="#editTaskModal">
-                                            Edit
-                                        </button>
-                                        
-
-                                        <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="delete-task">
-                                            <button class="btn btn-danger">Delete</button>
-                                        </a>
+                                        @can('update', $task)
+                                            <button 
+                                                class="btn btn-primary edit-task-modal" 
+                                                taskId="{{$task->id}}" 
+                                                sprint="{{$sprint->id}}" 
+                                                data-toggle="modal" 
+                                                data-target="#editTaskModal">
+                                                Edit
+                                            </button>
+                                            
+                                            <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="delete-task">
+                                                <button class="btn btn-danger">Delete</button>
+                                            </a>
+                                        @endcan
                                         
                                     </div>
                                     
