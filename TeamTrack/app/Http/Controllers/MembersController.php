@@ -20,7 +20,6 @@ class MembersController extends Controller
                 'email'=>'required',
             ]);
 
-
             if ($validator->passes()) 
             {
                 Team::addMemberByEmail($request->email, Auth::user()->getCurrentTeamId() );
@@ -31,7 +30,6 @@ class MembersController extends Controller
                 return response()->json(['message'=>$validator->errors()->all()]);
             }
         }
-        
     }
 
 
@@ -45,13 +43,10 @@ class MembersController extends Controller
     public function destroy($id)
     {
         $team = Team::find(Auth::user()->getCurrentTeamId());
-        if(Auth::id() == $team->leader_id){
-            //$this->authorize('delete', $team);
-            $memberId = $id;
-            $teamId = $team->id;
-            Team::removeMember($memberId, $teamId);
-            return response()->json(['message'=>$memberId]);
-        }
-
+        $this->authorize('removeMember', $team);
+        $memberId = $id;
+        $teamId = $team->id;
+        Team::removeMember($memberId, $teamId);
+        return response()->json(['message'=>$memberId]);
     }
 }
