@@ -10,7 +10,6 @@ class TaskPolicy
 {
     use HandlesAuthorization;
 
-
     public function updateTask(User $user, Task $task)
     {
         return $user->id==$task->created_by;
