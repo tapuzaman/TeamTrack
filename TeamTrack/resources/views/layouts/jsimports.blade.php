@@ -147,14 +147,14 @@
           {
                //console.log('deleteTask');
                $(".delete-task").off('click').click(function(e){
-                    e.preventDefault();
-                    console.log("Delete task called : ".concat($(this).attr('href')));
+                    $taskId = $(this).attr('taskId');
+                    console.log("Delete task called : ".concat($taskId));
                     //console.log("Delete task sprint: ".concat($(this).attr('sprint')));
                     sprintId = $(this).attr('sprint');
 
                     $.ajax({
                     type:'DELETE',
-                    url: '/tasks/'.concat( $(this).attr('href') ),
+                    url: '/tasks/'.concat( $taskId ),
                     success:function(data){
                          $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),
                               function(responseText, textStatus, XMLHttpRequest){
@@ -164,7 +164,6 @@
                                    deleteSprint();
                          });
                          console.log(data.message);  
-                         console.log(window.location.pathname);
                     } 
                     });
                });

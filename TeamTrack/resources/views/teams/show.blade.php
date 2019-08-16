@@ -45,15 +45,13 @@
                         Tasks ({{count($sprint->tasks)}}) :
                             @foreach($sprint->tasks as $task)
                                 <div class="card m-2 p-3">
-                                    <div id="task{{$task->id}}">
+                                
                                     <!-- Task -->
-        
+                                    <div id="task{{$task->id}}">
                                     <h5 id="taskTitle"> {{$task->title}} </h5>
-                                     <h6 id="taskDescription"> {{$task->description}} </h6>
-                                     <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
-                                     <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
-                                    
-                                    
+                                    <h6 id="taskDescription"> {{$task->description}} </h6>
+                                    <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
+                                    <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
                                    
                                     <hr>
                                         <div id="task{{$task->id}}AssignedTo" hidden>{{App\User::find($task->user_id)->id}}</div>
@@ -64,16 +62,20 @@
                                     <div>
                                         @can('updateTask', $task)
                                             <button 
-                                                class="btn btn-primary edit-task-modal" 
+                                                class="edit-task-modal btn btn-primary " 
                                                 taskId="{{$task->id}}" 
                                                 sprint="{{$sprint->id}}" 
                                                 data-toggle="modal" 
                                                 data-target="#editTaskModal">
-                                                Edit
+                                                    Edit
                                             </button>
                                             
-                                            <a href="{{$task->id}}" sprint="{{$sprint->id}}" class="delete-task">
-                                                <button class="btn btn-danger">Delete</button>
+                                            <button 
+                                                class="delete-task btn btn-danger"
+                                                taskId="{{$task->id}}"
+                                                sprint="{{$sprint->id}}">
+                                                    Delete
+                                            </button>
                                             </a>
                                         @endcan
                                         
