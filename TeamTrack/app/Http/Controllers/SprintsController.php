@@ -93,6 +93,6 @@ class SprintsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return response()->json(['message'=>'working']);
     }
 }

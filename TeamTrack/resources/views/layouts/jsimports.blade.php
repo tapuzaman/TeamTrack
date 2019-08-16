@@ -29,7 +29,7 @@
                newMember();
                deleteTask();
                setEditTaskModalInfo();
-               deleteSrpint();
+               deleteSprint();
           }
 
 
@@ -217,13 +217,12 @@
           function deleteSprint()
           {
                $(".delete-sprint").off('click').click(function(e){
-
                     console.log("deleteSprint called");
                     var sprintId = $(this).attr('sprintId');
 
                     $.ajax({
                     type:'DELETE',
-                    url:'/sprints'.concat(sprintId),
+                    url:'/sprints/'.concat(sprintId),
                     data:{},
                     success:function(data){
                          console.log(data.message);
