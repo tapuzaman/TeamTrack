@@ -17,10 +17,31 @@
         <div class="well card m-3 p-3">
             <div class="team-member">
                 <h4>Team members :</h4>
+
                 <!-- Member list -->
-                @foreach($team->users as $user)
-                    {{$user->id}} : {{$user->name}} <br>
-                @endforeach
+                <table>
+                
+                    @foreach($team->users as $user)
+
+                        <!-- Each Member -->
+                        <tr>
+                            <td class="px-2">
+                            {{$user->id}} : {{$user->name}}
+                            </td>
+                            
+                            <td>
+                                <button 
+                                    class="delete-sprint btn btn-outline-danger"
+                                    userId="{{$user->id}}"
+                                >
+                                    Remove 
+                                </button>
+                            </td>
+                            
+                        </tr>
+
+                    @endforeach
+                </table>
             </div>
         </div>
 
