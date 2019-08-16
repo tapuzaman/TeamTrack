@@ -21,19 +21,22 @@ class MembersController extends Controller
     public function store(Request $request)
     {
 
-        $validator = Validator::make($request->all(), [
-            'email'=>'required',
-        ]);
+        if(Auth::id() == $team->leader_id){
+
+            $validator = Validator::make($request->all(), [
+                'email'=>'required',
+            ]);
 
 
-        if ($validator->passes()) 
-        {
-            Team::addMemberByEmail($request->email, Auth::user()->getCurrentTeamId() );
-            return response()->json(['message'=>$request->email]);
-        }
-        else if($validator->fails())
-        {
-            return response()->json(['message'=>$validator->errors()->all()]);
+            if ($validator->passes()) 
+            {
+                Team::addMemberByEmail($request->email, Auth::user()->getCurrentTeamId() );
+                return response()->json(['message'=>$request->email]);
+            }
+            else if($validator->fails())
+            {
+                return response()->json(['message'=>$validator->errors()->all()]);
+            }
         }
         
     }
