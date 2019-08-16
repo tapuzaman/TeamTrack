@@ -116,9 +116,7 @@ class TasksController extends Controller
      */
     public function update(Request $request, $taskId)
     {
-
         $task = Task::find($taskId);
-
         $this->authorize('update', $task);
 
         $validator = Validator::make($request->all(), [
@@ -142,10 +140,6 @@ class TasksController extends Controller
         {
             return response()->json(['message'=>$validator->errors()->all()]);
         }
-
-        
-
-        return redirect('/tasks');
     }
 
     /**
@@ -157,7 +151,6 @@ class TasksController extends Controller
     public function destroy($id)
     {
         $task = Task::find($id);
-
         $this->authorize('delete', $task);
         $task->delete();
         return response()->json(['message'=>'done']);
