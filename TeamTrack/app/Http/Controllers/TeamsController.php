@@ -67,7 +67,11 @@ class TeamsController extends Controller
      */
     public function show($id)
     {
+
         $team = Team::find($id);
+
+        $this->authorize('view', $team);
+
         Auth::user()->setCurrentTeamId($id);
 
         $members = Team::find(Auth::user()->getCurrentTeamId())->members;

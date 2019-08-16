@@ -25,7 +25,7 @@
       <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
         @foreach( App\Member::teamList(Auth::id()) as $team)
           <a class="dropdown-item" href="/teams/{{$team->id}}">
-            <b>{{$team->name}}</b>
+            <b>{{$team->name}} : {{$team->id}}</b>
           </a>
         @endforeach
         <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter">

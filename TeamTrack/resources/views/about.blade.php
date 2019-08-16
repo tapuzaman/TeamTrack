@@ -1,5 +1,7 @@
 {{
-    App\User::all()
+
+    App\Team::find(1)->members->contains('id',4)
+    
 }}
 
 
