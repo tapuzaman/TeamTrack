@@ -10,14 +10,14 @@ class TaskPolicy
 {
     use HandlesAuthorization;
 
-    
+
     public function update(User $user, Task $task)
     {
         return $user->id==$task->created_by;
     }
 
 
-    public function delete(User $user, Task $task)
+    public function deleteTask(User $user, Task $task)
     {
         return $user->id==$task->created_by;
     }

@@ -13,44 +13,19 @@ use Validator;
 
 class TasksController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        // $tasks=Task::all();
-        // return view('tasks.index')->with('tasks', $tasks);
         return redirect('/home');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create($sprintId)
     {
-        // $members = Team::find(Auth::user()->getCurrentTeamId())->members;
-        // $membersArray;
-
-        // foreach($members as $member)
-        // {
-        //     $membersArray[$member->id] = $member->name;
-        // }
-
-        // //create the task form
-        // return view('tasks.create')->with('sprintId', $sprintId)
-        //                            ->with('members', $membersArray);
+        return redirect('/home');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
 
@@ -61,7 +36,6 @@ class TasksController extends Controller
             'assignedTo'=>'required',
         ]);
 
-
         if ($validator->passes()) {
 
             //Create Task 
@@ -70,7 +44,6 @@ class TasksController extends Controller
             $sprintId = $request->sprintId;
             $assignedTo = $request->assignedTo;
             Task::createTask($sprintId, $assignedTo, Auth::id(), $title, $description); //TODO : change input
-
             return response()->json(['message'=>'done']);
         }
         else if($validator->fails())
@@ -78,15 +51,9 @@ class TasksController extends Controller
             return response()->json(['message'=>$validator->errors()->all()]);
         }
 
-        //return redirect('/teams/'.Auth::user()->getCurrentTeamId());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //fetching task data from the task table database
@@ -95,25 +62,12 @@ class TasksController extends Controller
         return view('tasks.show')->with('task',$task);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        // $task = Task::find($id);
-        // return view('tasks.edit')->with('task',$task);
+         return redirect('/home');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $taskId)
     {
         $task = Task::find($taskId);
@@ -142,12 +96,7 @@ class TasksController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         $task = Task::find($id);
