@@ -46,6 +46,9 @@ Route::resource('sprints', 'SprintsController');
 // Members Routes
 Route::resource('members', 'MembersController');
 
+// Comments Routes
+Route::resource('comments', 'CommentsController');
+
 // Team Routes
 //Route::get('teams','TeamsController@index');
 
