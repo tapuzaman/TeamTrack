@@ -12,8 +12,8 @@
 
                 <div class="modal-body">
                     <div class="form-group">
-                        {{Form::label('taskId3', 'Task Id',[ ''])}}
-                        {{Form::text('taskId3', null, ['class' => 'form-control hidden', 'id'=>'task-id-text-field3','placeholder' => 'Task Id', ''])}}
+                        {{Form::label('taskId3', 'Task Id',[ 'hidden'])}}
+                        {{Form::text('taskId3', null, ['class' => 'form-control hidden', 'id'=>'task-id-text-field3','placeholder' => 'Task Id', 'hidden'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('commentContent', 'Task Description')}}

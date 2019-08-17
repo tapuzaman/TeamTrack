@@ -31,6 +31,7 @@
                setEditTaskModalInfo();
                deleteSprint();
                removeMember();
+               setCommentTaskModalInfo();
                newComment();
           }
 
@@ -107,6 +108,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   setCommentTaskModalInfo();
                                    newComment();
                          });
                          console.log(data.message);
@@ -139,6 +141,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   setCommentTaskModalInfo();
                                    newComment();
                          });
                          console.log(data.message);
@@ -147,19 +150,16 @@
                });
           }
 
-          // function setCommentTaskModalInfo()
-          // {
-          //      $(".comment-task-modal").off('click').click(function(e){
+          function setCommentTaskModalInfo()
+          {
+               $(".comment-task-modal").off('click').click(function(e){
 
-          //           taskId = $(this).attr('taskId');
-          //           console.log('setCommentTaskModalInfo called. task: '.concat(taskId));
+                    taskId = $(this).attr('taskId');
+                    console.log('setCommentTaskModalInfo called. task: '.concat(taskId));
 
-          //            document.getElementById("task-id-text-field").value = taskId;
-          //            document.getElementById("assigned-to-field").value = assignedTo;
-          //            document.getElementById("title-text-field").value = title;
-          //            document.getElementById("description-text-field").value = description;
-          //      });
-          // }
+                     document.getElementById("task-id-text-field3").value = taskId;
+               });
+          }
 
           function newComment()
           {
@@ -182,6 +182,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   setCommentTaskModalInfo();
                                    newComment();
                          });
                          console.log(data.message);  
@@ -209,6 +210,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   setCommentTaskModalInfo();
                                    newComment();
                          });
                          console.log(data.message);  
@@ -239,6 +241,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   setCommentTaskModalInfo();
                                    newComment();
                          });
 
@@ -291,6 +294,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   setCommentTaskModalInfo();
                                    newComment();
                          });
                     } 
