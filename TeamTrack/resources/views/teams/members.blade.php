@@ -37,7 +37,6 @@
                                         </button>
                                     @endcan
                                 </td>
-                                
                             </tr>
                         @endif
                     @endforeach
