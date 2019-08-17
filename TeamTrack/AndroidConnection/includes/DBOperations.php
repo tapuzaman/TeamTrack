@@ -49,6 +49,15 @@
             return $stmt->get_result()->fetch_assoc();
         }
          
-      
+        # Checks Whether The Username and Password exists or not
+        private function isUserExist($name, $email){
+            $stmt = $this->con->prepare("SELECT id FROM users WHERE name = ? OR email = ?");
+            $stmt->bind_param("ss", $name, $email);
+            $stmt->execute(); 
+            $stmt->store_result(); 
+            return $stmt->num_rows > 0; 
+        }
+
+     
  
     }
