@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
+use App\Task;
 
 class CommentsController extends Controller
 {
@@ -34,7 +36,25 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(['message'=>'commentStore']);
+        $validator = Validator::make($request->all(), [
+            'taskId'=>'required',
+            'commentContent'=>'required',
+        ]);
+
+        if ($validator->passes()) {
+            $task->title = $request->taskId;
+            $task->commentContent = $request->commentContent;
+            $task->user_id = $request->assignedTo;
+            $task->save();
+
+            
+
+            return response()->json(['message'=>'updated']);
+        }
+        else if($validator->fails())
+        {
+            return response()->json(['message'=>$validator->errors()->all()]);
+        }
     }
 
     /**
