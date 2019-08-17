@@ -41,6 +41,14 @@
             return $stmt->num_rows > 0; 
         }
  
-        
+        # Gets a User by Email Address
+        public function getUserByEmail($email){
+            $stmt = $this->con->prepare("SELECT * FROM users WHERE email = ?");
+            $stmt->bind_param("s",$email);
+            $stmt->execute();
+            return $stmt->get_result()->fetch_assoc();
+        }
+         
+      
  
     }
