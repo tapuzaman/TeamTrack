@@ -147,6 +147,20 @@
                });
           }
 
+          // function setCommentTaskModalInfo()
+          // {
+          //      $(".comment-task-modal").off('click').click(function(e){
+
+          //           taskId = $(this).attr('taskId');
+          //           console.log('setCommentTaskModalInfo called. task: '.concat(taskId));
+
+          //            document.getElementById("task-id-text-field").value = taskId;
+          //            document.getElementById("assigned-to-field").value = assignedTo;
+          //            document.getElementById("title-text-field").value = title;
+          //            document.getElementById("description-text-field").value = description;
+          //      });
+          // }
+
           function newComment()
           {
                //console.log('newComment');
@@ -154,7 +168,7 @@
                     e.preventDefault();
 
                     console.log('newComment called');
-                    var taskId = $("input[name=taskId]").val();
+                    var taskId = $("input[name=taskId3]").val();
                     var commentContent = $("textarea[name=commentContent]").val();
 
                     $.ajax({

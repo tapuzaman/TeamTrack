@@ -95,7 +95,7 @@
 
                                         <br>
                                         <button 
-                                            class="comment-task btn btn-primary"
+                                            class="comment-task-modal btn btn-primary"
                                             taskId="{{$task->id}}"
                                             data-toggle="modal" 
                                             data-target="#commentTaskModal">
