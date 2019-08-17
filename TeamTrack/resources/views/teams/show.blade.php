@@ -50,49 +50,56 @@
                                 
                                     <!-- Task -->
                                     <div id="task{{$task->id}}">
-                                    <h5 id="taskTitle"> {{$task->title}} ({{$task->id}})</h5>
-                                    <h6 id="taskDescription"> {{$task->description}} </h6>
-                                    <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
-                                    <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
-                                   
-                                    <hr>
-                                        <div id="task{{$task->id}}AssignedTo" hidden>{{App\User::find($task->user_id)->id}}</div>
-                                        Assigned to : {{App\User::find($task->user_id)->name}} <br>
-                                        Created by : {{App\User::find($task->created_by)->name}}
-                                    <br><br>
-
-                                    <div>
-                                        @can('updateTask', $task)
-                                            <button 
-                                                class="edit-task-modal btn btn-primary " 
-                                                taskId="{{$task->id}}" 
-                                                sprint="{{$sprint->id}}" 
-                                                data-toggle="modal" 
-                                                data-target="#editTaskModal">
-                                                    Edit
-                                            </button>
-                                            
-                                            <button 
-                                                class="delete-task btn btn-danger"
-                                                taskId="{{$task->id}}"
-                                                sprint="{{$sprint->id}}">
-                                                    Delete
-                                            </button>
-                                            </a>
-                                        @endcan
-                                        
-                                    </div>
+                                        <h5 id="taskTitle"> {{$task->title}} ({{$task->id}})</h5>
+                                        <h6 id="taskDescription"> {{$task->description}} </h6>
+                                        <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
+                                        <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
                                     
+                                        <hr>
+                                            <div id="task{{$task->id}}AssignedTo" hidden>{{App\User::find($task->user_id)->id}}</div>
+                                            Assigned to : {{App\User::find($task->user_id)->name}} <br>
+                                            Created by : {{App\User::find($task->created_by)->name}}
+                                        <br><br>
+
+                                        <div>
+                                            @can('updateTask', $task)
+                                                <button 
+                                                    class="edit-task-modal btn btn-primary " 
+                                                    taskId="{{$task->id}}" 
+                                                    sprint="{{$sprint->id}}" 
+                                                    data-toggle="modal" 
+                                                    data-target="#editTaskModal">
+                                                        Edit
+                                                </button>
+                                                
+                                                <button 
+                                                    class="delete-task btn btn-danger"
+                                                    taskId="{{$task->id}}"
+                                                    sprint="{{$sprint->id}}">
+                                                        Delete
+                                                </button>
+                                            @endcan
+                                            
+                                        </div>
+                                        
                                         <!-- <hr> <i>Comments </i> -->
                                         <small>
-                                            @foreach($task->comments as $comment)
-                                                <div>
-                                                    <br>
-                                                    <b>{{App\User::find($comment->commentor_id)->name}} : </b>
-                                                        "{{$comment->content}}""
-                                                </div>
-                                            @endforeach
+                                        @foreach($task->comments as $comment)
+                                            <div>
+                                                <br>
+                                                <b>{{App\User::find($comment->commentor_id)->name}} : </b> "{{$comment->content}}"
+                                                    
+                                            </div>
+                                        @endforeach
                                         </small>
+
+                                        <button 
+                                            class="comment-task btn btn-danger"
+                                            taskId="{{$task->id}}"
+                                            data-toggle="modal" 
+                                            data-target="#commentTaskModal">
+                                                Add Comment
+                                        </button>
                                     </div>
                                 </div>
                             @endforeach
