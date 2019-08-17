@@ -53,9 +53,19 @@
                                         <h5 id="taskTitle"> {{$task->title}} </h5> ({{$task->id}})
                                         <h6 id="taskDescription"> {{$task->description}} </h6>
 
-                                        <button class="toggleIsCompleted btn btn-outline-primary" taskId="{{$task->id}}">
+                                        @if($task->is_completed)
+                                            <button class="toggleIsCompleted btn btn-success" taskId="{{$task->id}}">
+                                                Completed
+                                            </button>
+                                            <input type="checkbox" aria-label="Checkbox for following text input" checked>
+                                        @else
+                                            <button class="toggleIsCompleted btn btn-success" taskId="{{$task->id}}">
+                                                Completed
+                                            </button>
+                                        @endif
+                                        <!-- <button class="toggleIsCompleted btn btn-outline-primary" taskId="{{$task->id}}">
                                             {{$task->is_completed}}
-                                        </button>
+                                        </button> -->
 
                                         <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
                                         <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
