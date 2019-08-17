@@ -193,6 +193,7 @@
                                    toggleIsCompleted()
                          });
                          console.log(data.message);
+
                          $("input[name=title]").val('');
                          $("textarea[name=description]").val('');
                          $("select[name=assignedTo]").val('');
@@ -238,6 +239,7 @@
                                    toggleIsCompleted()
                          });
                          console.log(data.message);  
+                         $("textarea[name=commentContent]").val('');
                     } 
                     });
                });
