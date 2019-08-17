@@ -53,6 +53,13 @@
             </button>
         @endcan
 
+        @can('removeMember', $team)
+            <!-- Button trigger newMemberModal -->
+            <button type="button" class="btn btn-danger">
+                Delete Team
+            </button>
+        @endcan
+
         @include('modals.new_member_modal')
 
     </div>
