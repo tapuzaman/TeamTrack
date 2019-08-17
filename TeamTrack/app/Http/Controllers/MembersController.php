@@ -50,4 +50,10 @@ class MembersController extends Controller
         Team::removeMember($memberId, $teamId);
         return response()->json(['message'=>$memberId]);
     }
+
+    public function deleteTeam($teamId)
+    {
+        return redirect('/home');
+    }
+
 }

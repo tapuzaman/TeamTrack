@@ -15,6 +15,13 @@
             <a class="new-sprint-submit">
                 <button class="btn btn-primary">Add Sprint</button>
             </a> 
+
+            <br><br>
+            
+            {!! Form::open(['action' => ['TeamsController@destroy', $team->id], 'method' => 'DELETE', 'enctype' => 'multipart/form-data']) !!}
+                {{Form::submit('Delete Team', ['class'=>'btn btn-danger'])}}
+            {!! Form::close() !!}
+
             <br><br>
 
             {{count($team->backlog->sprints)}} Sprints

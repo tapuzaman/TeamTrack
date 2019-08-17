@@ -54,10 +54,13 @@
         @endcan
 
         @can('removeMember', $team)
-            <!-- Button trigger newMemberModal -->
+            <!-- {!! Form::open(['action' => 'MembersController@deleteTeam', 'method' => 'DELETE', 'enctype' => 'multipart/form-data']) !!}
+                {{Form::submit('Delete Team', ['class'=>'btn btn-danger'])}}
+            {!! Form::close() !!} -->
             <button type="button" class="btn btn-danger">
                 Delete Team
             </button>
+            
         @endcan
 
         @include('modals.new_member_modal')

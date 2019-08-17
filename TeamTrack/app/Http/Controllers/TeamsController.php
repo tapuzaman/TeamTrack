@@ -62,6 +62,10 @@ class TeamsController extends Controller
         return view('teams.show')->with('team',$team)->with('members', $membersArray);
     }
 
-
+    public function destroy($id)
+    {
+        
+        return 'destroy team hit';
+    }
 
 }
