@@ -50,8 +50,13 @@
                                 
                                     <!-- Task -->
                                     <div id="task{{$task->id}}">
-                                        <h5 id="taskTitle"> {{$task->title}} ({{$task->id}})</h5>
+                                        <h5 id="taskTitle"> {{$task->title}} </h5> ({{$task->id}})
                                         <h6 id="taskDescription"> {{$task->description}} </h6>
+
+                                        <button class="toggleIsCompleted btn btn-outline-primary">
+                                            {{$task->is_completed}}
+                                        </button>
+
                                         <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
                                         <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
                                     
