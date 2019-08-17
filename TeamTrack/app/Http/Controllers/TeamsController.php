@@ -64,8 +64,9 @@ class TeamsController extends Controller
 
     public function destroy($id)
     {
-        
-        return 'destroy team hit';
+        Team::deleteTeam($id);
+        Auth::user()->setCurrentTeamId(0);
+        return redirect('\home');
     }
 
 }
