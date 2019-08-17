@@ -114,6 +114,7 @@
                                    deleteSprint();
                                    setCommentTaskModalInfo();
                                    newComment();
+                                   toggleIsCompleted();
                          });
                          console.log(data.message);
                     } 

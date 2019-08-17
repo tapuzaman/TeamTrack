@@ -33,4 +33,9 @@
     float: left;
     } */
 
+    .checkbox{
+        width: 25px; 
+        height: 25px;
+        }
+
     </style>
