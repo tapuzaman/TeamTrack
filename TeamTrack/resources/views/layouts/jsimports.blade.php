@@ -107,6 +107,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   newComment();
                          });
                          console.log(data.message);
                     } 
@@ -138,6 +139,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   newComment();
                          });
                          console.log(data.message);
                     } 
@@ -193,6 +195,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   newComment();
                          });
                          console.log(data.message);  
                     } 
@@ -222,6 +225,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   newComment();
                          });
 
                     } 
@@ -273,6 +277,7 @@
                                    setEditTaskModalInfo();
                                    deleteTask();
                                    deleteSprint();
+                                   newComment();
                          });
                     } 
                     });
