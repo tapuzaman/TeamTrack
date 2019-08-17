@@ -16,6 +16,10 @@
                         {{Form::text('sprintId2', null, [ 'class' => 'form-control hidden', 'id'=>'sprint-id-text-field2','placeholder' => 'Sprint Id', 'hidden'])}}
                     </div>
                     <div class="form-group">
+                        {{Form::label('isCompleted', 'isCompleted',[ ''])}}
+                        {{Form::text('isCompleted', null, [ 'class' => 'form-control hidden', 'id'=>'isCompleted-field','placeholder' => 'isCompleted', ''])}}
+                    </div>
+                    <div class="form-group">
                         {{Form::label('taskId2', 'Task Id',[ 'hidden'])}}
                         {{Form::text('taskId2', null, [ 'class' => 'form-control hidden', 'id'=>'task-id-text-field','placeholder' => 'Task Id', 'hidden'])}}
                     </div>

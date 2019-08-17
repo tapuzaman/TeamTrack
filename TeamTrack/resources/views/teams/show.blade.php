@@ -53,12 +53,13 @@
                                         <h5 id="taskTitle"> {{$task->title}} </h5> ({{$task->id}})
                                         <h6 id="taskDescription"> {{$task->description}} </h6>
 
-                                        <button class="toggleIsCompleted btn btn-outline-primary">
+                                        <button class="toggleIsCompleted btn btn-outline-primary" taskId="{{$task->id}}">
                                             {{$task->is_completed}}
                                         </button>
 
                                         <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
                                         <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
+                                        <h6 id="taskIsCompleted" hidden>{{$task->is_completed}}</h6>
                                     
                                         <hr>
                                             <div id="task{{$task->id}}AssignedTo" hidden>{{App\User::find($task->user_id)->id}}</div>

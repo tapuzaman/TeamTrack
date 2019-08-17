@@ -84,7 +84,7 @@ class TasksController extends Controller
             $task->description = $request->description;
             $task->user_id = $request->assignedTo;
             //$task->due_date = now();
-           // $task->is_completed = false;
+            $task->is_completed = $request->isCompleted;
             $task->save();
 
             return response()->json(['message'=>'updated']);
