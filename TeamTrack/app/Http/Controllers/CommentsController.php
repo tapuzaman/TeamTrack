@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Task;
 
@@ -46,9 +47,9 @@ class CommentsController extends Controller
             $taskId = $request->taskId;
             $commentorId = Auth::id();
             $commentContent = $request->commentContent;
-            commentTask($taskId, $commentorId, $commentContent);
+            Task::commentTask($taskId, $commentorId, $commentContent);
 
-            return response()->json(['message'=>'updated']);
+            return response()->json(['message'=>'comment Added']);
         }
         else if($validator->fails())
         {
