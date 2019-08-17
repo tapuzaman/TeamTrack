@@ -21,24 +21,25 @@
                 <!-- Member list -->
                 <table>
                     @foreach($team->users as $user)
+                        @if($user->id != $team->leader_id)
                         <!-- Each Member -->
-                        <tr>
-                            <td class="px-2">
-                            {{$user->id}} : {{$user->name}}
-                            </td>
-                            <td>
-                                <!-- Don't display remove btn if user is leader -->
-                                @can('removeMember', $team)
-                                    <button 
-                                        class="remove-member btn btn-outline-danger"
-                                        userId="{{$user->id}}">
-                                            Remove 
-                                    </button>
-                                @endcan
-                            </td>
-                            
-                        </tr>
-
+                            <tr>
+                                <td class="px-2">
+                                {{$user->id}} : {{$user->name}}
+                                </td>
+                                <td>
+                                    <!-- Don't display remove btn if user is leader -->
+                                    @can('removeMember', $team)
+                                        <button 
+                                            class="remove-member btn btn-outline-danger"
+                                            userId="{{$user->id}}">
+                                                Remove 
+                                        </button>
+                                    @endcan
+                                </td>
+                                
+                            </tr>
+                        @endif
                     @endforeach
                 </table>
             </div>
