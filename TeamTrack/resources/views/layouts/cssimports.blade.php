@@ -21,4 +21,16 @@
             width: 100%;
         }
 
+        /* .rowview{
+    width: 100%;
+    
+    margin: 0 auto;
+    }
+
+    .cardview{
+    width: 23%;
+    min-height: 450px;
+    float: left;
+    } */
+
     </style>

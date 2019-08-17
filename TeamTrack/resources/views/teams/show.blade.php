@@ -17,14 +17,14 @@
             </a> 
             <br><br>
 
-            <div class="sprint-view">
-
-                {{count($team->backlog->sprints)}} Sprints
+            {{count($team->backlog->sprints)}} Sprints
                 <hr>
+
+            <div class="sprint-view rowview">
 
                 <!-- Add Exception for new user without team -->
                 @foreach($team->backlog->sprints as $sprint)
-                    <div class="well card m-2 p-3">
+                    <div class="well cardview card m-2 p-3">
                         <div class="sprint{{$sprint->id}}">
 
                         <!-- Sprint -->

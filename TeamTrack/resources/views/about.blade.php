@@ -1,16 +1,34 @@
-{{
+<html>
 
-    App\Task::find(61)->created_by
+<style>
 
-    
-}}
+    .row {
+    width: 100%;
+    margin: 0 auto;
+    }
+    .block {
+    width: 20%;
+    float: left;
+    margin:1%;
+    padding:1%;
+    }
 
+</style>
 
+@include('layouts.cssimports')
 
+<body>
+    <div class="row">
+    <div class="block card">Loremffffffffffffffffffffffffffffffffffffffffffffffffsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
+    <div class="block card">Ipsum</div>
+    <div class="block card">Dolor</div>
+    <div class="block card">Lorem</div>
+    <div class="block card">Ipsum</div>
+    <div class="block card">Dolor</div>
+    </div>
+</body>
 
-
-
-
+</html>
 
 
 
