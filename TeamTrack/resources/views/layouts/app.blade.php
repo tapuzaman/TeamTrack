@@ -48,6 +48,7 @@
 
   </body>
 
+  @include('modals.new_team_modal')
   @include('layouts.jsimports')
 
 </html>

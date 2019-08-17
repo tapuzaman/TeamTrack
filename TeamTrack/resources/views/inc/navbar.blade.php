@@ -28,7 +28,7 @@
             <b>{{$team->name}} : {{$team->id}}</b>
           </a>
         @endforeach
-        <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter">
+        <a class="dropdown-item" data-toggle="modal" data-target="#newTeamModal">
             <b>+ Add Team</b>
           </a>
       </div>
