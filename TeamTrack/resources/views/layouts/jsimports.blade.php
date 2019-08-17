@@ -315,6 +315,7 @@
 
                     console.log("newMember called");
                     var email = $("input[name=email]").val();
+                    console.log(email);
 
                     $.ajax({
                     type:'POST',

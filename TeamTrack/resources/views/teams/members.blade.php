@@ -46,7 +46,7 @@
 
         <br>
 
-        @can('removeMember', $team)
+        @can('addMember', $team)
             <!-- Button trigger newMemberModal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newMemberModal">
                 Add Member
