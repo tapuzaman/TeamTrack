@@ -31,5 +31,16 @@
             }
         }
  
-       
+        # Handles User Login
+        public function userLogin($email, $pass){
+            $password = md5($pass);
+            $stmt = $this->con->prepare("SELECT id FROM users WHERE email = ? AND password = ?");
+            $stmt->bind_param("ss",$email,$password);
+            $stmt->execute();
+            $stmt->store_result(); 
+            return $stmt->num_rows > 0; 
+        }
+ 
+        
+ 
     }
