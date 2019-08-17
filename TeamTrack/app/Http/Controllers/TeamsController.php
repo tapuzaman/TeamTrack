@@ -38,6 +38,7 @@ class TeamsController extends Controller
         $team_name = $request->input('name');
         $leader_id = Auth::id();
         $newTeam = Team::createTeam($team_name, $leader_id);
+        Auth::user()->setCurrentTeamId($newTeam->id);
 
         return redirect('/home');
     }
