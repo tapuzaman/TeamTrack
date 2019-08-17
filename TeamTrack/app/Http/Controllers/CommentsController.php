@@ -42,12 +42,11 @@ class CommentsController extends Controller
         ]);
 
         if ($validator->passes()) {
-            $task->title = $request->taskId;
-            $task->commentContent = $request->commentContent;
-            $task->user_id = $request->assignedTo;
-            $task->save();
 
-            
+            $taskId = $request->taskId;
+            $commentorId = Auth::id();
+            $commentContent = $request->commentContent;
+            commentTask($taskId, $commentorId, $commentContent);
 
             return response()->json(['message'=>'updated']);
         }
