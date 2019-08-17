@@ -50,7 +50,7 @@
                                 
                                     <!-- Task -->
                                     <div id="task{{$task->id}}">
-                                    <h5 id="taskTitle"> {{$task->title}} </h5>
+                                    <h5 id="taskTitle"> {{$task->title}} ({{$task->id}})</h5>
                                     <h6 id="taskDescription"> {{$task->description}} </h6>
                                     <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
                                     <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
@@ -87,8 +87,9 @@
                                         <small>
                                             @foreach($task->comments as $comment)
                                                 <div>
-                                                    <b>{{App\User::find($comment->commentor_id)->name}}</b> <br>
-                                                    {{$comment->content}}
+                                                    <br>
+                                                    <b>{{App\User::find($comment->commentor_id)->name}} : </b>
+                                                        "{{$comment->content}}""
                                                 </div>
                                             @endforeach
                                         </small>

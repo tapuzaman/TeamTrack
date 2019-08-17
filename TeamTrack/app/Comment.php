@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    
+    protected $guarded = [];
+
     public function Task()
     {
         return $this->belongsTo('App\Task');

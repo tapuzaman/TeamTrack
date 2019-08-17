@@ -24,8 +24,16 @@ class Task extends Model
             'title' => $title,
             'description' => $description,
             'due_date' => '2020-08-12 00:00:00',
-            'is_completed' => false
-           
+            'is_completed' => false 
+        ]);
+    }
+
+    public static function commentTask($taskId, $commentorId, $commentContent)
+    {
+        $newComment = Comment::create([
+            'task_id'=>$taskId,
+            'commentor_id'=>$commentorId,
+            'content'=>$commentContent
         ]);
     }
 
