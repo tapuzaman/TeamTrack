@@ -93,8 +93,9 @@
                                         @endforeach
                                         </small>
 
+                                        <br>
                                         <button 
-                                            class="comment-task btn btn-danger"
+                                            class="comment-task btn btn-primary"
                                             taskId="{{$task->id}}"
                                             data-toggle="modal" 
                                             data-target="#commentTaskModal">
@@ -114,5 +115,6 @@
     
     @include('modals.new_task_modal')
     @include('modals.edit_task_modal')
+    @include('modals.comment_task_modal')
 
 @endsection
