@@ -34,7 +34,7 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response()->json(['message'=>'commentStore']);
     }
 
     /**

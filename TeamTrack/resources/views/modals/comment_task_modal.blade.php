@@ -11,7 +11,14 @@
                 </div>
 
                 <div class="modal-body">
-                    
+                    <div class="form-group">
+                        {{Form::label('taskId', 'Task Id',[ ''])}}
+                        {{Form::text('taskId', null, ['class' => 'form-control hidden', 'id'=>'task-id-text-field','placeholder' => 'Task Id', ''])}}
+                    </div>
+                    <div class="form-group">
+                        {{Form::label('commentContent', 'Task Description')}}
+                        {{Form::textarea('commentContent', 'Default Comment', ['class' => 'form-control', 'placeholder' => 'Comment Content'])}}
+                    </div>
                 </div>
                 <div class="modal-footer">
                     {{Form::submit('Post Comment', ['class'=>'btn btn-primary comment-task-submit', 'data-dismiss'=>'modal'])}}

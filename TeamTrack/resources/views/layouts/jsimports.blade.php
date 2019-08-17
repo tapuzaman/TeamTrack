@@ -31,6 +31,7 @@
                setEditTaskModalInfo();
                deleteSprint();
                removeMember();
+               newComment();
           }
 
 
@@ -138,6 +139,36 @@
                                    deleteTask();
                                    deleteSprint();
                          });
+                         console.log(data.message);
+                    } 
+                    });
+               });
+          }
+
+          function newComment()
+          {
+               //console.log('newComment');
+               $(".comment-task-submit").off('click').click(function(e){
+                    e.preventDefault();
+
+                    console.log('newComment called');
+                    var taskId = $("input[name=taskId]").val();
+                    var commentContent = $("textarea[name=commentContent]").val();
+
+                    $.ajax({
+                    type:'POST',
+                    url:'/comments',
+                    data:{taskId:taskId, commentContent:commentContent},
+                    success:function(data){
+                          $('.sprint-view').load( window.location.pathname.concat(' .sprint-view'),
+                              function(responseText, textStatus, XMLHttpRequest){
+                                   setSprintId();
+                                   setEditTaskModalInfo();
+                                   deleteTask();
+                                   deleteSprint();
+                                   newComment();
+                         });
+                         console.log(data.message);  
                     } 
                     });
                });
