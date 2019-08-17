@@ -25,4 +25,9 @@ class TeamPolicy
         return $user->id == $team->leader_id;
     }
 
+    public function destroyTeam(User $user, Team $team)
+    {
+        return $user->id == $team->leader_id;
+    }
+
 }

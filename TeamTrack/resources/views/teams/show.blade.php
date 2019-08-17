@@ -15,12 +15,13 @@
             <a class="new-sprint-submit">
                 <button class="btn btn-primary">Add Sprint</button>
             </a> 
-
-            <br><br>
             
-            {!! Form::open(['action' => ['TeamsController@destroy', $team->id], 'method' => 'DELETE', 'enctype' => 'multipart/form-data']) !!}
-                {{Form::submit('Delete Team', ['class'=>'btn btn-danger'])}}
-            {!! Form::close() !!}
+            @can('destroyTeam', $team)
+                <br><br>
+                {!! Form::open(['action' => ['TeamsController@destroy', $team->id], 'method' => 'DELETE', 'enctype' => 'multipart/form-data']) !!}
+                    {{Form::submit('Delete Team', ['class'=>'btn btn-danger'])}}
+                {!! Form::close() !!}
+            @endcan
 
             <br><br>
 
