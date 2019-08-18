@@ -25,10 +25,12 @@
 
             <br><br>
 
-            {{count($team->backlog->sprints)}} Sprints
-                <hr>
+            
 
             <div class="sprint-view rowview">
+
+                {{count($team->backlog->sprints)}} Sprints
+                <hr>
 
                 <!-- Add Exception for new user without team -->
                 @foreach($team->backlog->sprints as $sprint)
