@@ -18,6 +18,7 @@ class ExampleTest extends TestCase
      * @return void
      */
     //home page comment added
+
     public function testBasicTest()
     {
         $response = $this->get('/')
@@ -25,6 +26,7 @@ class ExampleTest extends TestCase
         ->assertSee('Teamtrack');
     }
 
+   // checked Login page 
     public function test_LoginPageTest()
     {
         $response = $this->get('/login')
@@ -32,7 +34,7 @@ class ExampleTest extends TestCase
         ->assertSee('login');
     }
 
-
+//testing register page
     public function test_RegisterPageTest()
     {
         $response = $this->get('/register')
@@ -57,4 +59,6 @@ class ExampleTest extends TestCase
         $this->assertNotEmpty($email);
     }
 
+
+    
 }
