@@ -18,8 +18,8 @@
             if($this->isUserExist($name,$email)){
                 return 0; 
             }else{
-                $password = md5($pass);
-                #$password =password_hash($pass, PASSWORD_DEFAULT);
+                #$password = md5($pass);
+                $password =password_hash($pass, PASSWORD_DEFAULT);
                 $stmt = $this->con->prepare("INSERT INTO `users`(`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES (NULL,?,?,NULL,?,NULL,NULL,NULL)");
                 $stmt->bind_param("sss", $name, $email, $password);
  
