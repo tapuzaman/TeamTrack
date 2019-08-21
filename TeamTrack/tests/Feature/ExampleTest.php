@@ -17,7 +17,6 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-
     
     public function testBasicTest()
     {
@@ -40,7 +39,7 @@ class ExampleTest extends TestCase
 
         ->assertSee('register');
     }
-
+//if user has a valid name
     public function test_authenticated_user_has_a_name()
     {
         $user = factory(User::class)->make();
