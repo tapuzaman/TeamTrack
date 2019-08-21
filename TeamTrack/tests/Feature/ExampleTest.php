@@ -4,14 +4,21 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
+use App\Member;
+use App\Task;
+use App\Team;
+use App\User;
 class ExampleTest extends TestCase
 {
+   use  RefreshDatabase;
+
     /**
      * A basic test example.
      *
      * @return void
      */
+
+    
     public function testBasicTest()
     {
         $response = $this->get('/')
@@ -31,7 +38,15 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/register')
 
-        ->assertSee('/register');
+        ->assertSee('register');
+    }
+
+    public function test_authenticated_user_has_a_name()
+    {
+        $user = factory(User::class)->make();
+        $name=$user->name;
+
+        $this->assertNotEmpty($name);
     }
 
 }
