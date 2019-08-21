@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 
     @Override
