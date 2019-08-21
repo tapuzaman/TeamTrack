@@ -48,4 +48,13 @@ class ExampleTest extends TestCase
         $this->assertNotEmpty($name);
     }
 
+//if user has a valid email
+    public function test_authenticated_user_has_an_email_id()
+    {
+        $user = factory(User::class)->make();
+        $email=$user->email;
+
+        $this->assertNotEmpty($email);
+    }
+
 }
