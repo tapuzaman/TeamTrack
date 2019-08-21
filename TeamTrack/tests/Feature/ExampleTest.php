@@ -14,15 +14,24 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get('/')
 
-        $response->assertSee('Teamtrack');
+        ->assertSee('Teamtrack');
     }
 
     public function test_LoginPageTest()
     {
         $response = $this->get('/login')
 
-        ->assertRedirect('/login');
+        ->assertSee('login');
     }
+
+
+    public function test_RegisterPageTest()
+    {
+        $response = $this->get('/register')
+
+        ->assertSee('/register');
+    }
+
 }
