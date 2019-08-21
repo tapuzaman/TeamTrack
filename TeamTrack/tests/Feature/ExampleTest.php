@@ -18,4 +18,11 @@ class ExampleTest extends TestCase
 
         $response->assertSee('Teamtrack');
     }
+
+    public function test_LoginPageTest()
+    {
+        $response = $this->get('/login')
+
+        ->assertRedirect('/login');
+    }
 }
