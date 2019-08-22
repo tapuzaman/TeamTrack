@@ -44,4 +44,13 @@ return [
         ],
     ],
 
+
+    //Custom Controller Google
+    'google' => [
+        'client_id' => '403614899305-6cfso601ln06vgfj0q97pa07o937jpr7.apps.googleusercontent.com',
+        'client_secret' => '_GGl9TizcJLMdnj_1HExK2GC',
+        'redirect' => 'http://teamtrack.me/auth/google/callback',
+    ],
+
+
 ];

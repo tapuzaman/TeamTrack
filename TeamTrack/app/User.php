@@ -70,4 +70,12 @@ class User extends Authenticatable
         return $this->hasOne('App\Setting');
     }
 
+ /**
+     * Social Provider
+     */
+    public function socialProviders(){
+        return $this->hasMany(SocialProvider::class);
+    }
+
+
 }

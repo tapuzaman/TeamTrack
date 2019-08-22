@@ -64,3 +64,6 @@ Route::post('teams','TeamsController@store');   // required for post actions
 Route::delete('teams/{id}','TeamsController@destroy'); 
 
 
+# Socialite
+Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider1');
+Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback1');

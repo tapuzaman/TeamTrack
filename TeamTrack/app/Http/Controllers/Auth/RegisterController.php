@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Socialite;
+use App\SocialProvider;
 
 class RegisterController extends Controller
 {
@@ -77,5 +79,57 @@ class RegisterController extends Controller
         ]);
 
         return $newUser;
+    }
+
+    //
+    /**
+     * Redirect the user to the Google authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider1($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+    /**
+     * Obtain the user information from Google.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback1($provider)
+    {
+        try{
+            $socialUser = Socialite::driver($provider)->user();
+        }
+        catch(\Exception $e){
+            return redirect('/');
+        }
+       
+        //check if we have log provider
+        $socialProvider = SocialProvider::where('provider_id',$socialUser->getId())->first();
+        
+        if(!$socialProvider){
+            //create a new user and provider
+            $user =User::firstOrCreate([
+                'name' => $socialUser->getName(),
+                'email' => $socialUser->getEmail(),
+                'password' => Hash::make('password'),
+            ]);
+
+            Setting::firstOrCreate([
+                'user_id' => $user->id,
+                'current_team_id' => 0
+            ]);
+         
+            $user->socialProviders()->create(
+                ['provider_id' => $socialUser->getId(), 'provider' => $provider]
+            );
+        }
+        
+        else
+            $user = $socialProvider->user;
+        
+        auth()->login($user);
+        return redirect('/home');
     }
 }
