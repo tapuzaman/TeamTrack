@@ -116,6 +116,8 @@ class RegisterController extends Controller
                 'password' => Hash::make('password'),
             ]);
 
+            
+        //create settings for new user(google)
             Setting::firstOrCreate([
                 'user_id' => $user->id,
                 'current_team_id' => 0

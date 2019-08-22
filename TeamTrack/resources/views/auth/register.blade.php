@@ -68,7 +68,7 @@
                                     {{ __('Register') }}
                                 </button>
 
-                                <a class= "btn btn-success" href= "/auth/google" role= "button">Login with Google</a>
+                                <a class= "btn btn-success" href= "/auth/google" role= "button">Register with Google</a>
                             </div>
                         </div>
                     </form>
