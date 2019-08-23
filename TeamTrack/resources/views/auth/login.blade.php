@@ -62,6 +62,13 @@
                                 
                                     <a class= "btn btn-success" href= "/auth/google" role= "button">Login with Google</a>
                                    
+                                    <div class="form-group row mb-1 mt-2">
+                                        <div class="col-md-0 offset-md-2">
+                                            <a href="{{ url('/auth/linkedin') }}" class="btn btn-success">
+                                                {{ __('Login with LinkedIn') }}
+                                            </a>
+                                        </div>
+                                    </div>
                                    
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
