@@ -45,11 +45,18 @@ return [
     ],
 
 
-    //Custom Controller Google
+    //Custom socialite Google
     'google' => [
-        'client_id' => '403614899305-6cfso601ln06vgfj0q97pa07o937jpr7.apps.googleusercontent.com',
-        'client_secret' => '_GGl9TizcJLMdnj_1HExK2GC',
-        'redirect' => 'http://teamtrack.me/auth/google/callback',
+        'client_id' => '403614899305-6cfso601ln06vgfj0q97pa07o937jpr7.apps.googleusercontent.com',//  Google Client ID
+        'client_secret' => '_GGl9TizcJLMdnj_1HExK2GC', //  Google Client Secret
+        'redirect' => 'http://teamtrack.me/auth/google/callback',  //  Google Callback URL
+    ],
+
+//custom linkedin socialite
+    'linkedin' => [
+        'client_id' => '81443bvg63sw4g',         //  LinkedIn Client ID
+        'client_secret' => 'odctdyYtimenSJzx', //  LinkedIn Client Secret
+        'redirect' => 'http://teamtrack.me/auth/linkedin/callback',       //  LinkedIn Callback URL
     ],
 
 

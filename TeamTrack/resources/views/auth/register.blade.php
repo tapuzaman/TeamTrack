@@ -69,6 +69,15 @@
                                 </button>
 
                                 <a class= "btn btn-success" href= "/auth/google" role= "button">Register with Google</a>
+
+                                <div class="form-group row mb-0 mt-3">
+                                    <div class="col-md-8 offset-md-4">
+                                        <a href="{{ url('/auth/linkedin') }}" class="btn btn-success">
+                                            {{ __('Register with LinkedIn') }}
+                                        </a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </form>
