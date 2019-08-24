@@ -60,7 +60,7 @@ Route::get('teams','TeamsController@index');
 //Route::get('teams/members/{id}','TeamsController@members'); // Show members in team + add/delete member option
 // implement delete Member route and method
 Route::post('teams','TeamsController@store');   // required for post actions
-Route::post('teams/members','TeamsController@storeMember');   // required for post actions
-
+//Route::post('teams/members','TeamsController@storeMember');   // required for post actions
+Route::delete('teams/{id}','TeamsController@destroy'); 
 
 

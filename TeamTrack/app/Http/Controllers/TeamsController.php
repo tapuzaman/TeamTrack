@@ -19,7 +19,8 @@ class TeamsController extends Controller
     public function masterindex()
     {
         $teams = Team::all();
-        return view('teams.index')->with('teams',$teams);        
+        //return view('teams.index')->with('teams',$teams);        
+        return redirect('/home');
     }
 
 
@@ -38,6 +39,7 @@ class TeamsController extends Controller
         $team_name = $request->input('name');
         $leader_id = Auth::id();
         $newTeam = Team::createTeam($team_name, $leader_id);
+        Auth::user()->setCurrentTeamId($newTeam->id);
 
         return redirect('/home');
     }
@@ -61,6 +63,11 @@ class TeamsController extends Controller
         return view('teams.show')->with('team',$team)->with('members', $membersArray);
     }
 
-
+    public function destroy($id)
+    {
+        Team::deleteTeam($id);
+        Auth::user()->setCurrentTeamId(0);
+        return redirect('\home');
+    }
 
 }

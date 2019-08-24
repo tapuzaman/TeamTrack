@@ -15,12 +15,22 @@
             <a class="new-sprint-submit">
                 <button class="btn btn-primary">Add Sprint</button>
             </a> 
+            
+            @can('destroyTeam', $team)
+                <br><br>
+                {!! Form::open(['action' => ['TeamsController@destroy', $team->id], 'method' => 'DELETE', 'enctype' => 'multipart/form-data']) !!}
+                    {{Form::submit('Delete Team', ['class'=>'btn btn-danger'])}}
+                {!! Form::close() !!}
+            @endcan
+
             <br><br>
 
-            {{count($team->backlog->sprints)}} Sprints
-                <hr>
+            
 
             <div class="sprint-view rowview">
+
+                {{count($team->backlog->sprints)}} Sprints
+                <hr>
 
                 <!-- Add Exception for new user without team -->
                 @foreach($team->backlog->sprints as $sprint)
@@ -28,7 +38,7 @@
                         <div class="sprint{{$sprint->id}}">
 
                         <!-- Sprint -->
-                        <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
+                        <h3>Sprint {{$sprint->sprint_no}}</h3>
 
                         <a href="{{$sprint->id}}"  class="add-task-modal" data-toggle="modal" data-target="#newTaskModal">
                             <button class="btn btn-primary">Add Task</button>
@@ -50,10 +60,26 @@
                                 
                                     <!-- Task -->
                                     <div id="task{{$task->id}}">
-                                        <h5 id="taskTitle"> {{$task->title}} ({{$task->id}})</h5>
+                                        @if($task->is_completed)   
+                                            <input type="checkbox" class="checkbox toggleIsCompleted" taskId="{{$task->id}}" checked>
+                                            <!-- <button class="btn btn-success" taskId="{{$task->id}}">
+                                                Completed
+                                            </button> -->
+                                        @else
+                                            <input type="checkbox" class="checkbox toggleIsCompleted" taskId="{{$task->id}}">
+                                            <!-- <button class="btn btn-light" taskId="{{$task->id}}">
+                                                InComplete
+                                            </button> -->
+                                        @endif
+                                        <h5 id="taskTitle"> {{$task->title}} </h5> 
+                                        <!-- ({{$task->id}}) -->
                                         <h6 id="taskDescription"> {{$task->description}} </h6>
+
+                                        
+
                                         <h6 id="taskSprintId" hidden>{{$sprint->id}}</h6>
                                         <h6 id="taskAssignedToId" hidden>{{$task->user_id}}</h6>
+                                        <h6 id="taskIsCompleted" hidden>{{$task->is_completed}}</h6>
                                     
                                         <hr>
                                             <div id="task{{$task->id}}AssignedTo" hidden>{{App\User::find($task->user_id)->id}}</div>

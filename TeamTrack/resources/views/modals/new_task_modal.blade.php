@@ -17,15 +17,15 @@
                     </div>
                     <div class="form-group">
                         {{Form::label('title', 'Task Title')}}
-                        {{Form::text('title', 'Default Title' , ['class' => 'form-control', 'placeholder' => 'Task Name'])}}
+                        {{Form::text('title', '' , ['class' => 'form-control', 'placeholder' => 'Enter Task Title', 'maxlength' => 180, 'required'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('assignedTo', 'Assign Task to')}}
-                        {{Form::select('assignedTo', array($members), null, ['class' => 'form-control', "placeholder" => "Pick member"])}}
+                        {{Form::select('assignedTo', array($members), null, ['class' => 'form-control', "placeholder" => "Pick member" , 'required'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('description', 'Task Description')}}
-                        {{Form::textarea('description', 'Default Description', ['class' => 'form-control', 'placeholder' => 'Task Description'])}}
+                        {{Form::textarea('description', '', ['class' => 'form-control', 'placeholder' => 'Enter Task Description' ,  'required'])}}
                     </div>
                 </div>
                 <div class="modal-footer">

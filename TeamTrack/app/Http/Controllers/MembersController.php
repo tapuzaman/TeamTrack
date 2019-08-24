@@ -27,7 +27,7 @@ class MembersController extends Controller
         }
         else if($validator->fails())
         {
-            return response()->json(['message'=>$validator->errors()->all()]);
+            return response()->json(['error'=>$validator->errors()->all()]);
         }
         
     }
@@ -50,4 +50,10 @@ class MembersController extends Controller
         Team::removeMember($memberId, $teamId);
         return response()->json(['message'=>$memberId]);
     }
+
+    public function deleteTeam($teamId)
+    {
+        return redirect('/home');
+    }
+
 }

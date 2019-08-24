@@ -6,10 +6,10 @@
   </head>
   <body class="h-100">
 
-    <!-- Settings icon -->
+    <!-- Settings icon
     <div class="color-switcher-toggle animated pulse infinite">
       <i class="material-icons">settings</i>
-    </div>
+    </div> -->
 
     <div class="container-fluid">
       <div class="row">
@@ -48,6 +48,7 @@
 
   </body>
 
+  @include('modals.new_team_modal')
   @include('layouts.jsimports')
 
 </html>

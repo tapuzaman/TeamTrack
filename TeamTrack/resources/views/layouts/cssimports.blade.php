@@ -14,7 +14,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <style>
-    
+
         .column{
             display: flex;
             flex-direction: row;
@@ -32,5 +32,10 @@
     min-height: 450px;
     float: left;
     } */
+
+    .checkbox{
+        width: 25px; 
+        height: 25px;
+        }
 
     </style>
