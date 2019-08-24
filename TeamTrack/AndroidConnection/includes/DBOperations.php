@@ -69,3 +69,20 @@
         }
  
     }
+
+
+           # public function userLogin($email, $pass){
+            #$password = md5($pass);
+            #$password =password_hash($pass, PASSWORD_DEFAULT);
+            #$hash= $this->con->prepare("SELECT password FROM users WHERE email = ?");
+
+            #if (password_verify($pass, $hash)) {
+    		#$stmt = $this->con->prepare("SELECT id FROM users WHERE email = ?");
+            #$stmt->bind_param("ss",$email,$hash);
+            #$stmt->execute();
+            #$stmt->store_result(); 
+            #return $stmt->num_rows > 0; 
+			#	} 
+
+ #       }
+ 
