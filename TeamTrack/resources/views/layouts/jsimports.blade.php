@@ -333,7 +333,7 @@
 
                     console.log("newMember called");
                     var email = $("input[name=email]").val();
-                    console.log(email);
+                    //console.log(email);
 
                     $.ajax({
                     type:'POST',
@@ -345,6 +345,10 @@
                               function(responseText, textStatus, XMLHttpRequest){
                                    removeMember();
                          });
+
+                         if(data.error.length>0){
+                              alert(data.error);
+                         }
                     } 
                     });
                });

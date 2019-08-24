@@ -16,7 +16,7 @@
                         {{Form::text('taskId3', null, ['class' => 'form-control hidden', 'id'=>'task-id-text-field3','placeholder' => 'Task Id', 'hidden'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::textarea('commentContent', '', ['class' => 'form-control', 'placeholder' => 'Enter comment . . .'])}}
+                        {{Form::textarea('commentContent', '', ['class' => 'form-control', 'placeholder' => 'Enter comment . . .', 'maxlength' => 2000])}}
                     </div>
                 </div>
                 <div class="modal-footer">
