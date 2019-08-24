@@ -27,17 +27,17 @@
 
             <!------ SIDEBAR LINKS ---------->
 
-            <li > Team id : {{ $teamId = Auth::user()->getCurrentTeamId() }} </li>
-            <li > Team name : {{ $teamName = Auth::user()->getCurrentTeamName() }} </li>
+            <li hidden> Team id : {{ $teamId = Auth::user()->getCurrentTeamId() }} </li>
+            <li hidden> Team name : {{ $teamName = Auth::user()->getCurrentTeamName() }} </li>
 
             @if($teamId!=0)
 
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link sidebar-link" href="/teamsmasterindex">
                   <i class="material-icons">view_module</i>
                   <span>Teams masterview</span>
                 </a>
-              </li>
+              </li> -->
 
               <li class="nav-item">
                 <a class="nav-link sidebar-link" href="/teams/{{$teamId}}" id="dashboard">

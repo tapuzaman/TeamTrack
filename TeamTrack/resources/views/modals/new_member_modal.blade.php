@@ -12,7 +12,7 @@
 
                 <div class="modal-body">
                     <div class="form-group">
-                        {{Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Email address'])}}
+                        {{Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Email address', 'maxlength' => 180])}}
                     </div>
                 </div>
                 <div class="modal-footer">

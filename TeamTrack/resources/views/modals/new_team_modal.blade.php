@@ -13,7 +13,7 @@
                 <div class="modal-body">
                         <!-- make this hidden later -->
                         <div class="form-group">
-                            {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Choose a team name'])}}
+                            {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Choose a team name', 'maxlength' => 180])}}
                         </div>
                    
                 </div>

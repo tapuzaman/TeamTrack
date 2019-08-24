@@ -38,7 +38,7 @@
                         <div class="sprint{{$sprint->id}}">
 
                         <!-- Sprint -->
-                        <h3>Sprint {{$sprint->sprint_no}} ({{$sprint->id}})</h3>
+                        <h3>Sprint {{$sprint->sprint_no}}</h3>
 
                         <a href="{{$sprint->id}}"  class="add-task-modal" data-toggle="modal" data-target="#newTaskModal">
                             <button class="btn btn-primary">Add Task</button>

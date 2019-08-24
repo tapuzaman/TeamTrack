@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         {{Form::label('title2', 'Task Title')}}
-                        {{Form::text('title2', '' , ['class' => 'form-control', 'id'=>'title-text-field','placeholder' => 'Task Name'])}}
+                        {{Form::text('title2', '' , ['class' => 'form-control', 'id'=>'title-text-field','placeholder' => 'Task Name', 'maxlength' => 180])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('assignedTo2', 'Assign Task to')}}

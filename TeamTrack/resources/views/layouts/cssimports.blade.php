@@ -14,7 +14,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <style>
-    
+
         .column{
             display: flex;
             flex-direction: row;

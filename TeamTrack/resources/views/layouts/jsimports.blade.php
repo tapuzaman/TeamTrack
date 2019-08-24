@@ -101,6 +101,10 @@
                     var title = $("input[name=title2]").val();
                     var description = $("textarea[name=description2]").val();
 
+                    if(title.length>180){
+                         alert("Error : Title field entry too long.");
+                    }
+
                     $.ajax({
                     type:'PUT',
                     url:'/tasks/'.concat(taskId),
@@ -115,8 +119,13 @@
                                    setCommentTaskModalInfo();
                                    newComment();
                                    toggleIsCompleted();
+
+                                   console.log(data.message);
                          });
-                         console.log(data.message);
+                         
+                         if(data.error.length>0){
+                              alert(data.error);
+                         }
                     } 
                     });
                });
@@ -176,6 +185,10 @@
                     var assignedTo = $("select[name=assignedTo]").val();
                     var title = $("input[name=title]").val();
                     var description = $("textarea[name=description]").val();
+;
+                    if(title.length>180){
+                         alert("Error : Title field entry too long.");
+                    }
 
                     $.ajax({
                     type:'POST',
@@ -190,9 +203,14 @@
                                    deleteSprint();
                                    setCommentTaskModalInfo();
                                    newComment();
-                                   toggleIsCompleted()
+                                   toggleIsCompleted();
+                                   console.log(data.message);
                          });
-                         console.log(data.message);
+                         
+                         if(data.error.length>0){
+                              alert(data.error);
+                         }
+                         
 
                          $("input[name=title]").val('');
                          $("textarea[name=description]").val('');
@@ -315,7 +333,7 @@
 
                     console.log("newMember called");
                     var email = $("input[name=email]").val();
-                    console.log(email);
+                    //console.log(email);
 
                     $.ajax({
                     type:'POST',
@@ -327,6 +345,10 @@
                               function(responseText, textStatus, XMLHttpRequest){
                                    removeMember();
                          });
+
+                         if(data.error.length>0){
+                              alert(data.error);
+                         }
                     } 
                     });
                });

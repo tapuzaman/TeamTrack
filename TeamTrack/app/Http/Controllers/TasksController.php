@@ -48,7 +48,7 @@ class TasksController extends Controller
         }
         else if($validator->fails())
         {
-            return response()->json(['message'=>$validator->errors()->all()]);
+            return response()->json(['error'=>$validator->errors()->all()]);
         }
 
     }
@@ -57,8 +57,9 @@ class TasksController extends Controller
     public function show($id)
     {
         //fetching task data from the task table database
-        $task= Task::find($id);
-        return view('tasks.show')->with('task',$task);
+        //$task= Task::find($id);
+        //return view('tasks.show')->with('task',$task);
+        return redirect('/home');
     }
 
 
@@ -70,7 +71,7 @@ class TasksController extends Controller
     public function update(Request $request, $taskId)
     {
         $task = Task::find($taskId);
-        $this->authorize('updateTask', $task);
+        $this->authorize('completeOrUpdateTask', $task);
 
         $validator = Validator::make($request->all(), [
             'title'=>'required',
@@ -91,7 +92,7 @@ class TasksController extends Controller
         }
         else if($validator->fails())
         {
-            return response()->json(['message'=>$validator->errors()->all()]);
+            return response()->json(['error'=>$validator->errors()->all()]);
         }
     }
 
