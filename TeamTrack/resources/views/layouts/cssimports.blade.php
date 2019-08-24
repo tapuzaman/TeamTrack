@@ -15,6 +15,10 @@
 
     <style>
 
+        /* .body{
+            background-image:url("{{ asset('research_top.png') }}");
+        } */
+
         .column{
             display: flex;
             flex-direction: row;
