@@ -14,7 +14,8 @@ class PagesController extends Controller
 
         return view('contact');
     }
-
+//controller for about page
+ 
     public function about(){
 
         return view('about');
