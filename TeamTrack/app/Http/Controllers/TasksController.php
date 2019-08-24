@@ -57,8 +57,9 @@ class TasksController extends Controller
     public function show($id)
     {
         //fetching task data from the task table database
-        $task= Task::find($id);
-        return view('tasks.show')->with('task',$task);
+        //$task= Task::find($id);
+        //return view('tasks.show')->with('task',$task);
+        return redirect('/home');
     }
 
 
