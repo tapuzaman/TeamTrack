@@ -10,6 +10,8 @@ use App\Sprint;
 class SprintsController extends Controller
 {
 
+    //Store a newly created resource in storage.
+
     public function store()
     {
         $backlog_id = Team::find(Auth::user()->getCurrentTeamId())->backlog->id;
@@ -25,6 +27,7 @@ class SprintsController extends Controller
         return response()->json(['message'=>$backlog_id]);
     }
 
+    //Remove the specified resource from storage.
 
     public function destroy($sprintId)
     {
