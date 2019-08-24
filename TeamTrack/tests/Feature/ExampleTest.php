@@ -68,5 +68,15 @@ class ExampleTest extends TestCase
 
         ->assertSee('About');
     }
+
+
+    //Contact Page checked
+
+    public function test_ContactPageTest()
+    {
+        $response = $this->get('/contact')
+
+        ->assertSee('Contact');
+    }
     
 }

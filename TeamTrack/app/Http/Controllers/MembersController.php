@@ -10,6 +10,7 @@ use App\Team;
 class MembersController extends Controller
 {
 
+    //Store the newly created resource in storage.
 
     public function store(Request $request)
     {
@@ -33,6 +34,9 @@ class MembersController extends Controller
     }
 
 
+    //Display the specified resource
+
+
     public function show($id)
     {
         $team = Team::find($id);
@@ -40,6 +44,7 @@ class MembersController extends Controller
         return view('teams.members')->with('team',$team);
     }
 
+    //Remove the specified resource from storage.
 
     public function destroy($id)
     {
@@ -50,6 +55,8 @@ class MembersController extends Controller
         Team::removeMember($memberId, $teamId);
         return response()->json(['message'=>$memberId]);
     }
+
+//delete the entire team
 
     public function deleteTeam($teamId)
     {
