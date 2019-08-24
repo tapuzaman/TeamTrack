@@ -19,7 +19,8 @@ class TeamsController extends Controller
     public function masterindex()
     {
         $teams = Team::all();
-        return view('teams.index')->with('teams',$teams);        
+        //return view('teams.index')->with('teams',$teams);        
+        return redirect('/home');
     }
 
 

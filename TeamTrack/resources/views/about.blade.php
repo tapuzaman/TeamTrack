@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 
 <style>
 
@@ -18,23 +18,18 @@
 @include('layouts.cssimports')
 
 <body>
-    <div class="row">
-    <div class="block card">Loremffffffffffffffffffffffffffffffffffffffffffffffffsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-    <div class="block card">Ipsum</div>
-    <div class="block card">Dolor</div>
-    <div class="block card">Lorem</div>
-    <div class="block card">Ipsum</div>
-    <div class="block card">Dolor</div>
-    </div>
+
+
+
 </body>
 
-</html>
+</html> -->
 
 
 
 
 
-
+{{ App\Team::find(4)->backlog->sprints->first()->tasks->where('user_id',3) }}
 
 
 
