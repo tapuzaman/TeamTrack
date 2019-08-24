@@ -60,9 +60,9 @@
         }
 
         # Gets All The Tasks From Database
-        public function getAllEvents(){
+        public function getAllTasks(){
             $today = date("Y-m-d");
-            $stmt = $this->con->prepare("select * from tasks where task_date >= ?");
+            $stmt = $this->con->prepare("SELECT * FROM tasks where task_date >= ?");
             $stmt->bind_param("s", $today);
             $stmt->execute();
             return $stmt->get_result()->fetch_all();

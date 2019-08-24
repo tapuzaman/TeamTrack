@@ -22,13 +22,14 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
-
+    //creates option menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
+    //menu item
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
