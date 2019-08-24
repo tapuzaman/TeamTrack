@@ -3,6 +3,7 @@ package com.example.teamtrack;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        if(SharedPrefManager.getInstance(this).isLoggedIn()){
+            finish();
+            startActivity(new Intent(this, ProfileActivity.class));
+            return;
+        }
 
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
@@ -65,11 +72,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     obj.getString("name"),
                                     obj.getString("email")
                                 );
-                            Toast.makeText(
-                                getApplicationContext(),
-                                "User login Successful",
-                                Toast.LENGTH_LONG
-                            ).show();
+                                startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                                finish();
                         }else {
 
                             Toast.makeText(
