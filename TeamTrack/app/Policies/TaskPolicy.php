@@ -10,7 +10,7 @@ class TaskPolicy
 {
     use HandlesAuthorization;
 
-    public function completeTask(User $user, Task $task)
+    public function completeOrUpdateTask(User $user, Task $task)
     {
         return $user->id==$task->created_by || $user->id==$task->user_id;
     }
