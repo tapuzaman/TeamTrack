@@ -48,7 +48,7 @@ class TasksController extends Controller
         }
         else if($validator->fails())
         {
-            return response()->json(['message'=>$validator->errors()->all()]);
+            return response()->json(['error'=>$validator->errors()->all()]);
         }
 
     }
@@ -91,7 +91,7 @@ class TasksController extends Controller
         }
         else if($validator->fails())
         {
-            return response()->json(['message'=>$validator->errors()->all()]);
+            return response()->json(['error'=>$validator->errors()->all()]);
         }
     }
 
