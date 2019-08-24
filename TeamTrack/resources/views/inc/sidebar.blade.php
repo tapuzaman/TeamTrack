@@ -27,8 +27,8 @@
 
             <!------ SIDEBAR LINKS ---------->
 
-            <li > Team id : {{ $teamId = Auth::user()->getCurrentTeamId() }} </li>
-            <li > Team name : {{ $teamName = Auth::user()->getCurrentTeamName() }} </li>
+            <li hidden> Team id : {{ $teamId = Auth::user()->getCurrentTeamId() }} </li>
+            <li hidden> Team name : {{ $teamName = Auth::user()->getCurrentTeamName() }} </li>
 
             @if($teamId!=0)
 
