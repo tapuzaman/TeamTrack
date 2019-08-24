@@ -10,8 +10,8 @@ class Team extends Model
     protected $guarded = [];
 
 
-    // Functions
-
+    //Team Functions
+//Create
     public static function createTeam($team_name, $leader_id)
     {
         $default_no_of_sprints = 4;                             //sets no of sprints in new Team
@@ -22,7 +22,7 @@ class Team extends Model
         self::createSprints($newTeamBacklog->id, $default_no_of_sprints);               // create Sprints for created team
         return $newTeam;
     }
-
+//Delete
     public static function deleteTeam($teamId)
     {
         $team = Team::find($teamId);
@@ -44,13 +44,14 @@ class Team extends Model
         $team->delete();
     }
 
+    
     public static function deleteSprint($sprintId)
     {
         $sprint = Sprint::find($sprintId);
         $sprint->tasks()->delete(); //delete tasks in sprint
         $sprint->delete();          //delete sprint
     }
-
+//teams' internal functions
     public static function addMember($member_id, $team_id)
     {
         $team = Team::find($team_id);
@@ -71,7 +72,7 @@ class Team extends Model
     }
 
 
-    // Internal Functions
+    // Internal DB related Functions
 
     private static function createTeamDB($team_name, $leader_id)
     {
@@ -123,7 +124,7 @@ class Team extends Model
     public function members(){
         return $this->belongsToMany('App\Member','team_user','team_id','user_id');
     }
-
+//Assigning a leader using leader model
     public function leader()
     {
         return $this->belongsTo('App\Leader','leader_id');
